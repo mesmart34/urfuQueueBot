@@ -40,7 +40,7 @@ class QueueBot:
             if files is not None and len(files) > 0:
                 for file in files:
                     f = open(file.get_path(), 'rb')
-                    self.__type_methods[file.get_type()](self.__bot, message.chat.id, f)
+                    self.__type_methods[file.get_type()](self.__bot, message.chat.id, f, caption=file.get_caption())
 
         return wrapped
 

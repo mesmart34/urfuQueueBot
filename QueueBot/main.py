@@ -23,10 +23,10 @@ if __name__ == '__main__':
 
     # === === === === buttons' responses
     _bot.add_response('Шаблон гугл таблицы',
-                      _bot.send_message('Описание шаблона',
-                                        files=[
-                                            File('src\\example.jpg', 'photo'),
-                                            File('src\\example.xlsx', 'document')
+                      _bot.send_message(files=[
+                                            File('src\\Описание шаблона.xlsx', 'document'),
+                                            File('src\\Пример шаблона.jpg', 'photo', 'Пример шаблона'),
+                                            File('src\\Пример шаблона.xlsx', 'document')
                                         ],
                                         keyboard=keyboard))
 
