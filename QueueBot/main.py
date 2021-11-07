@@ -1,43 +1,37 @@
-import telebot
-from telebot import types
+# -*- coding: utf-8 -*-
 
-# def welcome_message(message):
-#         print(message.text)
-#         btns = bot.get_buttons([('b1', fun1), ('b2', fun2)])
-#         markp = bot.add_keyboard(btns)
-#         # markup = types.ReplyKeyboardMarkup(row_width=2)
-#         # btn1 = types.KeyboardButton('b1')
-#         # btn2 = types.KeyboardButton('b2')
-#         # markup.add(btn1, btn2)
-#         bot.send_message(message.chat.id, 'hi', reply_markup=markp)
-
-def welcome(message):
-    bot.send_message(message.chat.id, SRCGetter.get('src/welcome.txt'))
+from bot.QueueBot import QueueBot
+from bot.File import *
+from bot.FileGetter import *
+import config as cfg
+import pathlib
 
 if __name__ == '__main__':
-    commands = {
-        'b1': lambda x: 'b1 pressed',
-        'b2': lambda x: 'b2 pressed'
-    }
+    welcome = open('src/welcome.txt', 'r', encoding='utf-8').readline()
 
-    token = "2048641333:AAHhIyZxlWHN3By87p4KEo9-90bw4FBiy6s"
-    bot = telebot.TeleBot(token)
+    _bot = QueueBot(cfg.token)
 
-    # @bot.message_handler(commands=['start'])
-    # def welcome_message(message):
-    #     print(message.text)
-    #     markup = types.ReplyKeyboardMarkup(row_width=2)
-    #     btn1 = types.KeyboardButton('b1')
-    #     btn2 = types.KeyboardButton('b2')
-    #     markup.add(btn1, btn2)
-    #     bot.send_message(message.chat.id, 'hi', reply_markup=markup)
-    #
-    # @bot.message_handler()
-    # def response(message):
-    #     bot.send_message(message.chat.id, commands[message.text](0))
+    # === === === === command: '/start'
+    buttons = [
+        _bot.get_button('Получить коды комнат'),
+        _bot.get_button('Шаблон гугл таблицы')
+    ]
+    keyboard = _bot.get_keyboard(buttons)
 
-    bot.add_command('start', welcome_message)
+    _bot.add_command('start',
+                     _bot.send_message(welcome, keyboard=keyboard))
 
+    # === === === === buttons' responses
+    _bot.add_response('Шаблон гугл таблицы',
+                      _bot.send_message('Описание шаблона',
+                                        files=[
+                                            File('src\\example.jpg', 'photo'),
+                                            File('src\\example.xlsx', 'document')
+                                        ],
+                                        keyboard=keyboard))
 
-    bot.infinity_polling(interval=0, timeout=20)
+    _bot.add_response('Получить коды комнат',
+                      _bot.send_query('Введите ссылку на таблицу',
+                                      _bot.send_message('GOT IT')))
 
+    _bot.start()
