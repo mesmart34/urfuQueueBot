@@ -18,12 +18,6 @@ namespace urfuQueueBot
         private SheetsService service;
         private string spreadSheetId;
         private string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
-        private readonly string[] keywords = new string[] { "Эксперты", "Модераторы", "Комната", "Защита" };
-        private enum ReadMode
-        {
-            None, ExpertMode, ModeratorMode, TeamMode, TimeMode
-        }
-
 
         public TableParser(string spreadSheet)
         {
@@ -32,6 +26,7 @@ namespace urfuQueueBot
             {
                 credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
             }
+            
             service = new SheetsService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
@@ -46,72 +41,44 @@ namespace urfuQueueBot
             foreach (var sheet in sheets)
             {
                 var table = Read(sheet);
-                ProcessTable(table, 0);
-                ProcessTable(table, 1);
+                var teams = new Dictionary<DateTime, List<Team>>();
+                teams = GetTeams(teams, table, 0);
+                teams = GetTeams(teams, table, 1);
+                var room = new Room("Комната " + rooms.Count.ToString(), teams);
+                rooms.Add(room);
             }
             return rooms;
         }
 
-        private bool IsKeyword(string value)
+        private int GetRoomCellId(IList<IList<object>> table, int offset)
         {
-            foreach (var v in keywords)
+            for(var i = 0; i < table.Count; i++)
             {
-                if (v == value)
-                    return true;
+                var value = (string)table[i][offset];
+                if (value.StartsWith("Защита"))
+                    return i;
             }
-            return false;
+            return -1;
         }
 
-        public Room ProcessTable(IList<IList<object>> data, int offset)
+        public Dictionary<DateTime, List<Team>> GetTeams(Dictionary<DateTime, List<Team>> teams, IList<IList<object>> data, int offset)
         {
-            var mode = ReadMode.None;
-            var room = new Room();
-            DateTime time = new DateTime();
-            foreach (var row in data)
+            var from = GetRoomCellId(data, offset);
+            var roomData = (string)(data[from][offset]);
+            var roomDataSplited = roomData.Split(' ');
+            var timeStr = roomDataSplited[1] + " " + roomDataSplited[3];
+            var time = DateTime.ParseExact(timeStr, "dd.MM.yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+            for (var i = from + 2; i < data.Count; i++)
             {
-                var value = row[offset].ToString();
-                //if (IsKeyword(value))
-                if (value.StartsWith("Эксперты"))
-                    mode = ReadMode.ExpertMode;
-                else if (value.StartsWith("Модераторы"))
-                    mode = ReadMode.ModeratorMode;
-                else if (value.StartsWith("Защита"))
-                {
-                    mode = ReadMode.TimeMode;
-                    var splited = value.Split(' ');
-                    time = Convert.ToDateTime(splited[3]);
-                    room.teams.Add(time, new List<Team>());
-                }
-                else if (value.StartsWith("Комната"))
-                {
-                    mode = ReadMode.TeamMode;
-                    room.name = value;
-                }
-                else
-                {
-                    switch (mode)
-                    {
-                        case ReadMode.ExpertMode:
-                            {
-                                room.experts.Add(new Expert(value));
-                            }
-                            break;
-                        case ReadMode.ModeratorMode:
-                            {
-                                room.moderators.Add(new Moderator(value));
-                            }
-                            break;
-                        case ReadMode.TeamMode:
-                            {
-                                var team = new Team();
-                                team.Name = value;
-                                room.teams[time].Add(team);
-                            }
-                            break;
-                    };
-                }
+                var value = data[i][offset].ToString();
+                var team = new Team();
+                team.Name = value;
+                team.Time = time;
+                if (!teams.ContainsKey(time))
+                    teams[time] = new List<Team>();
+                teams[time].Add(team);
             }
-            return room;
+            return teams;
         }
 
         public List<string> GetAllSheets()

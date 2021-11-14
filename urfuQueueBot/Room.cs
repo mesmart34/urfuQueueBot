@@ -6,53 +6,35 @@ using System.Threading.Tasks;
 
 namespace urfuQueueBot
 {
-
-    struct Expert
-    {
-        public Expert(string name)
-        {
-            Name = name;
-        }
-
-        public string Name;
-    }
-
-    struct Moderator
-    {   
-        public Moderator(string name)
-        {
-            Name = name;
-        }
-
-        public string Name;
-    }
-
-    struct Student
-    {
-        public string Name;
-        public string Group;
-    }
-
     struct Team
     {
         public string Name;
-        public List<Student> Students;
+        public DateTime Time;
     }
 
     class Room
     {
-        public List<Expert> experts;
-        public List<Moderator> moderators;
-        public Dictionary<DateTime, List<Team>> teams;
-        public string name;
+        public string Name { get; private set; }
+        public Dictionary<DateTime, List<Team>> Teams { get; private set; }
 
-
-        public Room()
+        public Room(string name, Dictionary<DateTime, List<Team>> team)
         {
-            experts = new List<Expert>();
-            teams = new Dictionary<DateTime, List<Team>>();
-            moderators = new List<Moderator>();
+            Name = name;
+            Teams = team;
         }
+
+        public string GetLink()
+        {
+            var hash = GetHashCode().ToString();
+            var builder = new StringBuilder();
+            foreach(var c in hash)
+            {
+                var code = (char)(c + 'A');
+                builder.Append(code);
+            }
+            return builder.ToString();
+        }
+
 
     }
 }

@@ -17,8 +17,9 @@ C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\bin\Debug\Google.Apis.Core.xm
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\bin\Debug\Google.Apis.Sheets.v4.pdb
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\bin\Debug\Google.Apis.Sheets.v4.xml
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\bin\Debug\Newtonsoft.Json.xml
-C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.csprojAssemblyReference.cache
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.csproj.CoreCompileInputs.cache
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.csproj.CopyComplete
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.exe
 C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.pdb
+C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.csproj.AssemblyReference.cache
+C:\Users\artem\Documents\urfuQueueBot\urfuQueueBot\obj\Debug\urfuQueueBot.csproj.SuggestedBindingRedirects.cache
