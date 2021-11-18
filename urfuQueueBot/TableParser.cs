@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Services;
-using Google.Apis.Util.Store;
 using System.IO;
 
 namespace urfuQueueBot
@@ -17,7 +13,7 @@ namespace urfuQueueBot
         private GoogleCredential credential;
         private SheetsService service;
         private string spreadSheetId;
-        private string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
+        private string[] Scopes = { SheetsService.Scope.Spreadsheets };
 
         public TableParser(string spreadSheet)
         {
@@ -26,7 +22,7 @@ namespace urfuQueueBot
             {
                 credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
             }
-            
+
             service = new SheetsService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
@@ -44,7 +40,7 @@ namespace urfuQueueBot
                 var teams = new Dictionary<DateTime, List<Team>>();
                 teams = GetTeams(teams, table, 0);
                 teams = GetTeams(teams, table, 1);
-                var room = new Room("Комната " + rooms.Count.ToString(), teams);
+                var room = new Room("Комната ", teams);
                 rooms.Add(room);
             }
             return rooms;
@@ -52,13 +48,32 @@ namespace urfuQueueBot
 
         private int GetRoomCellId(IList<IList<object>> table, int offset)
         {
-            for(var i = 0; i < table.Count; i++)
+            for (var i = 0; i < table.Count; i++)
             {
                 var value = (string)table[i][offset];
                 if (value.StartsWith("Защита"))
                     return i;
             }
             return -1;
+        }
+
+        public void CreateSheet(string name)
+        {
+            var sheets = GetAllSheets();
+            foreach (var s in sheets)
+            {
+                if (s == name)
+                    return;
+            }
+            var addSheetRequest = new AddSheetRequest();
+            addSheetRequest.Properties = new SheetProperties();
+            addSheetRequest.Properties.Title = name;
+            BatchUpdateSpreadsheetRequest batchUpdateSpreadsheetRequest = new BatchUpdateSpreadsheetRequest();
+            batchUpdateSpreadsheetRequest.Requests = new List<Request>();
+            batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
+
+            var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, spreadSheetId);
+            batchUpdateRequest.Execute();
         }
 
         public Dictionary<DateTime, List<Team>> GetTeams(Dictionary<DateTime, List<Team>> teams, IList<IList<object>> data, int offset)
@@ -116,7 +131,19 @@ namespace urfuQueueBot
         public void Write(string sheet, string range, List<IList<object>> values)
         {
             var valueRange = new ValueRange();
-            var request = service.Spreadsheets.Values.Update(valueRange, spreadSheetId, sheet + "!" + range);
+            var address = sheet + "!" + range;
+            var request = service.Spreadsheets.Values.Update(valueRange, spreadSheetId, address);
+            valueRange.Values = values;
+            request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
+            request.Execute();
+        }
+        public void Write(string sheet, List<IList<object>> values)
+        {
+            var valueRange = new ValueRange();
+            var address = sheet;
+            var request = service.Spreadsheets.Values.Update(valueRange, spreadSheetId, address);
+            valueRange.Values = values;
+            request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
             request.Execute();
         }
     }

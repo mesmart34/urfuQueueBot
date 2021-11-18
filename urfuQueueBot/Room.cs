@@ -23,6 +23,13 @@ namespace urfuQueueBot
             Teams = team;
         }
 
+        public void AddTeam(Team team, DateTime time)
+        {
+            if (!Teams.ContainsKey(time))
+                Teams.Add(time, new List<Team>());
+            Teams[time].Add(team);
+        }
+
         public string GetLink()
         {
             var hash = GetHashCode().ToString();
