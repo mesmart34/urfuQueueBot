@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace urfuQueueBot
 {
-    struct Team
-    {
-        public string Name;
-        public DateTime Time;
-    }
-
     class Room
     {
         public string Name { get; private set; }
@@ -32,11 +26,14 @@ namespace urfuQueueBot
 
         public string GetLink()
         {
-            var hash = GetHashCode().ToString();
+            var hash = Name.GetHashCode();
+            var random = new Random(hash);
             var builder = new StringBuilder();
-            foreach(var c in hash)
+            for(var i = 0; i < 10; i++)
             {
-                var code = (char)(c + 'A');
+                var code = (char)(random.Next('A', 'Z'));
+                if (random.Next(0, 2) == 0)
+                    code = char.ToLower(code);
                 builder.Append(code);
             }
             return builder.ToString();
