@@ -45,16 +45,6 @@ namespace urfuQueueBot
                 }
                 var team = new Team(value, time);
                 teams[time].Add(team);
-                /*else
-                {
-
-                    *//*foreach (var team in teams[time])
-                    {
-                        if (team.Name == value)
-                            team.AddStudent(value);
-                    }*//*
-
-                }*/
             }
         }
     }

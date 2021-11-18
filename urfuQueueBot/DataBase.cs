@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace urfuQueueBot
 {
@@ -43,40 +41,16 @@ namespace urfuQueueBot
                     column.Add(timeKey.ToString());
                     column.Add(team.Name + "," + team.Time.ToString());
                     data.Add(column);
-                    for (var s = 0; s < Math.Max(team.Students.Count, 10); s++) //ДИКИЙ КОСТЫЛЬ
+                    for (var s = 0; s < team.Students.Count; s++)
                     {
-                        if (s < team.Students.Count)
-                            column.Add(s);
-                        else 
-                            column.Add("");
+                        column.Add(team.Students[s]);
+ 
                     }
                 }
             }
-            data = GetTransposed(data);
             var link = room.GetLink();
             table.CreateSheet(link);
             table.Write(link, data);
-            //table.Write(link, GetTransposed(data));
-        }
-
-        private List<IList<object>> GetTransposed(List<IList<object>> data)
-        {
-            var result = new List<IList<object>>();
-            for (var i = 0; i < data[0].Count; i++)
-            {
-                var line = new List<object>();
-                result.Add(line);
-                for (var j = 0; j < data.Count; j++)
-                    line.Add(0);
-            }
-            for (int x = 0; x < data.Count; ++x) //Iterate through the horizontal rows of the two dimensional array
-            {
-                for (int y = 0; y < data[0].Count; ++y) //Iterate throught the vertical rows, to add more dimensions add another for loop for z
-                {
-                    result[y][x] = data[x][y]; //Change result x,y to input x,y
-                }
-            }
-            return result;
         }
 
         //Fills rooms with teams from google sheet
@@ -91,31 +65,19 @@ namespace urfuQueueBot
                     continue;
                 var room = rooms[link];
                 var data = table.Read(link);
-                var timeKeys = new List<DateTime>();
-                for (var row = 0; row < data.Count; row++)
+                foreach (var row in data)
                 {
-                    for (var col = 0; col < data[row].Count; col++)
+                    var time = DateTime.Parse((string)row[0]);
+                    var value = (string)row[1];
+                    var title = value.Split(',');
+                    var team = new Team(title[0], DateTime.Parse(title[1]));
+                    room.AddTeam(team, time);
+                    for (var i = 2; i < row.Count; i++)
                     {
-                        var value = (string)data[row][col];
+                        value = (string)row[i];
                         if (value.Length == 0)
                             continue;
-                        if (row == 0)
-                        {
-                            var roomTime = DateTime.Parse(value);
-                            timeKeys.Add(roomTime);
-                        }
-                        else if (row == 1)
-                        {
-                            var titleData = value.Split(',');
-                            var time = DateTime.Parse(titleData[1]);
-                            room.Teams[timeKeys[col]][row].ChangeTime(time);
-                        }
-                        else
-                        {
-                            var key = timeKeys[col];
-                            var team = room.Teams[key][col];
-                            team.AddStudent(value);
-                        }
+                        team.AddStudent(value);
                     }
                 }
             }
