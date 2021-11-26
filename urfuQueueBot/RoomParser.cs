@@ -8,14 +8,22 @@ namespace urfuQueueBot
 {
     static class RoomParser
     {
-        public static Room GetRoom(IList<IList<object>> data)
+        public static Room CreateRoom(TableIO table, SheetData sheet)
+        {
+            var id = table.GetID();
+            var roomData = table.Read(sheet.Name);
+            var room = GetRoom(roomData, id);
+            return room;
+        }
+
+        private static Room GetRoom(IList<IList<object>> data, string tableID)
         {
             var teams = new Dictionary<DateTime, List<Team>>();
             GetTeams(teams, data, 0);
             GetTeams(teams, data, 1);
             var roomNameId = GetRoomCellIdByContent(data, "Защита", 0) + 1;
             var roomName = (string)data[roomNameId][0];
-            return new Room(roomName, teams);
+            return new Room(roomName, tableID, teams);
         }
 
         private static int GetRoomCellIdByContent(IList<IList<object>> table, string content, int offset)

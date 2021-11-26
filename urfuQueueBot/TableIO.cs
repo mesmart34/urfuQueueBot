@@ -36,6 +36,11 @@ namespace urfuQueueBot
             });
         }
 
+        public string GetID()
+        {
+            return spreadSheetId;
+        }
+
         public IList<IList<object>> Read(string sheet)
         {
             var request = service.Spreadsheets.Values.Get(spreadSheetId, sheet);

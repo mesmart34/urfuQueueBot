@@ -8,11 +8,13 @@ namespace urfuQueueBot
     {
         public string Name { get; private set; }
         public Dictionary<DateTime, List<Team>> Teams { get; private set; }
+        private string _tableID;
 
-        public Room(string name, Dictionary<DateTime, List<Team>> team)
+        public Room(string name, string tableID, Dictionary<DateTime, List<Team>> team)
         {
             Name = name;
             Teams = team;
+            _tableID = tableID;
         }
 
         public void AddTeam(Team team, DateTime time)
@@ -24,17 +26,10 @@ namespace urfuQueueBot
 
         public string GetLink()
         {
-            var hash = Name.GetHashCode();
-            var random = new Random(hash);
-            var builder = new StringBuilder();
-            for(var i = 0; i < 10; i++)
-            {
-                var code = (char)(random.Next('A', 'Z'));
-                if (random.Next(0, 2) == 0)
-                    code = char.ToLower(code);
-                builder.Append(code);
-            }
-            return builder.ToString();
+            var key = Name + _tableID;
+            var bytes = Encoding.UTF8.GetBytes(key);
+            var encoded = Convert.ToBase64String(bytes);
+            return encoded;
         }
     }
 }

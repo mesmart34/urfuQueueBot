@@ -16,8 +16,7 @@ namespace urfuQueueBot
             var roomsTable = new TableIO("1mM1JgYBx188-fujNFJIfgWQPDm5QyvcSwFjsMCEDJzY");
             foreach(var sheet in roomsTable.GetAllSheets())
             {
-                var roomData = roomsTable.Read(sheet.Name);
-                var room = RoomParser.GetRoom(roomData);
+                var room = RoomParser.CreateRoom(roomsTable, sheet);
                 var link = room.GetLink();
                 Rooms.Add(link, room);
             }
@@ -27,7 +26,7 @@ namespace urfuQueueBot
             team.AddStudent("Биборан");
             team.AddStudent("Масленок");
             team.AddStudent("Питух");
-            Rooms["siubiAxfKP"].AddTeam(team, time);
+            Rooms["0JrQvtC80L3QsNGC0LAgMzFtTTFKZ1lCeDE4OC1mdWpORkpJZmdXUVBEbTVReXZjU3dGanNNQ0VESnpZ"].AddTeam(team, time);
             dataBase.UpdateWhole(Rooms);
             dataBase.Read(Rooms);
             Console.ReadLine();
