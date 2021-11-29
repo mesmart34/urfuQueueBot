@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using TelegramBot;
-using FileManager;
-using Telegram.Bot.Types;
-using QueueBot;
-using System.Threading.Tasks;
-using System.Linq;
 
 namespace Main
 {
@@ -16,6 +10,8 @@ namespace Main
         {
             DefaultUpdateHandler updateHandler = new DefaultUpdateHandler();
             QueueBot.QueueBot bot;
+
+            // TODO: Передать параметром реализацию IQuery
 
             using (StreamReader sr = new StreamReader("../../../../.private_cfg/token.txt"))
             {

@@ -7,6 +7,9 @@ using FileManager;
 using System.Threading.Tasks;
 using TableParser;
 using System.Linq;
+using TableQueries;
+
+// TODO: Сделать создание сценария использования более удобным и поддерживаемым
 
 namespace QueueBot
 {
@@ -14,8 +17,15 @@ namespace QueueBot
     {
         private const string src = "../../../../src/";
 
-        public QueueBot(string token, IUpdateHandler updateHandler) : base(token, updateHandler)
+        private IQuery _querier;
+
+        private Dictionary<ChatId, string> _sessions;
+
+        public QueueBot(string token, IUpdateHandler updateHandler, IQuery querier) : base(token, updateHandler)
         {
+            _querier = querier;
+            _sessions = new Dictionary<ChatId, string>();
+
             AddStartWelcome();
             AddExpertBranch();
             AddStudentBranch();
@@ -130,25 +140,33 @@ namespace QueueBot
         {
             Task RoomsResponse(Update update)
             {
-                var roomsTable = new TableIO(update.Message.Text);
-                var rooms = roomsTable.GetAllSheets();
-                var links = rooms.Select(room => new Room(room.Name, null, null).GetLink());
+                //var roomsTable = new TableIO(update.Message.Text);
+                //var rooms = roomsTable.GetAllSheets();
+                //var links = rooms.Select(room => new Room(room.Name, null, null).GetLink());
 
                 List<Task> tasks = new List<Task>();
 
-                tasks.Add(Task.Run(() => {
-                    var commandsTable = new TableIO("1bUR8BaBnYjc5rkaC9DHW6vm79qu7UVGgqBOVuZgeMAc");
-                    foreach (string link in links)
-                    {
-                        commandsTable.CreateSheet(link);
-                    }
-                }));
+                List<Room> rooms = new List<Room>(_querier.GetRooms(update.Message.Text));
 
                 tasks.Add(SendMessage(
                         chatId: update.Message.Chat.Id,
                         text: "Коды комнат:\n" + String.Join("\n", rooms.Select(room => $"    {room.Name} - {new Room(room.Name, null, null).GetLink()}")),
                         replyMarkup: Keyboard.RemoveMarkup
                         ));
+
+                //tasks.Add(Task.Run(() => {
+                //    var commandsTable = new TableIO("1bUR8BaBnYjc5rkaC9DHW6vm79qu7UVGgqBOVuZgeMAc");
+                //    foreach (string link in links)
+                //    {
+                //        commandsTable.CreateSheet(link);
+                //    }
+                //}));
+
+                //tasks.Add(SendMessage(
+                //        chatId: update.Message.Chat.Id,
+                //        text: "Коды комнат:\n" + String.Join("\n", rooms.Select(room => $"    {room.Name} - {new Room(room.Name, null, null).GetLink()}")),
+                //        replyMarkup: Keyboard.RemoveMarkup
+                //        ));
 
                 Task test = Task.Run(() => {
                     tasks.Last().Wait();
@@ -171,30 +189,42 @@ namespace QueueBot
         {
             Task ResponseTask(Update update)
             {
-                var commandsTable = new TableIO("1bUR8BaBnYjc5rkaC9DHW6vm79qu7UVGgqBOVuZgeMAc");
-                var rooms = commandsTable.GetAllSheets();
-                var roomsNames = rooms.Select(sheet => sheet.Name);
+                //var commandsTable = new TableIO("1bUR8BaBnYjc5rkaC9DHW6vm79qu7UVGgqBOVuZgeMAc");
+                //var rooms = commandsTable.GetAllSheets();
+                //var roomsNames = rooms.Select(sheet => sheet.Name);
+
+                List<Room> rooms = new List<Room>(_querier.GetRooms(update.Message.Text));
+                List<string> roomsNames = rooms.Select(room => room.Name).ToList();
 
                 List<Task> tasks = new List<Task>();
 
+                // завернуть условие в таск
                 if (roomsNames.Contains(update.Message.Text))
                 {
-                    tasks.Add(SendMessage(
-                        chatId: update.Message.Chat.Id,
-                        text: "Подключилось.",
-                        replyMarkup: new Keyboard(new List<string> { "Посмотреть команды" }).GetReplyMarkup()
-                        ));
+                    tasks.Add(Task.Run(() =>
+                    {
+                        _sessions.Add(update.Message.Chat.Id, update.Message.Text);
+
+                        return SendMessage(
+                            chatId: update.Message.Chat.Id, 
+                            text: "Подключилось.", 
+                            replyMarkup: new Keyboard(new List<string> { "Посмотреть команды" }).GetReplyMarkup()
+                         );
+                    }));
 
                     _updateHandler.AddResponse(
                             (Message mes) => mes.Text == "Посмотреть команды",
                             null,
                             (update) =>
                             {
+                                List<Team> teams = _querier.GetTeamsByRoomId(_sessions[update.Message.Chat.Id]).ToList();
+                                string t = String.Join('\n', teams.Select(team => team.Name));
                                 return SendMessage(
                                     chatId: update.Message.Chat.Id,
-                                    text: "Команд нету."
+                                    text: t
                                     );
                             }
+                            // add response to connect by name
                         );
                 }
                 else

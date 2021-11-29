@@ -134,6 +134,19 @@
           "bin/placeholder/TableParser.dll": {}
         }
       },
+      "TableQueries/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "TableParser": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TableQueries.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TableQueries.dll": {}
+        }
+      },
       "TelegramBot/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -378,6 +391,11 @@
       "path": "../TableParser/TableParser.csproj",
       "msbuildProject": "../TableParser/TableParser.csproj"
     },
+    "TableQueries/1.0.0": {
+      "type": "project",
+      "path": "../TableQueries/TableQueries.csproj",
+      "msbuildProject": "../TableQueries/TableQueries.csproj"
+    },
     "TelegramBot/1.0.0": {
       "type": "project",
       "path": "../TelegramBot/TelegramBot.csproj",
@@ -388,6 +406,7 @@
     "net5.0": [
       "FileManager >= 1.0.0",
       "TableParser >= 1.0.0",
+      "TableQueries >= 1.0.0",
       "TelegramBot >= 1.0.0"
     ]
   },
@@ -423,6 +442,9 @@
             },
             "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
               "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj"
+            },
+            "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj": {
+              "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj"
             },
             "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
               "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj"
