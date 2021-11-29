@@ -15,7 +15,9 @@ namespace TableQueries
     // TODO: Реализовать INotificator
     public interface INotificator
     {
-        void SetNotification(NotificationType type);
+        void SetNotificationType(NotificationType type);
 
+        void StartPolling();
+        void StopPolling();
     }
 }
