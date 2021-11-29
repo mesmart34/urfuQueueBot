@@ -19,12 +19,12 @@ namespace QueueBot
 
         private IQuery _querier;
 
-        private Dictionary<ChatId, string> _sessions;
+        private Dictionary<ChatId, IMember> _sessions;
 
         public QueueBot(string token, IUpdateHandler updateHandler, IQuery querier) : base(token, updateHandler)
         {
             _querier = querier;
-            _sessions = new Dictionary<ChatId, string>();
+            _sessions = new Dictionary<ChatId, IMember>();
 
             AddStartWelcome();
             AddExpertBranch();
@@ -203,7 +203,9 @@ namespace QueueBot
                 {
                     tasks.Add(Task.Run(() =>
                     {
-                        _sessions.Add(update.Message.Chat.Id, update.Message.Text);
+                        // TODO: Использовать реализацию IMember
+                        // MemberImpl member = new(name); - notification set to default
+                        _sessions.Add(update.Message.Chat.Id, member);
 
                         return SendMessage(
                             chatId: update.Message.Chat.Id, 
@@ -217,7 +219,9 @@ namespace QueueBot
                             null,
                             (update) =>
                             {
-                                List<Team> teams = _querier.GetTeamsByRoomId(_sessions[update.Message.Chat.Id]).ToList();
+                                // TODO: Использовать реализацию IMember
+                                // MemberImpl member = new(name); - notification set to default
+                                List<Team> teams = _querier.GetTeamsByRoomId(_sessions[member]).ToList();
                                 string t = String.Join('\n', teams.Select(team => team.Name));
                                 return SendMessage(
                                     chatId: update.Message.Chat.Id,
