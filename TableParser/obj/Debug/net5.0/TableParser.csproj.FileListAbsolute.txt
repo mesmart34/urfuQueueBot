@@ -1,0 +1,12 @@
+W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
+W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
+W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\ref\TableParser.dll
+W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
+W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb

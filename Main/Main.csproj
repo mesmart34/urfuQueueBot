@@ -7,14 +7,14 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Telegram.Bot" Version="16.0.2" />
-    <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="0.2.0" />
+    <PackageReference Include="Telegram.Bot" Version="17.0.0" />
+    <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TableParser\urfuQueueBot\urfuQueueBot\urfuQueueBot.csproj" />
     <ProjectReference Include="..\FileManager\FileManager.csproj" />
-    <ProjectReference Include="..\QueueBot\Bot.csproj" />
+    <ProjectReference Include="..\QueueBot\QueueBot.csproj" />
+    <ProjectReference Include="..\TelegramBot\TelegramBot.csproj" />
   </ItemGroup>
 
 </Project>

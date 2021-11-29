@@ -1,27 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj": {}
+    "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
+    "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj",
+        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj",
         "projectName": "FileManager",
-        "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj": {
+    "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj",
+        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj",
         "projectName": "Main",
-        "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj",
+        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\Main\\obj\\",
+        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,14 +38,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+              "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
               },
-              "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\QueueBot\\Bot.csproj": {
-                "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\QueueBot\\Bot.csproj"
+              "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj"
               },
-              "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj": {
-                "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj"
+              "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -66,11 +66,11 @@
             },
             "Telegram.Bot": {
               "target": "Package",
-              "version": "[16.0.2, )"
+              "version": "[17.0.0, )"
             },
             "Telegram.Bot.Extensions.Polling": {
               "target": "Package",
-              "version": "[0.2.0, )"
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -92,14 +92,14 @@
         }
       }
     },
-    "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\QueueBot\\Bot.csproj": {
+    "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\QueueBot\\Bot.csproj",
-        "projectName": "Bot",
-        "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\QueueBot\\Bot.csproj",
+        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj",
+        "projectName": "QueueBot",
+        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\QueueBot\\obj\\",
+        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -116,11 +116,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+              "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
               },
-              "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj": {
-                "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj"
+              "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj"
+              },
+              "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -134,18 +137,72 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj",
+        "projectName": "TableParser",
+        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "Newtonsoft.Json": {
+            "Google.Apis": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[1.55.0, )"
             },
-            "Telegram.Bot": {
+            "Google.Apis.Auth": {
               "target": "Package",
-              "version": "[16.0.2, )"
+              "version": "[1.55.0, )"
             },
-            "Telegram.Bot.Extensions.Polling": {
+            "Google.Apis.Sheets.v4": {
               "target": "Package",
-              "version": "[0.2.0, )"
+              "version": "[1.55.0.2371, )"
             }
           },
           "imports": [
@@ -167,14 +224,79 @@
         }
       }
     },
-    "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj": {
+    "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
+      "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj",
-        "projectName": "urfuQueueBot",
-        "projectPath": "C:\\Users\\PC-1\\Desktop\\tg_bot\\c#\\TableParser\\urfuQueueBot\\urfuQueueBot\\urfuQueueBot.csproj"
+        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj",
+        "projectName": "TelegramBot",
+        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+              },
+              "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
       },
       "frameworks": {
-        "net472": {}
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            },
+            "Telegram.Bot.Extensions.Polling": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
       }
     }
   }
