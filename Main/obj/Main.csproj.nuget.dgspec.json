@@ -1,30 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj": {}
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj": {}
   },
   "projects": {
-    "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
       "restore": {
-        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj",
         "projectName": "FileManager",
-        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj",
         "projectName": "Main",
-        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\Main\\Main.csproj",
-        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\Main\\obj\\",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj",
+        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,14 +43,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
               },
-              "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj"
               },
-              "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -83,26 +88,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.12, 5.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
         "projectName": "QueueBot",
-        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\QueueBot.csproj",
-        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\QueueBot\\obj\\",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,17 +139,17 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
               },
-              "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
               },
-              "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj"
               },
-              "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -150,26 +173,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
         "projectName": "TableParser",
-        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj",
-        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\obj\\",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -218,26 +255,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
         "projectName": "TableQueries",
-        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj",
-        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\obj\\",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
+        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -251,8 +302,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
               }
             }
           }
@@ -276,26 +327,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
         "projectName": "TelegramBot",
-        "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\TelegramBot.csproj",
-        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\tg_bot\\c#\\QueueBot\\TelegramBot\\obj\\",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -309,11 +374,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\FileManager\\FileManager.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
               },
-              "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
               }
             }
           }
@@ -351,12 +416,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

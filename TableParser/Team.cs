@@ -28,5 +28,14 @@ namespace TableParser
         {
             Students.Add(student);
         }
+
+        public void RemoveStudent(string student)
+        {
+            foreach(var stu in Students)
+            {
+                if(stu == student)
+                    Students.Remove(stu);
+            }
+        }
     }
 }

@@ -146,7 +146,7 @@ namespace QueueBot
 
                 List<Task> tasks = new List<Task>();
 
-                List<Room> rooms = new List<Room>(_querier.GetRooms(update.Message.Text));
+                List<Room> rooms = new List<Room>(_querier.ParseRoom(update.Message.Text));
 
                 tasks.Add(SendMessage(
                         chatId: update.Message.Chat.Id,
@@ -193,7 +193,7 @@ namespace QueueBot
                 //var rooms = commandsTable.GetAllSheets();
                 //var roomsNames = rooms.Select(sheet => sheet.Name);
 
-                List<Room> rooms = new List<Room>(_querier.GetRooms(update.Message.Text));
+                List<Room> rooms = new System.Collections.Generic.List<Room>(_querier.ParseRoom(update.Message.Text));
                 List<string> roomsNames = rooms.Select(room => room.Name).ToList();
 
                 List<Task> tasks = new List<Task>();

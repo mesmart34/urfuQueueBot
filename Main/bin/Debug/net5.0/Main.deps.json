@@ -125,6 +125,8 @@
       "QueueBot/1.0.0": {
         "dependencies": {
           "FileManager": "1.0.0",
+          "TableParser": "1.0.0",
+          "TableQueries": "1.0.0",
           "TelegramBot": "1.0.0"
         },
         "runtime": {
@@ -139,6 +141,14 @@
         },
         "runtime": {
           "TableParser.dll": {}
+        }
+      },
+      "TableQueries/1.0.0": {
+        "dependencies": {
+          "TableParser": "1.0.0"
+        },
+        "runtime": {
+          "TableQueries.dll": {}
         }
       },
       "TelegramBot/1.0.0": {
@@ -235,6 +245,11 @@
       "sha512": ""
     },
     "TableParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TableQueries/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

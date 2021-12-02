@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TableParser
 {
-    static class RoomParser
+    public static class RoomParser
     {
         public static Room CreateRoom(TableIO table, SheetData sheet)
         {

@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FileManager\FileManager.csproj" />
     <ProjectReference Include="..\TableParser\TableParser.csproj" />
+    <ProjectReference Include="..\TableQueries\TableQueries.csproj" />
     <ProjectReference Include="..\TelegramBot\TelegramBot.csproj" />
   </ItemGroup>
 

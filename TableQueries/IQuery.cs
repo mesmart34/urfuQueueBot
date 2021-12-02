@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TableParser;
 
 namespace TableQueries
@@ -8,9 +7,9 @@ namespace TableQueries
 
     public interface IQuery
     {
-        IEnumerable<Room> GetRooms(string tableId);
-        IEnumerable<Team> GetTeamsByRoomId(string roomId);
-        void AddMemberToTeam(string member);
-        void RemoveMemberFromTeam(string member);
+        IEnumerable<Room> ParseRoom(string tableId);
+        IEnumerable<Team> GetTeamsByRoomId(string tableId, string roomId);
+        void AddMemberToTeam(Room room, Team team, string member);
+        void RemoveMemberFromTeam(Room room, Team team, string member);
     }
 }

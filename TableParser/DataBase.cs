@@ -53,8 +53,28 @@ namespace TableParser
             table.Write(link, data);
         }
 
+        public void Read(Room room)
+        {
+            var data = table.Read(room.GetLink());
+            foreach (var row in data)
+            {
+                var time = DateTime.Parse((string)row[0]);
+                var value = (string)row[1];
+                var title = value.Split(',');
+                var team = new Team(title[0], DateTime.Parse(title[1]));
+                room.AddTeam(team, time);
+                for (var i = 2; i < row.Count; i++)
+                {
+                    value = (string)row[i];
+                    if (value.Length == 0)
+                        continue;
+                    team.AddStudent(value);
+                }
+            }
+        }
+
         //Fills rooms with teams from google sheet
-        public void Read(Dictionary<string, Room> rooms)
+        public void ReadWhole(Dictionary<string, Room> rooms)
         {
             foreach (var sheet in table.GetAllSheets())
             {

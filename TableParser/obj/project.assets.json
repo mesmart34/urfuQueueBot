@@ -204,19 +204,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC-1\\.nuget\\packages\\": {}
+    "C:\\Users\\artem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj",
+      "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
       "projectName": "TableParser",
-      "projectPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\TableParser.csproj",
-      "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-      "outputPath": "W:\\tg_bot\\c#\\QueueBot\\TableParser\\obj\\",
+      "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+      "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -265,12 +265,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

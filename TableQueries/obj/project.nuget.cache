@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "11SXEbpvXFcaESe9NhTNJRT9+d82VooAq6uqtwRVMakPjJVItuzGseMRXvsDt52wq45epOE5Q1uYtSH1guBh1g==",
+  "dgSpecHash": "wxiGjIV8rppU+E80EOxZzElxRD9Kb69SsE0D8JovEzISHywMto2VCHwFG7m1nFu1d3x6NHebaIGix86cu8c5CA==",
   "success": true,
-  "projectFilePath": "W:\\tg_bot\\c#\\QueueBot\\TableQueries\\TableQueries.csproj",
+  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PC-1\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\google.apis.core\\1.55.0\\google.apis.core.1.55.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\google.apis.sheets.v4\\1.55.0.2371\\google.apis.sheets.v4.1.55.0.2371.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\artem\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\google.apis.core\\1.55.0\\google.apis.core.1.55.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\google.apis.sheets.v4\\1.55.0.2371\\google.apis.sheets.v4.1.55.0.2371.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
