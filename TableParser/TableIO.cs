@@ -5,6 +5,7 @@ using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Services;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace TableParser
 {
@@ -120,6 +121,36 @@ namespace TableParser
             batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
             var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, spreadSheetId);
             batchUpdateRequest.Execute();
+        }
+
+        public List<Tuple<int, Google.Apis.Sheets.v4.Data.Color>> LoadColors(string sheet)
+        {
+            var colors = new List<Tuple<int, Google.Apis.Sheets.v4.Data.Color>>();
+            foreach (var _sheet in GetColors(sheet).Sheets)
+            {
+                foreach (var data in _sheet.Data)
+                {
+                    for (var i = 0; i < data.RowData.Count; i++)
+                    {
+                        if (data.RowData[i].Values == null)
+                            continue;
+                        foreach (var value in data.RowData[i].Values)
+                        {
+                            colors.Add(Tuple.Create(i, value.EffectiveFormat.BackgroundColor));
+                        }
+                    }
+                }
+            }
+            return colors;
+        }
+
+        public Spreadsheet GetColors(string sheet)
+        {
+            var request = service.Spreadsheets.Get(spreadSheetId);
+            request.Ranges = sheet;
+            request.IncludeGridData = true;
+            var response = request.Execute();
+            return response;
         }
     }
 }

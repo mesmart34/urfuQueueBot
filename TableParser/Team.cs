@@ -11,12 +11,14 @@ namespace TableParser
         public string Name { get; private set; }
         public DateTime Time { get; private set; }
         public List<string> Students { get; private set; }
+        public int Id { get; private set; }
 
-        public Team(string name, DateTime time)
+        public Team(string name, int id, DateTime time)
         {
             Name = name;
             Time = time;
             Students = new List<string>();
+            Id = id;
         }
 
         public void ChangeTime(DateTime time)

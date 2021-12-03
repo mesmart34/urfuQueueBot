@@ -204,8 +204,9 @@ namespace QueueBot
                     tasks.Add(Task.Run(() =>
                     {
                         // TODO: Использовать реализацию IMember
-                        // MemberImpl member = new(name); - notification set to default
-                        _sessions.Add(update.Message.Chat.Id, member);
+                        // Get Name by update.Message.Char.Id
+                        //var member = new Member(update, Team, notif); //- notification set to default
+                        //_sessions.Add(update.Message.Chat.Id, member);
 
                         return SendMessage(
                             chatId: update.Message.Chat.Id, 

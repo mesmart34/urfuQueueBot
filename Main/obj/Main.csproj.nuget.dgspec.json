@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj": {}
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\Main\\Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj",
         "projectName": "FileManager",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -19,14 +19,14 @@
         "net472": {}
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\Main\\Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\Main\\Main.csproj",
         "projectName": "Main",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\Main.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\Main\\Main.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\Main\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,14 +43,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj"
               },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj"
               },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -115,14 +115,14 @@
         }
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
         "projectName": "QueueBot",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -139,17 +139,17 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj"
               },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
               },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj"
               },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -196,14 +196,14 @@
         }
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
         "projectName": "TableParser",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -278,14 +278,14 @@
         }
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj",
         "projectName": "TableQueries",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -302,8 +302,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
               }
             }
           }
@@ -350,14 +350,14 @@
         }
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj",
         "projectName": "TelegramBot",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -374,11 +374,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj"
               },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
               }
             }
           }

@@ -34,3 +34,21 @@ C:\Users\artem\Documents\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.c
 C:\Users\artem\Documents\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.dll
 C:\Users\artem\Documents\urfuQueueBot\TelegramBot\obj\Debug\net5.0\ref\TelegramBot.dll
 C:\Users\artem\Documents\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.pdb
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\TelegramBot.deps.json
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\TelegramBot.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\ref\TelegramBot.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\TelegramBot.pdb
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\FileManager.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\TableParser.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\FileManager.pdb
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\FileManager.dll.config
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\bin\Debug\net5.0\TableParser.pdb
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.AssemblyReference.cache
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.AssemblyInfoInputs.cache
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.AssemblyInfo.cs
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.CoreCompileInputs.cache
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.CopyComplete
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\ref\TelegramBot.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.pdb

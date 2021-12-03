@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TPpKxJjGjQmDqwvp9FWj+/Digl0FFVIzVSHrdHDuIbCMKtg9JVpRbJSpS/XRh3tT7LicTJHOucAkVURpV5yUxQ==",
+  "dgSpecHash": "wu5+gnpC+HZDZ4aJd2pPwsyAut9ig6y6H/WVmYrBRiV9HlOa7LcCxEZsUXJampJYB5WxROxunIYP6K9hCwsOig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artem\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\artem\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",

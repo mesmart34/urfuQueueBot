@@ -61,7 +61,8 @@ namespace TableParser
                 var time = DateTime.Parse((string)row[0]);
                 var value = (string)row[1];
                 var title = value.Split(',');
-                var team = new Team(title[0], DateTime.Parse(title[1]));
+                var teamCounter = 0;
+                var team = new Team(title[0], teamCounter++, DateTime.Parse(title[1]));
                 room.AddTeam(team, time);
                 for (var i = 2; i < row.Count; i++)
                 {
@@ -85,12 +86,13 @@ namespace TableParser
                     continue;
                 var room = rooms[link];
                 var data = table.Read(link);
+                var teamCounter = 0;
                 foreach (var row in data)
                 {
                     var time = DateTime.Parse((string)row[0]);
                     var value = (string)row[1];
                     var title = value.Split(',');
-                    var team = new Team(title[0], DateTime.Parse(title[1]));
+                    var team = new Team(title[0], teamCounter++, DateTime.Parse(title[1]));
                     room.AddTeam(team, time);
                     for (var i = 2; i < row.Count; i++)
                     {

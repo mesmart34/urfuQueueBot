@@ -209,11 +209,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+      "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
       "projectName": "TableParser",
-      "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+      "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
       "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\obj\\",
+      "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",

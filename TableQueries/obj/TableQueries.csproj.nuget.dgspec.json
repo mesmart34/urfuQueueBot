@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {}
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
         "projectName": "TableParser",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {
+    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj",
         "projectName": "TableQueries",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
+        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\obj\\",
+        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -110,8 +110,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
               }
             }
           }

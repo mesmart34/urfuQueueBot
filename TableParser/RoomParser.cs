@@ -51,7 +51,7 @@ namespace TableParser
                 {
                     teams[time] = new List<Team>();
                 }
-                var team = new Team(value, time);
+                var team = new Team(value, i - from + 2, time);
                 teams[time].Add(team);
             }
         }

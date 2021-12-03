@@ -416,11 +416,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+      "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
       "projectName": "QueueBot",
-      "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+      "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
       "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\QueueBot\\obj\\",
+      "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -437,17 +437,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\FileManager\\FileManager.csproj"
+            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
+              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj"
             },
-            "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableParser\\TableParser.csproj"
+            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
+              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
             },
-            "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj"
+            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj": {
+              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj"
             },
-            "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
+            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {
+              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj"
             }
           }
         }

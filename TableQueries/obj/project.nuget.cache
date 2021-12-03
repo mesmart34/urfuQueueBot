@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wxiGjIV8rppU+E80EOxZzElxRD9Kb69SsE0D8JovEzISHywMto2VCHwFG7m1nFu1d3x6NHebaIGix86cu8c5CA==",
+  "dgSpecHash": "Ui92RH+Ds6e/sm2vfALk2Oq/8yGn7ReUzkfeVvjyuq2wj6/VfFArkufyCjPxRsvLtc2TV4gyZJ0HdgYVwZIAZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TableQueries\\TableQueries.csproj",
+  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artem\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\artem\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",

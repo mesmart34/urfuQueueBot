@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jdERT8f7wuCLdB+8jKgVqK5czj9KM6F8TGsHyW2If4o4hx1E1kOPpeyF/TS4sqRZf2wugr54yT5z5TmpevsSGQ==",
+  "dgSpecHash": "xlMKgO/XyG6xUHtSLptd+dAftM2N8AxorM5neIhBzmmt/swvjRhmVh81cN4f2vP6ClYWy+pm2T8fKwEqLT6+2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+  "projectFilePath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artem\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\artem\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",

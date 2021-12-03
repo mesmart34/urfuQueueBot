@@ -22,3 +22,15 @@ C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.c
 C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
 C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
 C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\TableParser.deps.json
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\TableParser.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\ref\TableParser.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\TableParser.pdb
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\ref\TableParser.dll
+C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.pdb
