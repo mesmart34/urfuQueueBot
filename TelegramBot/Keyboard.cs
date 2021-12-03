@@ -5,13 +5,15 @@ namespace TelegramBot
 {
     public class Keyboard
     {
-        private List<string> _buttonsNames;
-
-        public static IReplyMarkup RemoveMarkup { get
+        public static IReplyMarkup RemoveMarkup
+        {
+            get
             {
                 return new ReplyKeyboardRemove();
-            } 
+            }
         }
+
+        private List<string> _buttonsNames;
 
         public Keyboard(List<string> buttonsNames)
         {

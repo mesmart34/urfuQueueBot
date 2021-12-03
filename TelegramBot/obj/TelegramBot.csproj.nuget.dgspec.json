@@ -1,117 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {}
+    "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
+    "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj",
+        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj",
         "projectName": "FileManager",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj",
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
+        "projectPath": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
+    "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
-        "projectName": "TableParser",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj",
-        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "Google.Apis": {
-              "target": "Package",
-              "version": "[1.55.0, )"
-            },
-            "Google.Apis.Auth": {
-              "target": "Package",
-              "version": "[1.55.0, )"
-            },
-            "Google.Apis.Sheets.v4": {
-              "target": "Package",
-              "version": "[1.55.0.2371, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj",
+        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
         "projectName": "TelegramBot",
-        "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj",
-        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\obj\\",
+        "projectPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,11 +38,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj"
-              },
-              "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
-                "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
+              "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj": {
+                "projectPath": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj"
               }
             }
           }
@@ -167,26 +77,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

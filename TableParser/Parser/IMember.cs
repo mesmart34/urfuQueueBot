@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TableQueries;
 
-namespace TableQueries
+namespace TableParser
 {
     // TODO: Реализовать IMember
 
@@ -12,5 +13,7 @@ namespace TableQueries
     {
         string Name { get; }
         NotificationType Notification { get; }
+
+        void Notify();
     }
 }

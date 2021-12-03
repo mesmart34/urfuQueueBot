@@ -5,7 +5,6 @@ using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Services;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace TableParser
 {
@@ -17,34 +16,34 @@ namespace TableParser
 
     public class TableIO
     {
-        private GoogleCredential credential;
-        private SheetsService service;
-        private string spreadSheetId;
-        private string[] Scopes = { SheetsService.Scope.Spreadsheets };
+        private readonly GoogleCredential _credential;
+        private readonly SheetsService _service;
+        private readonly string _spreadSheetId;
+        private readonly string[] _scopes = { SheetsService.Scope.Spreadsheets };
 
         public TableIO(string spreadSheet)
         {
-            spreadSheetId = spreadSheet;
+            _spreadSheetId = spreadSheet;
             using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
             {
-                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+                _credential = GoogleCredential.FromStream(stream).CreateScoped(_scopes);
             }
 
-            service = new SheetsService(new BaseClientService.Initializer()
+            _service = new SheetsService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = credential,
+                HttpClientInitializer = _credential,
                 ApplicationName = "urfuQueueBot"
             });
         }
 
         public string GetID()
         {
-            return spreadSheetId;
+            return _spreadSheetId;
         }
 
         public IList<IList<object>> Read(string sheet)
         {
-            var request = service.Spreadsheets.Values.Get(spreadSheetId, sheet);
+            var request = _service.Spreadsheets.Values.Get(_spreadSheetId, sheet);
             var response = request.Execute();
             var values = response.Values;
             if (values != null && values.Count > 0)
@@ -54,7 +53,7 @@ namespace TableParser
 
         public IList<IList<object>> Read(string sheet, string range)
         {
-            var request = service.Spreadsheets.Values.Get(spreadSheetId, sheet + "!" + range);
+            var request = _service.Spreadsheets.Values.Get(_spreadSheetId, sheet + "!" + range);
             var response = request.Execute();
             var values = response.Values;
             if (values != null && values.Count > 0)
@@ -66,7 +65,7 @@ namespace TableParser
         {
             var valueRange = new ValueRange();
             var address = sheet + "!" + range;
-            var request = service.Spreadsheets.Values.Update(valueRange, spreadSheetId, address);
+            var request = _service.Spreadsheets.Values.Update(valueRange, _spreadSheetId, address);
             valueRange.Values = values;
             request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
             request.Execute();
@@ -75,7 +74,7 @@ namespace TableParser
         {
             var valueRange = new ValueRange();
             var address = sheet;
-            var request = service.Spreadsheets.Values.Update(valueRange, spreadSheetId, address);
+            var request = _service.Spreadsheets.Values.Update(valueRange, _spreadSheetId, address);
             valueRange.Values = values;
             request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
             request.Execute();
@@ -83,7 +82,7 @@ namespace TableParser
 
         public List<SheetData> GetAllSheets()
         {
-            var request = service.Spreadsheets.Get(spreadSheetId);
+            var request = _service.Spreadsheets.Get(_spreadSheetId);
             var response = request.Execute();
             var sheetList = new List<SheetData>();
             foreach (var sheet in response.Sheets)
@@ -101,7 +100,7 @@ namespace TableParser
             var batchUpdateSpreadsheetRequest = new BatchUpdateSpreadsheetRequest();
             batchUpdateSpreadsheetRequest.Requests = new List<Request>();
             batchUpdateSpreadsheetRequest.Requests.Add(new Request { DeleteSheet = new DeleteSheetRequest() { SheetId = id } });
-            var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, spreadSheetId);
+            var batchUpdateRequest = _service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, _spreadSheetId);
             batchUpdateRequest.Execute();
         }
 
@@ -119,13 +118,13 @@ namespace TableParser
             var batchUpdateSpreadsheetRequest = new BatchUpdateSpreadsheetRequest();
             batchUpdateSpreadsheetRequest.Requests = new List<Request>();
             batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
-            var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, spreadSheetId);
+            var batchUpdateRequest = _service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, _spreadSheetId);
             batchUpdateRequest.Execute();
         }
 
-        public List<Tuple<int, Google.Apis.Sheets.v4.Data.Color>> LoadColors(string sheet)
+        public List<Tuple<int, Color>> LoadColors(string sheet)
         {
-            var colors = new List<Tuple<int, Google.Apis.Sheets.v4.Data.Color>>();
+            var colors = new List<Tuple<int, Color>>();
             foreach (var _sheet in GetColors(sheet).Sheets)
             {
                 foreach (var data in _sheet.Data)
@@ -146,7 +145,7 @@ namespace TableParser
 
         public Spreadsheet GetColors(string sheet)
         {
-            var request = service.Spreadsheets.Get(spreadSheetId);
+            var request = _service.Spreadsheets.Get(_spreadSheetId);
             request.Ranges = sheet;
             request.IncludeGridData = true;
             var response = request.Execute();

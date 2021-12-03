@@ -134,26 +134,12 @@
           "bin/placeholder/TableParser.dll": {}
         }
       },
-      "TableQueries/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "TableParser": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/TableQueries.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TableQueries.dll": {}
-        }
-      },
       "TelegramBot/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "FileManager": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
-          "TableParser": "1.0.0",
           "Telegram.Bot": "17.0.0",
           "Telegram.Bot.Extensions.Polling": "1.0.0"
         },
@@ -391,11 +377,6 @@
       "path": "../TableParser/TableParser.csproj",
       "msbuildProject": "../TableParser/TableParser.csproj"
     },
-    "TableQueries/1.0.0": {
-      "type": "project",
-      "path": "../TableQueries/TableQueries.csproj",
-      "msbuildProject": "../TableQueries/TableQueries.csproj"
-    },
     "TelegramBot/1.0.0": {
       "type": "project",
       "path": "../TelegramBot/TelegramBot.csproj",
@@ -406,24 +387,23 @@
     "net5.0": [
       "FileManager >= 1.0.0",
       "TableParser >= 1.0.0",
-      "TableQueries >= 1.0.0",
       "TelegramBot >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\artem\\.nuget\\packages\\": {}
+    "C:\\Users\\PC-1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
+      "projectUniqueName": "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
       "projectName": "QueueBot",
-      "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\QueueBot.csproj",
-      "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\QueueBot\\obj\\",
+      "projectPath": "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+      "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+      "outputPath": "W:\\qwe\\urfuQueueBot\\QueueBot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -437,17 +417,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\FileManager\\FileManager.csproj"
+            "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj": {
+              "projectPath": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj"
             },
-            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableParser\\TableParser.csproj"
+            "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+              "projectPath": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj"
             },
-            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TableQueries\\TableQueries.csproj"
-            },
-            "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj": {
-              "projectPath": "C:\\Users\\artem\\Documents\\urfuQueueBot - Copy\\TelegramBot\\TelegramBot.csproj"
+            "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+              "projectPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
             }
           }
         }
@@ -471,26 +448,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

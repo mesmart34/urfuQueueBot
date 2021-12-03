@@ -21,17 +21,25 @@ namespace QueueBot
 
         private Dictionary<ChatId, IMember> _sessions;
 
-        public QueueBot(string token, IUpdateHandler updateHandler, IQuery querier) : base(token, updateHandler)
+        private readonly List<INotificator> _notificators;
+        private readonly DataBase _dataBase;
+
+        public QueueBot(string token, IUpdateHandler updateHandler, IQuery querier, DataBase db) : base(token, updateHandler)
         {
             _querier = querier;
             _sessions = new Dictionary<ChatId, IMember>();
+            _dataBase = db;
+            _notificators = new List<INotificator>();
+
+            // UpdateNotify() ↓
+            // _notificators.Add(new notificator(..., _dataBase))
 
             AddStartWelcome();
             AddExpertBranch();
             AddStudentBranch();
         }
 
-        public void AddStartWelcome()
+        private void AddStartWelcome()
         {
             using StreamReader sr = new StreamReader(src + "startWelcome.txt");
             _updateHandler.AddResponse(
@@ -45,7 +53,7 @@ namespace QueueBot
         }
 
         #region Expert branch
-        public void AddExpertBranch()
+        private void AddExpertBranch()
         {
             AddExpertWelcomeResponse();
 
@@ -97,7 +105,7 @@ namespace QueueBot
         #endregion
 
         #region Student
-        public void AddStudentBranch()
+        private void AddStudentBranch()
         {
             AddStudentWelcomeResponse();
 
@@ -136,7 +144,7 @@ namespace QueueBot
         }
         #endregion
 
-        public Func<Update, Task> GetRoomsResponse()
+        private Func<Update, Task> GetRoomsResponse()
         {
             Task RoomsResponse(Update update)
             {
@@ -150,7 +158,7 @@ namespace QueueBot
 
                 tasks.Add(SendMessage(
                         chatId: update.Message.Chat.Id,
-                        text: "Коды комнат:\n" + String.Join("\n", rooms.Select(room => $"    {room.Name} - {new Room(room.Name, null, null).GetLink()}")),
+                        text: "Коды комнат:\n" + String.Join("\n", rooms.Select(room => $"    {room.Name} - {new Room(room.Name, , null, null).GetLink()}")),
                         replyMarkup: Keyboard.RemoveMarkup
                         ));
 
@@ -185,7 +193,7 @@ namespace QueueBot
             return RoomsResponse;
         }
 
-        public Func<Update, Task> ConnectToRoomResponse()
+        private Func<Update, Task> ConnectToRoomResponse()
         {
             Task ResponseTask(Update update)
             {

@@ -150,3 +150,11 @@ C:\Users\artem\Documents\urfuQueueBot - Copy\Main\obj\Debug\net5.0\Main.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\Main\obj\Debug\net5.0\ref\Main.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\Main\obj\Debug\net5.0\Main.pdb
 C:\Users\artem\Documents\urfuQueueBot - Copy\Main\obj\Debug\net5.0\Main.genruntimeconfig.cache
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.csproj.AssemblyReference.cache
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.AssemblyInfoInputs.cache
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.AssemblyInfo.cs
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.csproj.CoreCompileInputs.cache
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.dll
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\ref\Main.dll
+W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.pdb

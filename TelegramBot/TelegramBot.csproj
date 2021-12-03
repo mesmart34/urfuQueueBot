@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FileManager\FileManager.csproj" />
-    <ProjectReference Include="..\TableParser\TableParser.csproj" />
   </ItemGroup>
 
 </Project>

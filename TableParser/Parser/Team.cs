@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TableParser
 {
@@ -10,14 +7,14 @@ namespace TableParser
     {
         public string Name { get; private set; }
         public DateTime Time { get; private set; }
-        public List<string> Students { get; private set; }
+        public List<IMember> Members { get; private set; }
         public int Id { get; private set; }
 
         public Team(string name, int id, DateTime time)
         {
             Name = name;
             Time = time;
-            Students = new List<string>();
+            Members = new List<IMember>();
             Id = id;
         }
 
@@ -26,18 +23,14 @@ namespace TableParser
             Time = time;
         }
 
-        public void AddStudent(string student)
+        public void AddStudent(IMember student)
         {
-            Students.Add(student);
+            Members.Add(student);
         }
 
-        public void RemoveStudent(string student)
+        public void RemoveStudent(IMember student)
         {
-            foreach(var stu in Students)
-            {
-                if(stu == student)
-                    Students.Remove(stu);
-            }
+            Members.Remove(student);
         }
     }
 }

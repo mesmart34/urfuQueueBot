@@ -52,3 +52,19 @@ C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\Telegr
 C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\ref\TelegramBot.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\TelegramBot\obj\Debug\net5.0\TelegramBot.pdb
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\TelegramBot.deps.json
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\TelegramBot.dll
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\ref\TelegramBot.dll
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\TelegramBot.pdb
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\FileManager.dll
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\FileManager.pdb
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\FileManager.dll.config
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.AssemblyReference.cache
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.GeneratedMSBuildEditorConfig.editorconfig
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.AssemblyInfoInputs.cache
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.AssemblyInfo.cs
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.CoreCompileInputs.cache
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.CopyComplete
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.dll
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\ref\TelegramBot.dll
+W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.pdb

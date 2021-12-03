@@ -34,3 +34,15 @@ C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableP
 C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\ref\TableParser.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.pdb
+W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
+W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
+W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\ref\TableParser.dll
+W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
+W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb

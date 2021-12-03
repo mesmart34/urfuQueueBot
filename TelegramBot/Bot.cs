@@ -12,7 +12,6 @@ using FileManager;
 using Telegram.Bot.Types.InputFiles;
 using File = System.IO.File;
 using FileType = FileManager.FileType;
-using TableParser;
 
 namespace TelegramBot
 {
@@ -23,14 +22,11 @@ namespace TelegramBot
 
         protected IUpdateHandler _updateHandler;
 
-        private Dictionary<ChatId, TableIO> _sessions;
-
         public Bot(string token, IUpdateHandler updateHandler)
         {
             _botClient = new TelegramBotClient(token);
             _cancellationToken = new CancellationTokenSource();
             _updateHandler = updateHandler;
-            _sessions = new Dictionary<ChatId, TableIO>();
         }
 
         public Func<Update, Task> SendMessageResponse(

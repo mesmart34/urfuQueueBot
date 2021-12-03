@@ -34,3 +34,11 @@ C:\Users\artem\Documents\urfuQueueBot - Copy\QueueBot\obj\Debug\net5.0\QueueBot.
 C:\Users\artem\Documents\urfuQueueBot - Copy\QueueBot\obj\Debug\net5.0\QueueBot.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\QueueBot\obj\Debug\net5.0\ref\QueueBot.dll
 C:\Users\artem\Documents\urfuQueueBot - Copy\QueueBot\obj\Debug\net5.0\QueueBot.pdb
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.csproj.AssemblyReference.cache
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.GeneratedMSBuildEditorConfig.editorconfig
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.AssemblyInfoInputs.cache
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.AssemblyInfo.cs
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.csproj.CoreCompileInputs.cache
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.dll
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\ref\QueueBot.dll
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.pdb

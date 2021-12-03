@@ -1,8 +1,6 @@
 ﻿using System;
 using TableParser;
 using System.Threading;
-using System.Collections.Generic;
-using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using System.Globalization;
@@ -13,9 +11,8 @@ namespace TableQueries
     public class Notification : INotificator
     {
         private bool _started;
-        ///private DataBase _dataBase;
-        private TableIO _table;
-        private Room _room;
+        private readonly TableIO _table;
+        private readonly Room _room;
 
         private readonly Color Yellow;
 
@@ -23,10 +20,12 @@ namespace TableQueries
         {
             _table = table;
             _room = room;
-            Yellow = new Color();
-            Yellow.Red = 0.9843137f;
-            Yellow.Green = 0.7372549f;
-            Yellow.Blue = 0.01568628f;
+            Yellow = new Color
+            {
+                Red = 0.9843137f,
+                Green = 0.7372549f,
+                Blue = 0.01568628f
+            };
         }
 
         private DateTime GetNistTime()
@@ -49,41 +48,44 @@ namespace TableQueries
                 {
                     var currentTime = GetNistTime();
                     //var colors = _table.LoadColors(_room.GetLink());
-                    //var currentTeamIndex = 0;
+                    var activeTeamIndex = 0;
                     //foreach (var color in colors)
                     //{
                     //    if (color.Item2 == Yellow)
                     //    {
-                    //        currentTeamIndex = color.Item1;
+                    //        activeTeamIndex = color.Item1;
                     //    }
                     //}
+
                     foreach (var team in _room.Teams)
                     {
-                        foreach (Member member in _members)
+                        // get team index
+                        int currentTeamIndex = Query.GetTeamIndex(_table, _room, team.Name);
+                        foreach (Member member in team.Members)
                         {
-                            var teamTime = member.Team.Time;
+                            var teamTime = team.Time;
                             switch (member.Notification)
                             {
                                 case NotificationType.TEN_MINUTES:
                                     {
-                                        var deltaTime = (currentTime - teamTime).TotalSeconds / 60;
-                                        if (deltaTime <= 10)
+                                        var deltaTime = (currentTime - teamTime).TotalSeconds;
+                                        if (deltaTime <= 600)
                                         {
-                                            //Вызвать уведомление
+                                            member.Notify();
                                         }
                                     }
                                     break;
                                 case NotificationType.TWO_TEAMS:
                                     {
-                                        if (member.Team.Id - currentTeamIndex == 2)
+                                        if (currentTeamIndex - activeTeamIndex == 2)
                                         {
-                                            //Вызвать уведомление
+                                            member.Notify();
                                         }
                                     }
                                     break;
                                 case NotificationType.AUTO:
                                     {
-
+                                        // smth
                                     }
                                     break;
                             };
