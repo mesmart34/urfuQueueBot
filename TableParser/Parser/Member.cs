@@ -1,13 +1,13 @@
-﻿using TableQueries;
-using System;
+﻿using System;
 
 namespace TableParser
 {
     public class Member : IMember
     {
         public string Name { get; }
+        public bool IsNotified { get; private set; }
 
-        public NotificationType Notification { get; }
+        public NotificationType Notification { get; private set; }
 
         public event Action OnNotifyCalled;
 
@@ -20,6 +20,13 @@ namespace TableParser
         public void Notify()
         {
             OnNotifyCalled?.Invoke();
+            OnNotifyCalled = null;
+            IsNotified = true;
+        }
+
+        public void SetNotificationType(NotificationType type)
+        {
+            Notification = type;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TableParser;
 
-namespace TableQueries
+namespace TableParser
 {
     public static class Query
     {
@@ -38,14 +38,14 @@ namespace TableQueries
 
         public static int GetTeamIndex(TableIO table, Room room, string teamName)
         {
-            var data = table.Read(room.Link);
-            for (int i = 0; i < data.Count; ++i)
+            var data = table.Read(room.Name);
+            for (int i = 0; i < data[0].Count; ++i)
             {
-                var startRow = RoomParser.GetRoomCellIdByContent(data, room.Name, i) + 1;
-                for (int r = 0; r < data[i].Count; ++r)
+                var startColumn = RoomParser.GetRoomCellIdByContent(data, room.Name, i) + 1;
+                for (int c = startColumn; c < data.Count; ++c)
                 {
-                    if ((string)data[i][r + startRow] == teamName)
-                        return r;
+                    if ((string)data[c][i] == teamName)
+                        return c;
                 }
             }
             return -1;

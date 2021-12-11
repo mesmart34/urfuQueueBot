@@ -7,9 +7,12 @@ using FileManager;
 using System.Threading.Tasks;
 using TableParser;
 using System.Linq;
-using TableQueries;
 
 // TODO: Сделать создание сценария использования более удобным и поддерживаемым
+// TODO: Парсить _rooms из базы данных
+// TODO: Refactoring
+// TODO: Разузнать про перекрёстный огонь
+// TODO: Отправка стикеров
 
 namespace QueueBot
 {
@@ -17,26 +20,210 @@ namespace QueueBot
     {
         private const string src = "../../../../src/";
 
-        private IQuery _querier;
-
-        private Dictionary<ChatId, IMember> _sessions;
+        private List<Tuple<IMember, Room, Team>> _sessions;
 
         private readonly List<INotificator> _notificators;
         private readonly DataBase _dataBase;
 
-        public QueueBot(string token, IUpdateHandler updateHandler, IQuery querier, DataBase db) : base(token, updateHandler)
+        private List<Room> _rooms;
+
+        public QueueBot(string token, IUpdateHandler updateHandler, DataBase db) : base(token, updateHandler)
         {
-            _querier = querier;
-            _sessions = new Dictionary<ChatId, IMember>();
+            _sessions = new List<Tuple<IMember, Room, Team>>();
             _dataBase = db;
             _notificators = new List<INotificator>();
-
-            // UpdateNotify() ↓
-            // _notificators.Add(new notificator(..., _dataBase))
+            _rooms = new List<Room>();
 
             AddStartWelcome();
             AddExpertBranch();
             AddStudentBranch();
+
+            SetNotTwoTeamsResponse();
+
+            SetNotAutoRepsonse();
+
+            SetNotTenMinutesResponse();
+
+            GetTeamsResponse();
+
+            ConnectToTeamResponse();
+
+            DisconnectFromTeamResponse();
+
+            NotSettingsResponse();
+        }
+
+        private void NotSettingsResponse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) => mes.Text == "Настройка уведомлений",
+                                        null,
+                                        (update) =>
+                                        {
+                                            return SendMessage(
+                                                    chatId: update.Message.Chat.Id,
+                                                    text: "Выберите подходящий вариант:",
+                                                    replyMarkup: new Keyboard(new List<string> { "За 10 минут", "За две команды", "Автоматически", "Назад" }).GetReplyMarkup()
+                                                );
+                                        }
+                                    );
+        }
+
+        private void DisconnectFromTeamResponse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) => mes.Text == "Покинуть команду",
+                                        null,
+                                        (update) =>
+                                        {
+                                            var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
+
+                                            _dataBase.RemoveMemberFromTeam(
+                                                currentSession.Item2,
+                                                currentSession.Item3,
+                                                currentSession.Item1
+                                            );
+
+                                            return SendMessage(
+                                                chatId: update.Message.Chat.Id,
+                                                text: "Disconnected"
+                                            );
+                                        }
+                                    );
+        }
+
+        private void ConnectToTeamResponse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) =>
+                                        {
+                                            Room currentRoom = GetRoomByChatId(mes.Chat.Id);
+
+                                            int num = 0;
+                                            return int.TryParse(mes.Text, out num) && num >= 0 && num < currentRoom.Teams.Count
+                                                || mes.Text == "Назад";
+                                        },
+                                        null,
+                                        (update) =>
+                                        {
+                                            if (update.Message.Text != "Назад")
+                                            {
+                                                var currentSession = _sessions
+                                                    .Where(session => session.Item1.Name == update.Message.Chat.Id.ToString())
+                                                    .FirstOrDefault();
+
+                                                var currentSessionIndex = _sessions.IndexOf(currentSession);
+
+                                                IMember currentMember = currentSession.Item1;
+                                                Room currentRoom = currentSession.Item2;
+
+                                                int teamId = int.Parse(update.Message.Text);
+                                                List<Team> teams = currentRoom.Teams;
+                                                Team currentTeam = teams[teamId];
+
+                                                _sessions[currentSessionIndex] = new Tuple<IMember, Room, Team>(currentMember, currentRoom, currentTeam);
+
+                                                _dataBase.AddMemberToTeam(
+                                                    currentRoom,
+                                                    currentTeam,
+                                                    currentMember
+                                                );
+                                            }
+
+                                            return SendMessage(
+                                                chatId: update.Message.Chat.Id,
+                                                text: "Информация о команде",
+                                                replyMarkup: new Keyboard(new List<string> { "Покинуть команду", "Настройка уведомлений" }).GetReplyMarkup()
+                                            );
+                                        }
+                                    );
+        }
+
+        private void GetTeamsResponse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) => mes.Text == "Посмотреть команды",
+                                        null,
+                                        (update) =>
+                                        {
+                                            Room currentRoom = GetRoomByChatId(update.Message.Chat.Id);
+                                            List<Team> teams = currentRoom.Teams;
+
+                                            string t = string.Join('\n', teams.Select(team => string.Format("{0} - {1}", teams.IndexOf(team), team.Name)));
+                                            
+                                            return SendMessage(
+                                                chatId: update.Message.Chat.Id,
+                                                text: t
+                                            );
+                                        }
+                                    );
+        }
+
+        private void SetNotTenMinutesResponse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) => mes.Text == "За 10 минут",
+                                        null,
+                                        (update) =>
+                                        {
+                                            var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
+                                            currentSession.Item1.SetNotificationType(NotificationType.TEN_MINUTES);
+
+                                            return SendMessage(
+                                                    chatId: update.Message.Chat.Id,
+                                                    text: "done",
+                                                    replyMarkup: new Keyboard(new List<string> { "За 10 минут", "За две команды", "Автоматически", "Назад" }).GetReplyMarkup()
+                                                );
+                                        }
+                                    );
+        }
+
+        private void SetNotAutoRepsonse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) => mes.Text == "Автоматически",
+                                        null,
+                                        (update) =>
+                                        {
+                                            var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
+                                            currentSession.Item1.SetNotificationType(NotificationType.AUTO);
+
+                                            return SendMessage(
+                                                    chatId: update.Message.Chat.Id,
+                                                    text: "done",
+                                                    replyMarkup: new Keyboard(new List<string> { "За 10 минут", "За две команды", "Автоматически", "Назад" }).GetReplyMarkup()
+                                                );
+                                        }
+                                    );
+        }
+
+        private void SetNotTwoTeamsResponse()
+        {
+            _updateHandler.AddResponse(
+                                        (Message mes) => mes.Text == "За две команды",
+                                        null,
+                                        (update) =>
+                                        {
+                                            var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
+                                            currentSession.Item1.SetNotificationType(NotificationType.TWO_TEAMS);
+
+                                            return SendMessage(
+                                                    chatId: update.Message.Chat.Id,
+                                                    text: "done",
+                                                    replyMarkup: new Keyboard(new List<string> { "За 10 минут", "За две команды", "Автоматически", "Назад" }).GetReplyMarkup()
+                                                );
+                                        }
+                                    );
+        }
+
+        private Room GetRoomByChatId(ChatId id)
+        {
+            if (_sessions.Count == 0)
+                return null;
+            return _sessions
+                .Where(session => session.Item1.Name == id.ToString())
+                .FirstOrDefault()
+                .Item2;
         }
 
         private void AddStartWelcome()
@@ -102,6 +289,56 @@ namespace QueueBot
                 )
             );
         }
+
+        private Func<Update, Task> GetRoomsResponse()
+        {
+            IEnumerable<Room> GetRooms(string tableId)
+            {
+                List<Room> res = new List<Room>();
+                var roomsTable = new TableIO(tableId);
+                foreach (var sheet in roomsTable.GetAllSheets())
+                {
+                    var rooms = RoomParser.CreateRooms(roomsTable, sheet).ToList();
+                    res.AddRange(rooms);
+                    foreach (var room in rooms)
+                    {
+                        var db = new TableIO("1GISEntayuaYagp7K9Zb13-YLGiDO6AaQIVfP39REkI0");
+                        var not = new Notification(roomsTable, room);
+                        not.StartPolling();
+                        _notificators.Add(not);
+                        _dataBase.WriteRoom(room);
+                    }
+                }
+
+                return res;
+            }
+
+            Task RoomsResponse(Update update)
+            {
+                _rooms = new List<Room>(GetRooms(update.Message.Text));
+
+                List<Task> tasks = new List<Task>();
+
+                tasks.Add(SendMessage(
+                        chatId: update.Message.Chat.Id,
+                        text: "Коды комнат:\n" + String.Join("\n", _rooms.Select(room => $"    {room.Name} - {room.Link}")),
+                        replyMarkup: Keyboard.RemoveMarkup
+                        ));
+
+                tasks.Add(Task.Run(() => {
+                    tasks.Last().Wait();
+                    SendMessage(
+                        chatId: update.Message.Chat.Id,
+                        text: "Дальше я сам буду брать всю информацию с вашей таблицы. (Стикер)",
+                        replyMarkup: Keyboard.RemoveMarkup
+                        );
+                }));
+
+                return Task.WhenAll(tasks);
+            }
+
+            return RoomsResponse;
+        }
         #endregion
 
         #region Student
@@ -110,24 +347,6 @@ namespace QueueBot
             AddStudentWelcomeResponse();
 
             AddConnectQuery();
-        }
-
-        private void AddConnectQuery()
-        {
-            //_updateHandler.AddResponse(
-            //    (Message mes) => mes.Text == "Подключение к комнате",
-            //    null,
-            //    GetSendMessageFunction("Введите, пожалуйста, код, который вам выдали ваши эксперты. (Стикер)")
-            //);
-
-            _updateHandler.AddResponse(
-                (Message mes) => mes.Text == "Подключиться к комнате",
-                null,
-                _updateHandler.GetQuery(this,
-                             "Введите, пожалуйста, код, который вам выдали ваши эксперты. (Стикер)",
-                             ConnectToRoomResponse()
-                )
-            );
         }
 
         private void AddStudentWelcomeResponse()
@@ -141,104 +360,70 @@ namespace QueueBot
                     keyboard: new Keyboard(new List<string> { "Подключиться к комнате" }).GetReplyMarkup()
                 )
             );
+            // if _sessions.contains(...) skip connect step
         }
-        #endregion
 
-        private Func<Update, Task> GetRoomsResponse()
+        private void AddConnectQuery()
         {
-            Task RoomsResponse(Update update)
-            {
-                //var roomsTable = new TableIO(update.Message.Text);
-                //var rooms = roomsTable.GetAllSheets();
-                //var links = rooms.Select(room => new Room(room.Name, null, null).GetLink());
-
-                List<Task> tasks = new List<Task>();
-
-                List<Room> rooms = new List<Room>(_querier.ParseRoom(update.Message.Text));
-
-                tasks.Add(SendMessage(
-                        chatId: update.Message.Chat.Id,
-                        text: "Коды комнат:\n" + String.Join("\n", rooms.Select(room => $"    {room.Name} - {new Room(room.Name, , null, null).GetLink()}")),
-                        replyMarkup: Keyboard.RemoveMarkup
-                        ));
-
-                //tasks.Add(Task.Run(() => {
-                //    var commandsTable = new TableIO("1bUR8BaBnYjc5rkaC9DHW6vm79qu7UVGgqBOVuZgeMAc");
-                //    foreach (string link in links)
-                //    {
-                //        commandsTable.CreateSheet(link);
-                //    }
-                //}));
-
-                //tasks.Add(SendMessage(
-                //        chatId: update.Message.Chat.Id,
-                //        text: "Коды комнат:\n" + String.Join("\n", rooms.Select(room => $"    {room.Name} - {new Room(room.Name, null, null).GetLink()}")),
-                //        replyMarkup: Keyboard.RemoveMarkup
-                //        ));
-
-                Task test = Task.Run(() => {
-                    tasks.Last().Wait();
-                    SendMessage(
-                        chatId: update.Message.Chat.Id,
-                        text: "Дальше я сам буду брать всю информацию с вашей таблицы. (Стикер)",
-                        replyMarkup: Keyboard.RemoveMarkup
-                        );
-                });
-
-                tasks.Add(test);
-
-                return Task.WhenAll(tasks);
-            }
-
-            return RoomsResponse;
+            _updateHandler.AddResponse(
+                (Message mes) => mes.Text == "Подключиться к комнате" || mes.Text == "Покинуть команду",
+                null,
+                _updateHandler.GetQuery(this,
+                             "Введите, пожалуйста, код, который вам выдали ваши эксперты. (Стикер)",
+                             ConnectToRoomResponse()
+                )
+            );
         }
 
         private Func<Update, Task> ConnectToRoomResponse()
         {
             Task ResponseTask(Update update)
             {
-                //var commandsTable = new TableIO("1bUR8BaBnYjc5rkaC9DHW6vm79qu7UVGgqBOVuZgeMAc");
-                //var rooms = commandsTable.GetAllSheets();
-                //var roomsNames = rooms.Select(sheet => sheet.Name);
-
-                List<Room> rooms = new System.Collections.Generic.List<Room>(_querier.ParseRoom(update.Message.Text));
-                List<string> roomsNames = rooms.Select(room => room.Name).ToList();
+                var commandsTable = new TableIO("1GISEntayuaYagp7K9Zb13-YLGiDO6AaQIVfP39REkI0");
+                var rooms = commandsTable.GetAllSheets();
+                var roomsLinks = rooms.Select(sheet => sheet.Name);
 
                 List<Task> tasks = new List<Task>();
 
-                // завернуть условие в таск
-                if (roomsNames.Contains(update.Message.Text))
+                if (roomsLinks.Contains(update.Message.Text))
                 {
                     tasks.Add(Task.Run(() =>
                     {
-                        // TODO: Использовать реализацию IMember
-                        // Get Name by update.Message.Char.Id
-                        //var member = new Member(update, Team, notif); //- notification set to default
-                        //_sessions.Add(update.Message.Chat.Id, member);
+                        string currentRoomLink = update.Message.Text;
 
-                        return SendMessage(
-                            chatId: update.Message.Chat.Id, 
-                            text: "Подключилось.", 
+                        // get rooms from tech. table with teams and members
+                        if (_rooms.Count == 0)
+                        {
+                            List<Room> res = new List<Room>();
+                            var roomsTable = new TableIO("1jp7fIEEOrGEVtoFU5dvE3FIwzKzjwMzxKJy5YH04w24");
+                            foreach (var sheet in roomsTable.GetAllSheets())
+                            {
+                                var rooms = RoomParser.CreateRooms(roomsTable, sheet).ToList();
+                                res.AddRange(rooms);
+                                foreach (var room in rooms)
+                                {
+                                    var not = new Notification(roomsTable, room);
+                                    not.StartPolling();
+                                    _notificators.Add(not);
+                                    _dataBase.WriteRoom(room);
+                                }
+                            }
+
+                            _rooms = res;
+                        }
+
+                        Room currentRoom = _rooms.Where(room => room.Link == currentRoomLink).FirstOrDefault();
+
+                        var member = new Member(update.Message.Chat.Id.ToString(), NotificationType.TEN_MINUTES);
+                        member.OnNotifyCalled += () => SendMessage(update.Message.Chat.Id, "Подключайтесь!");
+                        _sessions.Add(new Tuple<IMember, Room, Team>(member, currentRoom, null));
+
+                        SendMessage(
+                            chatId: update.Message.Chat.Id,
+                            text: "Подключилось.",
                             replyMarkup: new Keyboard(new List<string> { "Посмотреть команды" }).GetReplyMarkup()
                          );
                     }));
-
-                    _updateHandler.AddResponse(
-                            (Message mes) => mes.Text == "Посмотреть команды",
-                            null,
-                            (update) =>
-                            {
-                                // TODO: Использовать реализацию IMember
-                                // MemberImpl member = new(name); - notification set to default
-                                List<Team> teams = _querier.GetTeamsByRoomId(_sessions[member]).ToList();
-                                string t = String.Join('\n', teams.Select(team => team.Name));
-                                return SendMessage(
-                                    chatId: update.Message.Chat.Id,
-                                    text: t
-                                    );
-                            }
-                            // add response to connect by name
-                        );
                 }
                 else
                 {
@@ -255,5 +440,6 @@ namespace QueueBot
 
             return ResponseTask;
         }
+        #endregion
     }
 }

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telegram.Bot;
-using Telegram.Bot.Types;
-
-namespace FileManager
+﻿namespace FileManager
 {
+    // TODO: Sticker
     public enum FileType
     {
         Document,

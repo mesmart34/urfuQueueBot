@@ -1,4 +1,4 @@
-﻿namespace TableQueries
+﻿namespace TableParser
 {
     // TODO: Заполнить типы уведомлений
     public enum NotificationType

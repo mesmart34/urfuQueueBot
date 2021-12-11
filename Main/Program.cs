@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using TableParser;
-using TableQueries;
 using TelegramBot;
 
 namespace Main
@@ -12,12 +11,9 @@ namespace Main
         {
             DefaultUpdateHandler updateHandler = new DefaultUpdateHandler();
             QueueBot.QueueBot bot;
-            var dataBase = new DataBase();
-            // TODO: Передать параметром реализацию IQuery
-            var query = new Query(dataBase);
             using (StreamReader sr = new StreamReader("../../../../.private_cfg/token.txt"))
             {
-                bot = new(sr.ReadLine(), updateHandler, query);
+                bot = new(sr.ReadLine(), updateHandler, new DataBase("1GISEntayuaYagp7K9Zb13-YLGiDO6AaQIVfP39REkI0"));
             }
 
             bot.StartReceiving();

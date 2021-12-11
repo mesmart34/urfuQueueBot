@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TableQueries;
 
 namespace TableParser
 {
@@ -13,6 +12,8 @@ namespace TableParser
     {
         string Name { get; }
         NotificationType Notification { get; }
+
+        void SetNotificationType(NotificationType type);
 
         void Notify();
     }

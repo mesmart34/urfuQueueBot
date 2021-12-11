@@ -151,5 +151,13 @@ namespace TableParser
             var response = request.Execute();
             return response;
         }
+
+        public void ClearSheet(string sheetName)
+        {
+            var req = new BatchClearValuesRequest();
+            req.Ranges = new List<string> { sheetName };
+            var response = _service.Spreadsheets.Values.BatchClear(req, _spreadSheetId);
+            response.Execute();
+        }
     }
 }

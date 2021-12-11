@@ -27,11 +27,12 @@ namespace TelegramBot
                 _ => exception.ToString()
             };
 
-            await Task.Run(() => Console.WriteLine(errorMessage));
+            Console.WriteLine(errorMessage);
         }
 
         public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
+            // clear old updates
             if (update.Type != UpdateType.Message)
                 return;
             if (update.Message.Type != MessageType.Text)
@@ -48,7 +49,7 @@ namespace TelegramBot
             }
             else
             {
-                await _queriedChatIds[chatId](update);
+                _queriedChatIds[chatId](update);
                 _queriedChatIds.Remove(chatId);
             }
         }

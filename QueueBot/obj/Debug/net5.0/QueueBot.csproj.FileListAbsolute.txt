@@ -42,3 +42,15 @@ W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.csproj.CoreCompileInputs.
 W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.dll
 W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\ref\QueueBot.dll
 W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.pdb
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\QueueBot.deps.json
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\QueueBot.dll
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\ref\QueueBot.dll
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\QueueBot.pdb
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\FileManager.dll
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\TableParser.dll
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\TelegramBot.dll
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\FileManager.pdb
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\FileManager.dll.config
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\TableParser.pdb
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\TelegramBot.pdb
+W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.csproj.CopyComplete

@@ -30,6 +30,9 @@ namespace TableParser
 
         public void WriteRoom(Room room)
         {
+            if (_table.GetAllSheets().Select(sheet => sheet.Name).Contains(room.Link))
+                _table.ClearSheet(room.Link);
+
             var data = new List<IList<object>>();
             //var timeKeys = room.Teams.Keys.ToList();
             var time = room.StartTime;
@@ -41,8 +44,9 @@ namespace TableParser
                 column.Add(time.ToString());
                 foreach (var student in team.Members)
                 {
-                    column.Add(student);
+                    column.Add(student.Name);
                 }
+                data.Add(column);
             }
 
             var link = room.Link;

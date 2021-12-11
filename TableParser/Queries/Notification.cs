@@ -6,7 +6,7 @@ using System.IO;
 using System.Globalization;
 using Google.Apis.Sheets.v4.Data;
 
-namespace TableQueries
+namespace TableParser
 {
     public class Notification : INotificator
     {
@@ -35,7 +35,12 @@ namespace TableQueries
             {
                 var response = streamReader.ReadToEnd();
                 var utcDateTimeString = response.Substring(7, 17);
-                return DateTime.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal);
+                DateTime res;
+                if (!DateTime.TryParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out res))
+                {
+                    return DateTime.Now;
+                }
+                return res;
             }
         }
 
@@ -60,16 +65,20 @@ namespace TableQueries
                     foreach (var team in _room.Teams)
                     {
                         // get team index
-                        int currentTeamIndex = Query.GetTeamIndex(_table, _room, team.Name);
+                        int currentTeamIndex = team.Id;
                         foreach (Member member in team.Members)
                         {
+                            if (member.IsNotified)
+                                continue;
+
                             var teamTime = team.Time;
                             switch (member.Notification)
                             {
+                                // TODO: fill rules
                                 case NotificationType.TEN_MINUTES:
                                     {
-                                        var deltaTime = (currentTime - teamTime).TotalSeconds;
-                                        if (deltaTime <= 600)
+                                        var deltaTime = (teamTime - currentTime).TotalSeconds;
+                                        if (deltaTime <= 20)
                                         {
                                             member.Notify();
                                         }

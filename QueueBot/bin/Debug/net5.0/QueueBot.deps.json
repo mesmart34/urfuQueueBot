@@ -9,6 +9,7 @@
       "QueueBot/1.0.0": {
         "dependencies": {
           "FileManager": "1.0.0",
+          "TableParser": "1.0.0",
           "TelegramBot": "1.0.0"
         },
         "runtime": {
@@ -132,7 +133,6 @@
         "dependencies": {
           "FileManager": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
-          "TableParser": "1.0.0",
           "Telegram.Bot": "17.0.0",
           "Telegram.Bot.Extensions.Polling": "1.0.0"
         },

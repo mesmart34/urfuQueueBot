@@ -53,6 +53,7 @@ namespace TelegramBot
 
                 if (files == null) return tasks.First();
 
+                // TODO: Добавить обработку стикеров
                 foreach (var file in files)
                 {
                     Stream sr = File.OpenRead(file.Path);

@@ -38,7 +38,7 @@ namespace TableParser
 
         private string GetLink()
         {
-            var key = Name + _tableID;
+            var key = Name + _tableID + StartTime.ToString("dd.MM HH:mm");
             var bytes = Encoding.UTF8.GetBytes(key);
             var encoded = Convert.ToBase64String(bytes);
             return encoded;
