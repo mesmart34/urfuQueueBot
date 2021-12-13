@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Telegram.Bot.Types.ReplyMarkups;
+using System.Linq;
 
 namespace TelegramBot
 {
@@ -25,12 +26,15 @@ namespace TelegramBot
             return new ReplyKeyboardMarkup(GetKeyboardButtons());
         }
 
-        private KeyboardButton[] GetKeyboardButtons()
+        private List<KeyboardButton[]> GetKeyboardButtons()
         {
-            KeyboardButton[] buttons = new KeyboardButton[_buttonsNames.Count];
+            List<KeyboardButton[]> buttons = new List<KeyboardButton[]>();
             for (int i = 0; i < _buttonsNames.Count; ++i)
             {
-                buttons[i] = GetKeyboardButton(_buttonsNames[i]);
+                KeyboardButton[] button = {
+                    GetKeyboardButton(_buttonsNames[i])
+                };
+                buttons.Add(button);
             }
 
             return buttons;

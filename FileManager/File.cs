@@ -1,12 +1,10 @@
 ﻿namespace FileManager
 {
-    // TODO: Sticker
     public enum FileType
     {
         Document,
         Image,
-        Audio,
-        Video
+        Sticker
     }
 
     public class File : IFile

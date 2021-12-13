@@ -1,0 +1,12 @@
+W:\qwe\urfuQueueBot\Logger\bin\Debug\net5.0\Logger.deps.json
+W:\qwe\urfuQueueBot\Logger\bin\Debug\net5.0\Logger.dll
+W:\qwe\urfuQueueBot\Logger\bin\Debug\net5.0\ref\Logger.dll
+W:\qwe\urfuQueueBot\Logger\bin\Debug\net5.0\Logger.pdb
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.csproj.AssemblyReference.cache
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.GeneratedMSBuildEditorConfig.editorconfig
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.AssemblyInfoInputs.cache
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.AssemblyInfo.cs
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.csproj.CoreCompileInputs.cache
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.dll
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\ref\Logger.dll
+W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.pdb

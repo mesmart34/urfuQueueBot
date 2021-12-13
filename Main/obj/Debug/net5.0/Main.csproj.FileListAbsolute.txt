@@ -186,3 +186,5 @@ W:\qwe\urfuQueueBot\Main\bin\Debug\net5.0\FileManager.dll.config
 W:\qwe\urfuQueueBot\Main\bin\Debug\net5.0\TableParser.pdb
 W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.csproj.CopyComplete
 W:\qwe\urfuQueueBot\Main\obj\Debug\net5.0\Main.genruntimeconfig.cache
+W:\qwe\urfuQueueBot\Main\bin\Debug\net5.0\Logger.dll
+W:\qwe\urfuQueueBot\Main\bin\Debug\net5.0\Logger.pdb

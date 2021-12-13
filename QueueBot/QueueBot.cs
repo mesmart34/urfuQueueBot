@@ -9,7 +9,6 @@ using TableParser;
 using System.Linq;
 
 // TODO: Сделать создание сценария использования более удобным и поддерживаемым
-// TODO: Парсить _rooms из базы данных
 // TODO: Refactoring
 // TODO: Разузнать про перекрёстный огонь
 // TODO: Отправка стикеров
@@ -32,7 +31,11 @@ namespace QueueBot
             _sessions = new List<Tuple<IMember, Room, Team>>();
             _dataBase = db;
             _notificators = new List<INotificator>();
-            _rooms = new List<Room>();
+
+            // TODO: Парсить _rooms из базы данных
+            // Нужно также хранить название комнаты в базе данных
+            //_rooms = new List<Room>();
+            _rooms = db.GetRooms().ToList();
 
             AddStartWelcome();
             AddExpertBranch();
@@ -77,7 +80,7 @@ namespace QueueBot
                                         (update) =>
                                         {
                                             var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
-
+                                            currentSession.Item1.OnNotifyCalled -= () => SendMessage(update.Message.Chat.Id, "Подключайтесь!");
                                             _dataBase.RemoveMemberFromTeam(
                                                 currentSession.Item2,
                                                 currentSession.Item3,
@@ -133,7 +136,7 @@ namespace QueueBot
                                             return SendMessage(
                                                 chatId: update.Message.Chat.Id,
                                                 text: "Информация о команде",
-                                                replyMarkup: new Keyboard(new List<string> { "Покинуть команду", "Настройка уведомлений" }).GetReplyMarkup()
+                                                replyMarkup: new Keyboard(new List<string> { "Настройка уведомлений", "Покинуть команду" }).GetReplyMarkup()
                                             );
                                         }
                                     );
@@ -166,8 +169,9 @@ namespace QueueBot
                                         null,
                                         (update) =>
                                         {
-                                            var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
+                                            var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).FirstOrDefault();
                                             currentSession.Item1.SetNotificationType(NotificationType.TEN_MINUTES);
+                                            _dataBase.WriteRoom(currentSession.Item2);
 
                                             return SendMessage(
                                                     chatId: update.Message.Chat.Id,
@@ -187,6 +191,7 @@ namespace QueueBot
                                         {
                                             var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
                                             currentSession.Item1.SetNotificationType(NotificationType.AUTO);
+                                            _dataBase.WriteRoom(currentSession.Item2);
 
                                             return SendMessage(
                                                     chatId: update.Message.Chat.Id,
@@ -206,6 +211,7 @@ namespace QueueBot
                                         {
                                             var currentSession = _sessions.Where(session => session.Item1.Name == update.Message.Chat.Id.ToString()).First();
                                             currentSession.Item1.SetNotificationType(NotificationType.TWO_TEAMS);
+                                            _dataBase.WriteRoom(currentSession.Item2);
 
                                             return SendMessage(
                                                     chatId: update.Message.Chat.Id,
@@ -220,10 +226,10 @@ namespace QueueBot
         {
             if (_sessions.Count == 0)
                 return null;
-            return _sessions
+            var session = _sessions
                 .Where(session => session.Item1.Name == id.ToString())
-                .FirstOrDefault()
-                .Item2;
+                .FirstOrDefault();
+            return session?.Item2;
         }
 
         private void AddStartWelcome()
@@ -319,18 +325,16 @@ namespace QueueBot
 
                 List<Task> tasks = new List<Task>();
 
-                tasks.Add(SendMessage(
+                tasks.Add(Task.Run(async () => {
+                    await SendMessage(
                         chatId: update.Message.Chat.Id,
-                        text: "Коды комнат:\n" + String.Join("\n", _rooms.Select(room => $"    {room.Name} - {room.Link}")),
+                        text: "Коды комнат:\n" + string.Join("\n", _rooms.Select(room => $"    [{room.StartTime:g}] {room.Name} - {room.Link}")),
                         replyMarkup: Keyboard.RemoveMarkup
-                        ));
-
-                tasks.Add(Task.Run(() => {
-                    tasks.Last().Wait();
-                    SendMessage(
+                        );
+                    await SendMessage(
                         chatId: update.Message.Chat.Id,
                         text: "Дальше я сам буду брать всю информацию с вашей таблицы. (Стикер)",
-                        replyMarkup: Keyboard.RemoveMarkup
+                        replyMarkup: new Keyboard(new List<string> { "Получить коды комнат", "Шаблон гугл таблицы" }).GetReplyMarkup()
                         );
                 }));
 
@@ -351,22 +355,47 @@ namespace QueueBot
 
         private void AddStudentWelcomeResponse()
         {
-            using StreamReader sr = new StreamReader("../../../../src/studentWelcome.txt");
             _updateHandler.AddResponse(
-                (Message mes) => mes.Text == "Студент",
+                (Message mes) => mes.Text == "Студент" || mes.Text == "Покинуть команду",
                 null,
-                SendMessageResponse(
-                    text: sr.ReadLine(),
-                    keyboard: new Keyboard(new List<string> { "Подключиться к комнате" }).GetReplyMarkup()
-                )
+                (update) =>
+                {
+                    if (update.Message.Text == "Покинуть команду")
+                    {
+                        Message m = new Message();
+                        m.Chat = update.Message.Chat;
+                        m.From = update.Message.From;
+                        m.Text = "Посмотреть команды";
+                        _updateHandler.InvokeMessage(_botClient, m);
+                        return Task.CompletedTask;
+                    }
+
+                    using StreamReader sr = new StreamReader("../../../../src/studentWelcome.txt");
+                    var currentSession = _sessions.Where(s => s.Item1.Name == update.Message.Chat.Id.ToString()).FirstOrDefault();
+                    if (currentSession == null)
+                    {
+                        return SendMessageResponse(
+                            text: sr.ReadLine(),
+                            keyboard: new Keyboard(new List<string> { "Подключиться к комнате" }).GetReplyMarkup()
+                        )(update);
+                    }
+                    else
+                    {
+                        Message m = new Message();
+                        m.Chat = update.Message.Chat;
+                        m.From = update.Message.From;
+                        m.Text = "Назад";
+                        _updateHandler.InvokeMessage(_botClient, m);
+                        return Task.CompletedTask;
+                    }
+                }
             );
-            // if _sessions.contains(...) skip connect step
         }
 
         private void AddConnectQuery()
         {
             _updateHandler.AddResponse(
-                (Message mes) => mes.Text == "Подключиться к комнате" || mes.Text == "Покинуть команду",
+                (Message mes) => mes.Text == "Подключиться к комнате",
                 null,
                 _updateHandler.GetQuery(this,
                              "Введите, пожалуйста, код, который вам выдали ваши эксперты. (Стикер)",
@@ -391,30 +420,9 @@ namespace QueueBot
                     {
                         string currentRoomLink = update.Message.Text;
 
-                        // get rooms from tech. table with teams and members
-                        if (_rooms.Count == 0)
-                        {
-                            List<Room> res = new List<Room>();
-                            var roomsTable = new TableIO("1jp7fIEEOrGEVtoFU5dvE3FIwzKzjwMzxKJy5YH04w24");
-                            foreach (var sheet in roomsTable.GetAllSheets())
-                            {
-                                var rooms = RoomParser.CreateRooms(roomsTable, sheet).ToList();
-                                res.AddRange(rooms);
-                                foreach (var room in rooms)
-                                {
-                                    var not = new Notification(roomsTable, room);
-                                    not.StartPolling();
-                                    _notificators.Add(not);
-                                    _dataBase.WriteRoom(room);
-                                }
-                            }
-
-                            _rooms = res;
-                        }
-
                         Room currentRoom = _rooms.Where(room => room.Link == currentRoomLink).FirstOrDefault();
 
-                        var member = new Member(update.Message.Chat.Id.ToString(), NotificationType.TEN_MINUTES);
+                        var member = new Member(update.Message.Chat.Id.ToString());
                         member.OnNotifyCalled += () => SendMessage(update.Message.Chat.Id, "Подключайтесь!");
                         _sessions.Add(new Tuple<IMember, Room, Team>(member, currentRoom, null));
 

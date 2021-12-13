@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace TableParser
 {
-    // TODO: Реализовать IMember
-
     public interface IMember
     {
         string Name { get; }
         NotificationType Notification { get; }
+        public event Action OnNotifyCalled;
 
         void SetNotificationType(NotificationType type);
 

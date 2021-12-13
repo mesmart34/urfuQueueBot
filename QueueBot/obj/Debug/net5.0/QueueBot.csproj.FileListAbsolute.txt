@@ -54,3 +54,5 @@ W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\FileManager.dll.config
 W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\TableParser.pdb
 W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\TelegramBot.pdb
 W:\qwe\urfuQueueBot\QueueBot\obj\Debug\net5.0\QueueBot.csproj.CopyComplete
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\Logger.dll
+W:\qwe\urfuQueueBot\QueueBot\bin\Debug\net5.0\Logger.pdb

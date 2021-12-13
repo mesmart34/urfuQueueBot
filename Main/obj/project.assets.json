@@ -119,6 +119,16 @@
           "bin/placeholder/FileManager.dll": {}
         }
       },
+      "Logger/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Logger.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Logger.dll": {}
+        }
+      },
       "QueueBot/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -154,6 +164,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "FileManager": "1.0.0",
+          "Logger": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "Telegram.Bot": "17.0.0",
           "Telegram.Bot.Extensions.Polling": "1.0.0"
@@ -386,6 +397,11 @@
       "type": "project",
       "path": "../FileManager/FileManager.csproj",
       "msbuildProject": "../FileManager/FileManager.csproj"
+    },
+    "Logger/1.0.0": {
+      "type": "project",
+      "path": "../Logger/Logger.csproj",
+      "msbuildProject": "../Logger/Logger.csproj"
     },
     "QueueBot/1.0.0": {
       "type": "project",

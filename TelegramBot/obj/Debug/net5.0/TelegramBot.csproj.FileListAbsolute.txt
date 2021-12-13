@@ -68,3 +68,5 @@ W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.csproj.CopyComplete
 W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.dll
 W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\ref\TelegramBot.dll
 W:\qwe\urfuQueueBot\TelegramBot\obj\Debug\net5.0\TelegramBot.pdb
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\Logger.dll
+W:\qwe\urfuQueueBot\TelegramBot\bin\Debug\net5.0\Logger.pdb

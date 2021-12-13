@@ -17,7 +17,7 @@ namespace TelegramBot
 {
     public class Bot : IBot
     {
-        private readonly TelegramBotClient _botClient;
+        protected readonly TelegramBotClient _botClient;
         private CancellationTokenSource _cancellationToken;
 
         protected IUpdateHandler _updateHandler;
@@ -53,7 +53,7 @@ namespace TelegramBot
 
                 if (files == null) return tasks.First();
 
-                // TODO: Добавить обработку стикеров
+                // TODO: test sticker
                 foreach (var file in files)
                 {
                     Stream sr = File.OpenRead(file.Path);
@@ -62,8 +62,7 @@ namespace TelegramBot
                         {
                             FileType.Image => _botClient.SendPhotoAsync(chatId, sr, file.Caption),
                             FileType.Document => _botClient.SendDocumentAsync(chatId, new InputOnlineFile(sr), caption: file.Caption),
-                            FileType.Video => _botClient.SendVideoAsync(chatId, new InputOnlineFile(sr), caption: file.Caption),
-                            FileType.Audio => throw new NotImplementedException(),
+                            FileType.Sticker => _botClient.SendStickerAsync(chatId, new InputOnlineFile(sr)),
                             _ => throw new NotImplementedException()
                         }
                     );
@@ -79,6 +78,43 @@ namespace TelegramBot
         {
             return _botClient.SendTextMessageAsync(chatId, text, replyMarkup: replyMarkup ?? Keyboard.RemoveMarkup);
         }
+
+        //public Task SendMessage(ChatId chatId, string text = null, IEnumerable<IFile> files = null, IReplyMarkup replyMarkup = null)
+        //{
+        //    //return _botClient.SendTextMessageAsync(chatId, text, replyMarkup: replyMarkup ?? Keyboard.RemoveMarkup);
+
+        //    List<Task> tasks = new List<Task>();
+
+        //    if (text != null)
+        //    {
+        //        tasks.Add(
+        //            _botClient.SendTextMessageAsync(
+        //            chatId: chatId,
+        //            text: text,
+        //            replyMarkup: keyboard ?? Keyboard.RemoveMarkup
+        //            )
+        //        );
+        //    }
+
+        //    if (files == null) return tasks.First();
+
+        //    // TODO: test sticker
+        //    foreach (var file in files)
+        //    {
+        //        Stream sr = File.OpenRead(file.Path);
+        //        tasks.Add(
+        //            file.FileType switch
+        //            {
+        //                FileType.Image => _botClient.SendPhotoAsync(chatId, sr, file.Caption),
+        //                FileType.Document => _botClient.SendDocumentAsync(chatId, new InputOnlineFile(sr), caption: file.Caption),
+        //                FileType.Sticker => _botClient.SendStickerAsync(chatId, new InputOnlineFile(sr)),
+        //                _ => throw new NotImplementedException()
+        //            }
+        //        );
+        //    }
+
+        //    return Task.WhenAll(tasks);
+        //}
 
         public void StartReceiving()
         {

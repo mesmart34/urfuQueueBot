@@ -1,6 +1,5 @@
 ﻿namespace TableParser
 {
-    // TODO: Заполнить типы уведомлений
     public enum NotificationType
     {
         TEN_MINUTES,
@@ -8,7 +7,6 @@
         AUTO
     }
 
-    // TODO: Реализовать INotificator
     public interface INotificator
     {
         void StartPolling();

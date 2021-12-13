@@ -6,6 +6,7 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Exceptions;
+using Logger;
 
 namespace TelegramBot
 {
@@ -14,9 +15,18 @@ namespace TelegramBot
         private Func<Update, Task> _updateHandle;
         private Dictionary<ChatId, Func<Update, Task>> _queriedChatIds;
 
+        private ILogger _logger;
+
+        private bool _toClearUpdates;
+        private DateTime _startTime;
+
         public DefaultUpdateHandler()
         {
             _queriedChatIds = new Dictionary<ChatId, Func<Update, Task>>();
+            _toClearUpdates = true;
+            _startTime = DateTime.UtcNow;
+
+            _logger = new Logger.Logger("../../../../logs/");
         }
 
         public async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
@@ -32,7 +42,21 @@ namespace TelegramBot
 
         public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
-            // clear old updates
+            if (_toClearUpdates)
+            {
+                if (update.Message.Date < _startTime)
+                {
+                    string skipText = 
+                        $"[ {update.Message.Date:HH:mm:ss} ] : Skip a message '{update.Message.Text}' in chat @{update.Message.From.Username} [{update.Message.Chat.Id}].";
+                    _logger.Log(skipText);
+                    Console.WriteLine(skipText);
+                    return;
+                }
+
+                _toClearUpdates = false;
+            }
+            
+
             if (update.Type != UpdateType.Message)
                 return;
             if (update.Message.Type != MessageType.Text)
@@ -41,17 +65,26 @@ namespace TelegramBot
             var chatId = update.Message.Chat.Id;
             var message = update.Message.Text;
 
-            Console.WriteLine($"Received a message '{update.Message.Text}' in chat @{update.Message.From.Username} [{chatId}].");
+            string text = $"[ {update.Message.Date:HH:mm:ss} ] : Received a message '{update.Message.Text}' in chat @{update.Message.From.Username} [{chatId}].";
+            _logger.Log(text);
+            Console.WriteLine(text);
 
             if (!_queriedChatIds.ContainsKey(chatId))
             {
-                await _updateHandle(update);
+                _updateHandle(update);
             }
             else
             {
                 _queriedChatIds[chatId](update);
                 _queriedChatIds.Remove(chatId);
             }
+        }
+
+        public Task InvokeMessage(ITelegramBotClient botClient, Message message)
+        {
+            var upd = new Update();
+            upd.Message = message;
+            return HandleUpdateAsync(botClient, upd, CancellationToken.None);
         }
 
         public void AddResponse(

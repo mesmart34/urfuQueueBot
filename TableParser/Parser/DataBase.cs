@@ -42,14 +42,15 @@ namespace TableParser
                 var column = new List<object>();
                 column.Add(team.Name);
                 column.Add(time.ToString());
+                //column.Add(team.Time.ToString());
                 foreach (var student in team.Members)
                 {
-                    column.Add(student.Name);
+                    column.Add(student.Name + ":" + ((int)student.Notification).ToString());
                 }
                 data.Add(column);
             }
 
-            var link = room.Link;
+            var link = room.Link; // room.Name + ":" + room.Link;
             _table.CreateSheet(link);
             _table.Write(link, data);
         }
@@ -86,6 +87,39 @@ namespace TableParser
                 var room = links[sheet.Name];
                 Read(room);
             }
+        }
+
+        public IEnumerable<Room> GetRooms()
+        {
+            List<Room> res = new List<Room>();
+            var sheets = _table.GetAllSheets();
+            foreach (var sheet in sheets.Skip(1))
+            {
+                string[] sheetInfo = sheet.Name.Split(':');
+                string roomName = sheetInfo[0];
+
+                var data = _table.Read(sheet.Name);
+                DateTime roomTime = DateTime.Parse((string)data[0][1]);
+                List<Team> teams = new List<Team>();
+                foreach (var row in data)
+                {
+                    string teamName = (string)row[0];
+                    DateTime teamTime = DateTime.Parse((string)row[1]);
+                    Team newTeam = new Team(teamName, teams.Count, teamTime);
+
+                    foreach (var member in row.Skip(2))
+                    {
+                        string[] memberInfo = ((string)member).Split(':');
+                        newTeam.AddStudent(new Member(memberInfo[0], (NotificationType)int.Parse(memberInfo[1])));
+                    }
+
+                    teams.Add(newTeam);
+                }
+
+                res.Add(new Room(roomName, teams, sheet.Name, roomTime));
+            }
+
+            return res;
         }
 
         public IEnumerable<string> GetTeamsNames(string roomId)

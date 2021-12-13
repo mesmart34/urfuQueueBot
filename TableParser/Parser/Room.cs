@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TableParser
 {
@@ -9,6 +8,7 @@ namespace TableParser
         public string Name { get; private set; }
         public DateTime StartTime { get; }
         public List<Team> Teams { get; private set; }
+
         private readonly string _tableID;
 
         public Room(string name, string tableID, List<Team> teams, DateTime start)
@@ -16,6 +16,14 @@ namespace TableParser
             Name = name;
             Teams = teams;
             _tableID = tableID;
+            StartTime = start;
+        }
+
+        public Room(string name, List<Team> teams, string link, DateTime start)
+        {
+            Name = name;
+            Teams = teams;
+            _link = link;
             StartTime = start;
         }
 
@@ -38,10 +46,20 @@ namespace TableParser
 
         private string GetLink()
         {
-            var key = Name + _tableID + StartTime.ToString("dd.MM HH:mm");
-            var bytes = Encoding.UTF8.GetBytes(key);
-            var encoded = Convert.ToBase64String(bytes);
-            return encoded;
+            //var key = Name + _tableID + StartTime.ToString("dd.MM HH:mm");
+
+            var seed = Name.GetHashCode() + _tableID.GetHashCode() + StartTime.ToString("dd.MM HH:mm").GetHashCode();
+
+            Random r = new Random(seed);
+            
+            string res = "";
+            for (int i = 0; i < 50; ++i)
+            {
+                char c = (char)r.Next('a', 'z');
+                res += (r.Next(0, 2) == 0 ? char.ToUpper(c) : c);
+            }
+
+            return Name + ":" + res;
         }
     }
 }

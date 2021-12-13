@@ -46,7 +46,8 @@ namespace TableParser
             for (var i = from + 2; i < data.Count; i++)
             {
                 var name = data[i][offset].ToString();
-                var team = new Team(name, teams.Count, time);
+                var teamTime = time.AddSeconds(3 * 60 * teams.Count);
+                var team = new Team(name, teams.Count, teamTime);
                 teams.Add(team);
             }
 

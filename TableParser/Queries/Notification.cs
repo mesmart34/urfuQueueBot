@@ -64,8 +64,8 @@ namespace TableParser
 
                     foreach (var team in _room.Teams)
                     {
-                        // get team index
                         int currentTeamIndex = team.Id;
+                        
                         foreach (Member member in team.Members)
                         {
                             if (member.IsNotified)
@@ -78,7 +78,9 @@ namespace TableParser
                                 case NotificationType.TEN_MINUTES:
                                     {
                                         var deltaTime = (teamTime - currentTime).TotalSeconds;
-                                        if (deltaTime <= 20)
+                                        int notificationOffset = 20; //s
+                                        //int notificationOffset = 10 * 60 //s == 10 min
+                                        if (deltaTime >= -(60*1.5 + 1) && deltaTime <= notificationOffset)
                                         {
                                             member.Notify();
                                         }
