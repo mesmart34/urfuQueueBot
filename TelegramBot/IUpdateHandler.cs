@@ -12,13 +12,10 @@ namespace TelegramBot
 
         public void AddResponse(
             Func<Message, bool> filter = null,
-            List<string> commandsList = null,
             Func<Update, Task> response = null
             );
 
         public Func<Update, Task> GetQuery(
-            IBot bot,
-            string queryText,
             Func<Update, Task> response = null
             );
     }

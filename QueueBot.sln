@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Main", "Main\Main.csproj", "{5AD9B896-70B1-4B80-8AB4-79EDBC39FBB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{B64B1509-CB82-4D96-9BE4-27B15287F8D9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{B477B532-93D4-489B-83FD-44594AB18008}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueBot", "QueueBot\QueueBot.csproj", "{6BA3F07E-A2AB-4C88-87E9-75075D452E6D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableParser", "TableParser\TableParser.csproj", "{ECEDBEE8-E9FE-4E0B-9F18-F685C6C0E4B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{52FF633F-6F4F-4A58-8781-6566A187B003}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{52FF633F-6F4F-4A58-8781-6566A187B003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendableFiles", "SendableFiles\SendableFiles.csproj", "{6CAC955F-1B03-4998-974A-DE2AD2539410}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{5AD9B896-70B1-4B80-8AB4-79EDBC39FBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AD9B896-70B1-4B80-8AB4-79EDBC39FBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AD9B896-70B1-4B80-8AB4-79EDBC39FBB9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B64B1509-CB82-4D96-9BE4-27B15287F8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B64B1509-CB82-4D96-9BE4-27B15287F8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B64B1509-CB82-4D96-9BE4-27B15287F8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B64B1509-CB82-4D96-9BE4-27B15287F8D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B477B532-93D4-489B-83FD-44594AB18008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B477B532-93D4-489B-83FD-44594AB18008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B477B532-93D4-489B-83FD-44594AB18008}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{52FF633F-6F4F-4A58-8781-6566A187B003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52FF633F-6F4F-4A58-8781-6566A187B003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52FF633F-6F4F-4A58-8781-6566A187B003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAC955F-1B03-4998-974A-DE2AD2539410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAC955F-1B03-4998-974A-DE2AD2539410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAC955F-1B03-4998-974A-DE2AD2539410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAC955F-1B03-4998-974A-DE2AD2539410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

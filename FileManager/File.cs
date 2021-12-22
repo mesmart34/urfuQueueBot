@@ -1,23 +1,60 @@
-﻿namespace FileManager
+﻿using System;
+using System.Threading.Tasks;
+using Telegram.Bot.Types;
+using Telegram.Bot;
+using System.IO;
+using Telegram.Bot.Types.InputFiles;
+
+namespace FileManager
 {
-    public enum FileType
+    public class Document : ISendable
     {
-        Document,
-        Image,
-        Sticker
+        private readonly string _path;
+        private readonly string _caption;
+
+        public Document(string path, string caption)
+        {
+            _path = path;
+            _caption = caption;
+        }
+
+        public Task Send(ITelegramBotClient client, ChatId chatId)
+        {
+            Stream s = System.IO.File.OpenRead(_path);
+            return client.SendDocumentAsync(chatId, new Telegram.Bot.Types.InputFiles.InputOnlineFile(s), caption: _caption);
+        }
     }
 
-    public class File : IFile
+    public class Image : ISendable
     {
-        public FileType FileType { get; }
-        public string Caption { get; }
-        public string Path { get; }
+        private readonly string _path;
+        private readonly string _caption;
 
-        public File(FileType fileType, string caption, string path)
+        public Image(string path, string caption)
         {
-            FileType = fileType;
-            Caption = caption;
-            Path = path;
+            _path = path;
+            _caption = caption;
+        }
+
+        public Task Send(ITelegramBotClient client, ChatId chatId)
+        {
+            Stream s = System.IO.File.OpenRead(_path);
+            return client.SendPhotoAsync(chatId, new InputOnlineFile(s), caption: _caption);
+        }
+    }
+
+    public class Sticker : ISendable
+    {
+        private readonly string _id;
+
+        public Sticker(string id)
+        {
+            _id = id;
+        }
+
+        public Task Send(ITelegramBotClient client, ChatId chatId)
+        {
+            return client.SendStickerAsync(chatId, new InputTelegramFile(_id).FileId);
         }
     }
 }

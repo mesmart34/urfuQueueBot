@@ -2,6 +2,6 @@
 {
     interface ICommand
     {
-        bool Execute();
+        void Execute();
     }
 }

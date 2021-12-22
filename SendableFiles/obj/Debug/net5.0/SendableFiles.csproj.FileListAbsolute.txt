@@ -1,0 +1,12 @@
+W:\qwe\urfuQueueBot\SendableFiles\bin\Debug\net5.0\SendableFiles.deps.json
+W:\qwe\urfuQueueBot\SendableFiles\bin\Debug\net5.0\SendableFiles.dll
+W:\qwe\urfuQueueBot\SendableFiles\bin\Debug\net5.0\ref\SendableFiles.dll
+W:\qwe\urfuQueueBot\SendableFiles\bin\Debug\net5.0\SendableFiles.pdb
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.csproj.AssemblyReference.cache
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.GeneratedMSBuildEditorConfig.editorconfig
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.AssemblyInfoInputs.cache
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.AssemblyInfo.cs
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.csproj.CoreCompileInputs.cache
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.dll
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\ref\SendableFiles.dll
+W:\qwe\urfuQueueBot\SendableFiles\obj\Debug\net5.0\SendableFiles.pdb

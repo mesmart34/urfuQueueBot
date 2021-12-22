@@ -5,6 +5,7 @@ using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 using Google.Apis.Services;
 using System.IO;
+using System.Linq;
 
 namespace TableParser
 {
@@ -70,6 +71,13 @@ namespace TableParser
             request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
             request.Execute();
         }
+
+        public void AppendRow(string sheet, IList<object> row)
+        {
+            var data = Read(sheet);
+            Write(sheet, $"A{data.Count + 1}:B{data.Count + 1}", new List<IList<object>> { row });
+        }
+
         public void Write(string sheet, List<IList<object>> values)
         {
             var valueRange = new ValueRange();
@@ -122,20 +130,24 @@ namespace TableParser
             batchUpdateRequest.Execute();
         }
 
-        public List<Tuple<int, Color>> LoadColors(string sheet)
+        public List<Tuple<int, int, Color>> LoadColors(string sheet)
         {
-            var colors = new List<Tuple<int, Color>>();
+            // TODO: Защита от пустых форматированных клеток
+            var colors = new List<Tuple<int, int, Color>>();
             foreach (var _sheet in GetColors(sheet).Sheets)
             {
                 foreach (var data in _sheet.Data)
                 {
-                    for (var i = 0; i < data.RowData.Count; i++)
+                    for (var j = 0; j < data.RowData.Count; j++)
                     {
-                        if (data.RowData[i].Values == null)
+                        if (data.RowData[j].Values == null)
                             continue;
-                        foreach (var value in data.RowData[i].Values)
+
+                        for (int i = 0; i < data.RowData[j].Values.Count; ++i)
                         {
-                            colors.Add(Tuple.Create(i, value.EffectiveFormat.BackgroundColor));
+                            var value = data.RowData[j].Values[i];
+                            if (value.EffectiveFormat != null)
+                                colors.Add(Tuple.Create(i, j, value.EffectiveFormat.BackgroundColor));
                         }
                     }
                 }

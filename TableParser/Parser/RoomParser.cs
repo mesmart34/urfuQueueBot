@@ -19,6 +19,7 @@ namespace TableParser
         private static IEnumerable<Room> GetRooms(IList<IList<object>> data, string tableID)
         {
             var rooms = new List<Room>();
+            // TODO: возможность парсить комнату для большего числа защит в ней по времени
             rooms.Add(GetRoom(data, 0, tableID));
             rooms.Add(GetRoom(data, 1, tableID));
             return rooms;
@@ -43,17 +44,20 @@ namespace TableParser
             var roomDataSplited = roomData.Split(' ');
             var timeStr = roomDataSplited[1] + " " + roomDataSplited[3];
             var time = DateTime.ParseExact(timeStr, "dd.MM.yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-            for (var i = from + 2; i < data.Count; i++)
+            var teamsCount = data.Where(r => r.Count >= offset + 1).Count();
+            for (var i = from + 2; i < teamsCount; i++)
             {
                 var name = data[i][offset].ToString();
-                var teamTime = time.AddSeconds(3 * 60 * teams.Count);
+                if (name == "")
+                    continue;
+                var teamTime = time.AddMinutes(3 * teams.Count);
                 var team = new Team(name, teams.Count, teamTime);
                 teams.Add(team);
             }
 
             var roomNameId = from + 1;
-            var roomName = (string)data[roomNameId][offset];
-            return new Room(roomName, tableID, teams, time);
+            var roomNumber = int.Parse(((string)data[roomNameId][offset]).Split(' ')[1]);
+            return new Room(roomNumber, tableID, teams, time);
         }
     }
 }

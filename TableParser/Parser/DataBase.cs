@@ -17,10 +17,9 @@ namespace TableParser
         public void WriteWhole(List<Room> rooms)
         {
             var sheets = _table.GetAllSheets();
-            foreach (var sheet in sheets)
+            foreach (var sheet in sheets.Skip(1))
             {
-                if (sheet.Name != "Sheet1")
-                    _table.DeleteSheet(sheet.Id);
+                _table.DeleteSheet(sheet.Id);
             }
             foreach (var room in rooms)
             {
@@ -34,15 +33,13 @@ namespace TableParser
                 _table.ClearSheet(room.Link);
 
             var data = new List<IList<object>>();
-            //var timeKeys = room.Teams.Keys.ToList();
             var time = room.StartTime;
             // TEAM_NAME | TIME | MEMBERS
             foreach (var team in room.Teams)
             {
                 var column = new List<object>();
                 column.Add(team.Name);
-                column.Add(time.ToString());
-                //column.Add(team.Time.ToString());
+                column.Add(team.Time.ToString());
                 foreach (var student in team.Members)
                 {
                     column.Add(student.Name + ":" + ((int)student.Notification).ToString());
@@ -50,9 +47,12 @@ namespace TableParser
                 data.Add(column);
             }
 
-            var link = room.Link; // room.Name + ":" + room.Link;
+            var link = room.Link;
             _table.CreateSheet(link);
             _table.Write(link, data);
+
+
+            _table.AppendRow("Linker", new List<object> { room.Link, room.TableID });
         }
 
         public void Read(Room room)
@@ -79,11 +79,8 @@ namespace TableParser
         public void ReadWhole(List<Room> rooms)
         {
             var links = rooms.ToDictionary(room => room.Link);
-            foreach (var sheet in _table.GetAllSheets())
+            foreach (var sheet in _table.GetAllSheets().Skip(1))
             {
-                if (sheet.Name == "Sheet1")
-                    continue;
-
                 var room = links[sheet.Name];
                 Read(room);
             }
@@ -96,7 +93,8 @@ namespace TableParser
             foreach (var sheet in sheets.Skip(1))
             {
                 string[] sheetInfo = sheet.Name.Split(':');
-                string roomName = sheetInfo[0];
+                // TODO: throw own exception
+                int roomNumber = int.Parse(new string(sheetInfo[0].ToCharArray().Where(c => char.IsDigit(c)).ToArray()));
 
                 var data = _table.Read(sheet.Name);
                 DateTime roomTime = DateTime.Parse((string)data[0][1]);
@@ -116,7 +114,10 @@ namespace TableParser
                     teams.Add(newTeam);
                 }
 
-                res.Add(new Room(roomName, teams, sheet.Name, roomTime));
+                var linksData = _table.Read("Linker").Skip(1);
+                string link = (string)linksData.Where(row => (string)row[0] == sheet.Name).First()[1];
+
+                res.Add(new Room(roomNumber, link, teams, roomTime));
             }
 
             return res;

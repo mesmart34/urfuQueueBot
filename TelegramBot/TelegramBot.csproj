@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileManager\FileManager.csproj" />
     <ProjectReference Include="..\Logger\Logger.csproj" />
+    <ProjectReference Include="..\SendableFiles\SendableFiles.csproj" />
   </ItemGroup>
 
 </Project>

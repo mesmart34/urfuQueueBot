@@ -89,13 +89,12 @@ namespace TelegramBot
 
         public void AddResponse(
             Func<Message, bool> filter = null,
-            List<string> commandsList = null,
             Func<Update, Task> response = null
             )
         {
             Task NewResponse(Update update)
             {
-                if ((filter == null || filter(update.Message)) && (commandsList == null || commandsList.Contains(update.Message.Text)))
+                if (filter == null || filter(update.Message))
                 {
                     return response(update);
                 }
@@ -107,8 +106,6 @@ namespace TelegramBot
         }
 
         public Func<Update, Task> GetQuery(
-            IBot bot,
-            string queryText,
             Func<Update, Task> response = null
             )
         {
@@ -118,7 +115,6 @@ namespace TelegramBot
 
                 Task[] tasks =
                 {
-                    bot.SendMessage(chatId: chatId, text: queryText),
                     Task.Run(() => _queriedChatIds.Add(chatId.Identifier, response.Invoke))
                 };
 

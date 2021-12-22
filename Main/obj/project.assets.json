@@ -110,15 +110,6 @@
           "lib/netcoreapp3.1/Telegram.Bot.Extensions.Polling.dll": {}
         }
       },
-      "FileManager/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/FileManager.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FileManager.dll": {}
-        }
-      },
       "Logger/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -133,7 +124,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "FileManager": "1.0.0",
           "TableParser": "1.0.0",
           "TelegramBot": "1.0.0"
         },
@@ -142,6 +132,20 @@
         },
         "runtime": {
           "bin/placeholder/QueueBot.dll": {}
+        }
+      },
+      "SendableFiles/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Telegram.Bot": "17.0.0",
+          "Telegram.Bot.Extensions.Polling": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SendableFiles.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SendableFiles.dll": {}
         }
       },
       "TableParser/1.0.0": {
@@ -163,9 +167,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "FileManager": "1.0.0",
           "Logger": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
+          "SendableFiles": "1.0.0",
           "Telegram.Bot": "17.0.0",
           "Telegram.Bot.Extensions.Polling": "1.0.0"
         },
@@ -393,11 +397,6 @@
         "telegram.bot.extensions.polling.nuspec"
       ]
     },
-    "FileManager/1.0.0": {
-      "type": "project",
-      "path": "../FileManager/FileManager.csproj",
-      "msbuildProject": "../FileManager/FileManager.csproj"
-    },
     "Logger/1.0.0": {
       "type": "project",
       "path": "../Logger/Logger.csproj",
@@ -407,6 +406,11 @@
       "type": "project",
       "path": "../QueueBot/QueueBot.csproj",
       "msbuildProject": "../QueueBot/QueueBot.csproj"
+    },
+    "SendableFiles/1.0.0": {
+      "type": "project",
+      "path": "../SendableFiles/SendableFiles.csproj",
+      "msbuildProject": "../SendableFiles/SendableFiles.csproj"
     },
     "TableParser/1.0.0": {
       "type": "project",

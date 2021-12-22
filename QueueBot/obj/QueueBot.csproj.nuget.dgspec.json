@@ -4,16 +4,6 @@
     "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {}
   },
   "projects": {
-    "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-      "restore": {
-        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj",
-        "projectName": "FileManager",
-        "projectPath": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj"
-      },
-      "frameworks": {
-        "net472": {}
-      }
-    },
     "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -92,9 +82,6 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj"
-              },
               "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj": {
                 "projectPath": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj"
               },
@@ -113,6 +100,70 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
+        "projectName": "SendableFiles",
+        "projectPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            },
+            "Telegram.Bot.Extensions.Polling": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -224,11 +275,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj": {
-                "projectPath": "W:\\qwe\\urfuQueueBot\\FileManager\\FileManager.csproj"
-              },
               "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj": {
                 "projectPath": "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj"
+              },
+              "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
+                "projectPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj"
               }
             }
           }
