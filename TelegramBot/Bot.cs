@@ -4,90 +4,53 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
-using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.ReplyMarkups;
+using TableParser;
 using SendableFiles;
 using Telegram.Bot.Types.InputFiles;
+using TelegramBot.UpdateHandler;
 
 namespace TelegramBot
 {
     public class Bot : IBot
     {
         protected readonly TelegramBotClient _botClient;
-        private CancellationTokenSource _cancellationToken;
+        private readonly CancellationTokenSource _cancellationToken;
 
-        protected IUpdateHandler _updateHandler;
+        public BotData Data { get; }
 
-        public Bot(string token, IUpdateHandler updateHandler)
+        public IUpdateHandler UpdateHandler { get; }
+
+        public Bot(BotToken token, IUpdateHandler updateHandler, DataBase db)
         {
-            _botClient = new TelegramBotClient(token);
+            Data = new BotData(db);
+            _botClient = new TelegramBotClient(token.GetToken());
             _cancellationToken = new CancellationTokenSource();
-            _updateHandler = updateHandler;
+            UpdateHandler = updateHandler;
         }
 
-        public Func<Update, Task> SendMessageResponse(
+        public async void SendMessageAsync(
+            ChatId chatId, 
             string text = null, 
-            List<ISendable> files = null, 
-            IReplyMarkup keyboard = null
-            )
+            IEnumerable<ISendable> content = null, 
+            Keyboard keyboard = null
+        )
         {
-            Task ResponseTask(Update update)
-            {
-                List<Task> tasks = new List<Task>();
-
-                ChatId chatId = update.Message.Chat.Id;
-
-                if (text != null)
-                {
-                    tasks.Add(_botClient.SendTextMessageAsync(
-                        chatId: chatId,
-                        text: text,
-                        replyMarkup: keyboard ?? Keyboard.RemoveMarkup
-                        )
-                    );
-                }
-
-                if (files == null) return tasks.First();
-
-                foreach (var file in files)
-                {
-                    tasks.Add(file.Send(_botClient, chatId));
-                }
-
-                return Task.WhenAll(tasks);
-            }
-
-            return ResponseTask;
-        }
-
-        public Task SendMessage(ChatId chatId, string text, IReplyMarkup replyMarkup = null)
-        {
-            return _botClient.SendTextMessageAsync(chatId, text, replyMarkup: replyMarkup ?? Keyboard.RemoveMarkup);
-        }
-
-        public Task SendMessageTest(ChatId chatId, string text = null, IEnumerable<ISendable> content = null, Keyboard keyboard = null)
-        {
-            List<Task> tasks = new List<Task>();
-
             if (text != null)
             {
-                tasks.Add(_botClient.SendTextMessageAsync(
+                await _botClient.SendTextMessageAsync(
                     chatId: chatId,
                     text: text,
                     replyMarkup: keyboard?.GetReplyMarkup() ?? Keyboard.RemoveMarkup
-                    )
                 );
             }
 
-            if (content == null) return tasks.First();
+            if (content == null) return;
 
             foreach (var file in content)
             {
-                tasks.Add(file.Send(_botClient, chatId));
+                await file.Send(_botClient, chatId);
             }
-
-            return Task.WhenAll(tasks);
         }
 
         public Task SendSticker(ChatId chatId, string stId)
@@ -104,8 +67,8 @@ namespace TelegramBot
         public void StartReceiving()
         {
             _botClient.StartReceiving(
-                _updateHandler,
-                new ReceiverOptions { AllowedUpdates = { } },
+                UpdateHandler,
+                new Telegram.Bot.Extensions.Polling.ReceiverOptions { AllowedUpdates = { } },
                 _cancellationToken.Token
                 );
         }
@@ -113,6 +76,11 @@ namespace TelegramBot
         public void StopReceiving()
         {
             _cancellationToken.Cancel();
+        }
+
+        public void InvokeMessage(Message mes)
+        {
+            UpdateHandler.InvokeMessage(_botClient, mes);
         }
     }
 }

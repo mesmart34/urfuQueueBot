@@ -1,0 +1,12 @@
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\bin\Debug\net5.0\TaskCollections.deps.json
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\bin\Debug\net5.0\TaskCollections.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\bin\Debug\net5.0\ref\TaskCollections.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\bin\Debug\net5.0\TaskCollections.pdb
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.csproj.AssemblyReference.cache
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.AssemblyInfoInputs.cache
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.AssemblyInfo.cs
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.csproj.CoreCompileInputs.cache
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\ref\TaskCollections.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\TaskCollections\obj\Debug\net5.0\TaskCollections.pdb

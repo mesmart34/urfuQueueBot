@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7imDAjVmpbXV4iF544wkICDw0yhkP4XH3xmC+iPke31bKxPFV1emsPenxK9qdG43/t+EkyCw9KEcn3BtTEVqkA==",
+  "dgSpecHash": "c2tR6spqPeWQgwobllUpQ/w6LM+81yXNBFrunGbEj10jOaz2RIEcmEUgK3/zVbYDQqmIkQ726NFiTsrjplSBVg==",
   "success": true,
-  "projectFilePath": "W:\\qwe\\urfuQueueBot\\Main\\Main.csproj",
+  "projectFilePath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Main\\Main.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-1\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",
@@ -12,7 +12,11 @@
     "C:\\Users\\PC-1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\telegram.bot\\17.0.0\\telegram.bot.17.0.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\telegram.bot.extensions.polling\\1.0.0\\telegram.bot.extensions.polling.1.0.0.nupkg.sha512"
+    "C:\\Users\\PC-1\\.nuget\\packages\\telegram.bot.extensions.polling\\1.0.0\\telegram.bot.extensions.polling.1.0.0.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

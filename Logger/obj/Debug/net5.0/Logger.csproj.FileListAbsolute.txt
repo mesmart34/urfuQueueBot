@@ -10,3 +10,15 @@ W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.csproj.CoreCompileInputs.cach
 W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.dll
 W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\ref\Logger.dll
 W:\qwe\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.pdb
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\bin\Debug\net5.0\Logger.deps.json
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\bin\Debug\net5.0\Logger.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\bin\Debug\net5.0\ref\Logger.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\bin\Debug\net5.0\Logger.pdb
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.csproj.AssemblyReference.cache
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.AssemblyInfoInputs.cache
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.AssemblyInfo.cs
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.csproj.CoreCompileInputs.cache
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\ref\Logger.dll
+C:\Users\PC-1\Desktop\urfuQueueBot\Logger\obj\Debug\net5.0\Logger.pdb

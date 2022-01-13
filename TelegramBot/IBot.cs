@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.ReplyMarkups;
 using SendableFiles;
+using TelegramBot.UpdateHandler;
 
 namespace TelegramBot
 {
     public interface IBot
     {
-        public void StartReceiving();
-        public void StopReceiving();
+        BotData Data { get; }
 
-        public Func<Update, Task> SendMessageResponse(string text = null, List<ISendable> content = null, IReplyMarkup keyboard = null);
+        IUpdateHandler UpdateHandler { get; }
 
-        public Task SendMessage(ChatId chatId, string text, IReplyMarkup replyMarkup = null);
-        public Task SendMessageTest(ChatId chatId, string text = null, IEnumerable<ISendable> content = null, Keyboard keyboard = null);
+        void StartReceiving();
+        void StopReceiving();
+
+        void SendMessageAsync(ChatId chatId, string text = null, IEnumerable<ISendable> content = null, Keyboard keyboard = null);
+        void InvokeMessage(Message mes);
     }
 }

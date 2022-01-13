@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {}
+    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {}
   },
   "projects": {
-    "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj": {
+    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj",
+        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj",
         "projectName": "Logger",
-        "projectPath": "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj",
+        "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\qwe\\urfuQueueBot\\Logger\\obj\\",
+        "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {
+    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\QueueBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
         "projectName": "QueueBot",
-        "projectPath": "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+        "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\qwe\\urfuQueueBot\\QueueBot\\obj\\",
+        "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,11 +82,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj"
+              "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj"
               },
-              "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
-                "projectPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
+              "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+                "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
               }
             }
           }
@@ -119,14 +119,14 @@
         }
       }
     },
-    "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
+    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
+        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
         "projectName": "SendableFiles",
-        "projectPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
+        "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\obj\\",
+        "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -183,14 +183,14 @@
         }
       }
     },
-    "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
         "projectName": "TableParser",
-        "projectPath": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\qwe\\urfuQueueBot\\TableParser\\obj\\",
+        "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -251,14 +251,14 @@
         }
       }
     },
-    "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
         "projectName": "TelegramBot",
-        "projectPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+        "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\obj\\",
+        "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -275,11 +275,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj": {
-                "projectPath": "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj"
+              "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj": {
+                "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj"
               },
-              "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
-                "projectPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj"
+              "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
+                "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj"
               }
             }
           }

@@ -416,11 +416,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+      "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
       "projectName": "QueueBot",
-      "projectPath": "W:\\qwe\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
+      "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\QueueBot.csproj",
       "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-      "outputPath": "W:\\qwe\\urfuQueueBot\\QueueBot\\obj\\",
+      "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\QueueBot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -437,11 +437,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj": {
-              "projectPath": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj"
+            "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+              "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj"
             },
-            "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
-              "projectPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
+            "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj": {
+              "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj"
             }
           }
         }

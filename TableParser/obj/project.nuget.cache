@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2MS2/q/a7Nc57tFCPsajFzBw0R7zY8o58/A9V4lS5YzQqE3FlX0L+7Wuf22Wbp62g2D3wY05wYtwY7wRHyICFg==",
+  "dgSpecHash": "jk4J+V66vLvIkxldnFFV35dL/5L2fnoVtqWcMb9vkRAYnsxQEuJ7i9qkx26qa7l3NU3IDHKPROnVHmu5BvW0CQ==",
   "success": true,
-  "projectFilePath": "W:\\qwe\\urfuQueueBot\\TableParser\\TableParser.csproj",
+  "projectFilePath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-1\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",

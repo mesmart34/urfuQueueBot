@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\SendableFiles\SendableFiles.csproj" />
+    <ProjectReference Include="..\TableParser\TableParser.csproj" />
   </ItemGroup>
 
 </Project>

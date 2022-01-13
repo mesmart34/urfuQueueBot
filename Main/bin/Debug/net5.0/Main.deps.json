@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "Main/1.0.0": {
         "dependencies": {
+          "BotConstructor": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
-          "QueueBot": "1.0.0",
           "Telegram.Bot": "17.0.0",
           "Telegram.Bot.Extensions.Polling": "1.0.0",
           "TelegramBot": "1.0.0"
@@ -116,18 +116,17 @@
           }
         }
       },
-      "Logger/1.0.0": {
-        "runtime": {
-          "Logger.dll": {}
-        }
-      },
-      "QueueBot/1.0.0": {
+      "BotConstructor/1.0.0": {
         "dependencies": {
-          "TableParser": "1.0.0",
           "TelegramBot": "1.0.0"
         },
         "runtime": {
-          "QueueBot.dll": {}
+          "BotConstructor.dll": {}
+        }
+      },
+      "Logger/1.0.0": {
+        "runtime": {
+          "Logger.dll": {}
         }
       },
       "SendableFiles/1.0.0": {
@@ -154,6 +153,7 @@
           "Logger": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "SendableFiles": "1.0.0",
+          "TableParser": "1.0.0",
           "Telegram.Bot": "17.0.0",
           "Telegram.Bot.Extensions.Polling": "1.0.0"
         },
@@ -232,12 +232,12 @@
       "path": "telegram.bot.extensions.polling/1.0.0",
       "hashPath": "telegram.bot.extensions.polling.1.0.0.nupkg.sha512"
     },
-    "Logger/1.0.0": {
+    "BotConstructor/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "QueueBot/1.0.0": {
+    "Logger/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

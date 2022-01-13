@@ -1,7 +1,8 @@
 ﻿using System;
-using System.IO;
 using TableParser;
 using TelegramBot;
+using TelegramBot.UpdateHandler;
+using BotConstructor;
 
 namespace Main
 {
@@ -9,12 +10,14 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            DefaultUpdateHandler updateHandler = new DefaultUpdateHandler();
-            QueueBot.QueueBot bot;
-            using (StreamReader sr = new StreamReader("../../../../.private_cfg/token.txt"))
-            {
-                bot = new(sr.ReadLine(), updateHandler, new DataBase("1GISEntayuaYagp7K9Zb13-YLGiDO6AaQIVfP39REkI0"));
-            }
+            Bot bot = new(
+                    new BotToken("../../../../.private_cfg/token.txt"),
+                    new DefaultUpdateHandler(),
+                    new DataBase("1GISEntayuaYagp7K9Zb13-YLGiDO6AaQIVfP39REkI0")
+                );
+
+            IBuilder builder = new Builder(bot);
+            builder.Build();
 
             bot.StartReceiving();
 

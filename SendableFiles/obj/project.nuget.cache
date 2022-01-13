@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "Cy0Un69ts070TRGUmwAiCfAxW++ah5oU+5zI9tzxV0VJgFRJE65O3bfAgLIFyCKz2GPHqHyElEofmF/0DuRA6Q==",
+  "dgSpecHash": "8iOWIOGUoj6SaY4aY0W+SWsJDFJYEHGH/iAmTwD/0X/kPItY4zOvYxibm07p+Jc4fqK3DV/4gFmrL2kSmO4M/w==",
   "success": true,
-  "projectFilePath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
+  "projectFilePath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-1\\.nuget\\packages\\jetbrains.annotations\\2021.3.0\\jetbrains.annotations.2021.3.0.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\telegram.bot\\17.0.0\\telegram.bot.17.0.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\telegram.bot.extensions.polling\\1.0.0\\telegram.bot.extensions.polling.1.0.0.nupkg.sha512"
+    "C:\\Users\\PC-1\\.nuget\\packages\\telegram.bot.extensions.polling\\1.0.0\\telegram.bot.extensions.polling.1.0.0.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -2,6 +2,58 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Google.Apis/1.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis.Core": "1.55.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        }
+      },
+      "Google.Apis.Auth/1.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Core": "1.55.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        }
+      },
+      "Google.Apis.Core/1.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        }
+      },
+      "Google.Apis.Sheets.v4/1.55.0.2371": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Auth": "1.55.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Sheets.v4.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Sheets.v4.dll": {}
+        }
+      },
       "JetBrains.Annotations/2021.3.0": {
         "type": "package",
         "compile": {
@@ -81,10 +133,127 @@
         "runtime": {
           "bin/placeholder/SendableFiles.dll": {}
         }
+      },
+      "TableParser/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Auth": "1.55.0",
+          "Google.Apis.Sheets.v4": "1.55.0.2371"
+        },
+        "compile": {
+          "bin/placeholder/TableParser.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TableParser.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Google.Apis/1.55.0": {
+      "sha512": "siw3M6VOFbkrTlOTo7F89BrdDFQw/XVks8qo4xDMXwGpwKpCt0KWENYs7N2RWFznJghlrmPuZ6Sx13vvYqrynA==",
+      "type": "package",
+      "path": "google.apis/1.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.1.55.0.nupkg.sha512",
+        "google.apis.nuspec",
+        "lib/net45/Google.Apis.PlatformServices.dll",
+        "lib/net45/Google.Apis.dll",
+        "lib/net45/Google.Apis.pdb",
+        "lib/net45/Google.Apis.xml",
+        "lib/netstandard1.3/Google.Apis.dll",
+        "lib/netstandard1.3/Google.Apis.pdb",
+        "lib/netstandard1.3/Google.Apis.xml",
+        "lib/netstandard2.0/Google.Apis.dll",
+        "lib/netstandard2.0/Google.Apis.pdb",
+        "lib/netstandard2.0/Google.Apis.xml"
+      ]
+    },
+    "Google.Apis.Auth/1.55.0": {
+      "sha512": "YPHAgzqsU3j/CiPjb2GSvZo2kHhVkFsdfrqA8X5CUWxlwfivcvSn3N5Hi995r4vpGRNmyXNiWZOXbFKps03bmg==",
+      "type": "package",
+      "path": "google.apis.auth/1.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.auth.1.55.0.nupkg.sha512",
+        "google.apis.auth.nuspec",
+        "lib/net45/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net45/Google.Apis.Auth.dll",
+        "lib/net45/Google.Apis.Auth.pdb",
+        "lib/net45/Google.Apis.Auth.xml",
+        "lib/net461/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net461/Google.Apis.Auth.dll",
+        "lib/net461/Google.Apis.Auth.pdb",
+        "lib/net461/Google.Apis.Auth.xml",
+        "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.pdb",
+        "lib/netstandard1.3/Google.Apis.Auth.xml",
+        "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.pdb",
+        "lib/netstandard2.0/Google.Apis.Auth.xml"
+      ]
+    },
+    "Google.Apis.Core/1.55.0": {
+      "sha512": "QX6pmjRxZYgyGFqsa7tyxdjoEb6ssJ9lv6ub8AxhPd/BCMEglmqzW4GpsuKQZaRg9Qq9gp9HRzjCiLZ3RgmNgw==",
+      "type": "package",
+      "path": "google.apis.core/1.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.core.1.55.0.nupkg.sha512",
+        "google.apis.core.nuspec",
+        "lib/net45/Google.Apis.Core.dll",
+        "lib/net45/Google.Apis.Core.pdb",
+        "lib/net45/Google.Apis.Core.xml",
+        "lib/netstandard1.3/Google.Apis.Core.dll",
+        "lib/netstandard1.3/Google.Apis.Core.pdb",
+        "lib/netstandard1.3/Google.Apis.Core.xml",
+        "lib/netstandard2.0/Google.Apis.Core.dll",
+        "lib/netstandard2.0/Google.Apis.Core.pdb",
+        "lib/netstandard2.0/Google.Apis.Core.xml"
+      ]
+    },
+    "Google.Apis.Sheets.v4/1.55.0.2371": {
+      "sha512": "2CCsbvYYbww7WyN8Bmh51srGGQz4vEzQXHU3BxauvfpXdoHz5V1IqDQ9SqfsECG/bPicfSKVw+FYY5bEb+quYg==",
+      "type": "package",
+      "path": "google.apis.sheets.v4/1.55.0.2371",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.sheets.v4.1.55.0.2371.nupkg.sha512",
+        "google.apis.sheets.v4.nuspec",
+        "lib/net40/Google.Apis.Sheets.v4.dll",
+        "lib/net40/Google.Apis.Sheets.v4.pdb",
+        "lib/net40/Google.Apis.Sheets.v4.xml",
+        "lib/net45/Google.Apis.Sheets.v4.dll",
+        "lib/net45/Google.Apis.Sheets.v4.pdb",
+        "lib/net45/Google.Apis.Sheets.v4.xml",
+        "lib/netstandard1.0/Google.Apis.Sheets.v4.dll",
+        "lib/netstandard1.0/Google.Apis.Sheets.v4.pdb",
+        "lib/netstandard1.0/Google.Apis.Sheets.v4.xml",
+        "lib/netstandard1.3/Google.Apis.Sheets.v4.dll",
+        "lib/netstandard1.3/Google.Apis.Sheets.v4.pdb",
+        "lib/netstandard1.3/Google.Apis.Sheets.v4.xml",
+        "lib/netstandard2.0/Google.Apis.Sheets.v4.dll",
+        "lib/netstandard2.0/Google.Apis.Sheets.v4.pdb",
+        "lib/netstandard2.0/Google.Apis.Sheets.v4.xml"
+      ]
+    },
     "JetBrains.Annotations/2021.3.0": {
       "sha512": "Ddxjs5RRjf+c8m9m++WvhW1lz1bqNhsTjWvCLbQN9bvKbkJeR9MhtfNwKgBRRdG2yLHcXFr5Lf7fsvvkiPaDRg==",
       "type": "package",
@@ -206,6 +375,11 @@
       "type": "project",
       "path": "../SendableFiles/SendableFiles.csproj",
       "msbuildProject": "../SendableFiles/SendableFiles.csproj"
+    },
+    "TableParser/1.0.0": {
+      "type": "project",
+      "path": "../TableParser/TableParser.csproj",
+      "msbuildProject": "../TableParser/TableParser.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -213,24 +387,30 @@
       "Logger >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1",
       "SendableFiles >= 1.0.0",
+      "TableParser >= 1.0.0",
       "Telegram.Bot >= 17.0.0",
       "Telegram.Bot.Extensions.Polling >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC-1\\.nuget\\packages\\": {}
+    "C:\\Users\\PC-1\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+      "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
       "projectName": "TelegramBot",
-      "projectPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
+      "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\TelegramBot.csproj",
       "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-      "outputPath": "W:\\qwe\\urfuQueueBot\\TelegramBot\\obj\\",
+      "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TelegramBot\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -244,11 +424,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj": {
-              "projectPath": "W:\\qwe\\urfuQueueBot\\Logger\\Logger.csproj"
+            "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj": {
+              "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj"
             },
-            "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
-              "projectPath": "W:\\qwe\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj"
+            "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj": {
+              "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\SendableFiles\\SendableFiles.csproj"
+            },
+            "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+              "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj"
             }
           }
         }
@@ -286,12 +469,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

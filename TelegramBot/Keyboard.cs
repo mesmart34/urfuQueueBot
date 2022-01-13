@@ -14,11 +14,16 @@ namespace TelegramBot
             }
         }
 
-        private List<string> _buttonsNames;
+        private readonly List<string> _buttonsNames;
 
         public Keyboard(List<string> buttonsNames)
         {
             _buttonsNames = buttonsNames;
+        }
+
+        public Keyboard(params string[] buttonsNames)
+        {
+            _buttonsNames = buttonsNames.ToList();
         }
 
         public IReplyMarkup GetReplyMarkup()

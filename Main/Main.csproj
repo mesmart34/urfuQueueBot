@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\QueueBot\QueueBot.csproj" />
+    <ProjectReference Include="..\BotConstructor\BotConstructor.csproj" />
     <ProjectReference Include="..\TelegramBot\TelegramBot.csproj" />
   </ItemGroup>
 

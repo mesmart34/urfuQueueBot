@@ -6,20 +6,21 @@ namespace TableParser
 {
     public class DataBase
     {
-        private readonly TableIO _table;
+        public TableIO Table { get; }
 
         public DataBase(string spriteSheetId)
         {
-            _table = new TableIO(spriteSheetId);
+            Table = new TableIO(spriteSheetId);
         }
 
         //Update google sheet with teams
-        public void WriteWhole(List<Room> rooms)
+        public void WriteRooms(List<Room> rooms)
         {
-            var sheets = _table.GetAllSheets();
+            // TODO: Maybe just check for new writes
+            var sheets = Table.GetAllSheets();
             foreach (var sheet in sheets.Skip(1))
             {
-                _table.DeleteSheet(sheet.Id);
+                Table.DeleteSheet(sheet.Id);
             }
             foreach (var room in rooms)
             {
@@ -29,8 +30,9 @@ namespace TableParser
 
         public void WriteRoom(Room room)
         {
-            if (_table.GetAllSheets().Select(sheet => sheet.Name).Contains(room.Link))
-                _table.ClearSheet(room.Link);
+            // delete room sheet
+            if (Table.GetAllSheets().Select(sheet => sheet.Name).Contains(room.Link))
+                Table.ClearSheet(room.Link);
 
             var data = new List<IList<object>>();
             var time = room.StartTime;
@@ -48,23 +50,24 @@ namespace TableParser
             }
 
             var link = room.Link;
-            _table.CreateSheet(link);
-            _table.Write(link, data);
+            Table.CreateSheet(link);
+            Table.Write(link, data);
 
 
-            _table.AppendRow("Linker", new List<object> { room.Link, room.TableID });
+            Table.AppendRow("Linker", new List<object> { room.Link, room.TableID });
         }
 
-        public void Read(Room room)
+        // TODO: set outRoom param to out
+        public void ParseRoom(Room outRoom)
         {
-            var data = _table.Read(room.Link);
+            var data = Table.Read(outRoom.Link);
             var teamCounter = 0;
             foreach (var row in data)
             {
                 var name = (string)row[0];
                 var time = DateTime.Parse((string)row[1]);
                 var team = new Team(name, teamCounter++, time);
-                room.AddTeam(team);
+                outRoom.AddTeam(team);
                 for (var i = 2; i < row.Count; i++)
                 {
                     name = (string)row[i];
@@ -75,28 +78,29 @@ namespace TableParser
             }
         }
 
+        // TODO: set outRoom param to out
         //Fills rooms with teams from google sheet
-        public void ReadWhole(List<Room> rooms)
+        public void ParseAllRooms(List<Room> outRooms)
         {
-            var links = rooms.ToDictionary(room => room.Link);
-            foreach (var sheet in _table.GetAllSheets().Skip(1))
+            var links = outRooms.ToDictionary(room => room.Link);
+            foreach (var sheet in Table.GetAllSheets().Skip(1))
             {
                 var room = links[sheet.Name];
-                Read(room);
+                ParseRoom(room);
             }
         }
 
         public IEnumerable<Room> GetRooms()
         {
             List<Room> res = new List<Room>();
-            var sheets = _table.GetAllSheets();
+            var sheets = Table.GetAllSheets();
             foreach (var sheet in sheets.Skip(1))
             {
                 string[] sheetInfo = sheet.Name.Split(':');
                 // TODO: throw own exception
                 int roomNumber = int.Parse(new string(sheetInfo[0].ToCharArray().Where(c => char.IsDigit(c)).ToArray()));
 
-                var data = _table.Read(sheet.Name);
+                var data = Table.Read(sheet.Name);
                 DateTime roomTime = DateTime.Parse((string)data[0][1]);
                 List<Team> teams = new List<Team>();
                 foreach (var row in data)
@@ -114,7 +118,7 @@ namespace TableParser
                     teams.Add(newTeam);
                 }
 
-                var linksData = _table.Read("Linker").Skip(1);
+                var linksData = Table.Read("Linker").Skip(1);
                 string link = (string)linksData.Where(row => (string)row[0] == sheet.Name).First()[1];
 
                 res.Add(new Room(roomNumber, link, teams, roomTime));
@@ -126,7 +130,7 @@ namespace TableParser
         public IEnumerable<string> GetTeamsNames(string roomId)
         {
             List<string> res = new List<string>();
-            var data = _table.Read(roomId);
+            var data = Table.Read(roomId);
             foreach (var row in data)
             {
                 var name = (string)row[0];
