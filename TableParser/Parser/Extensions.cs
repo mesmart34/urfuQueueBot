@@ -8,8 +8,8 @@ namespace TableParser.Parser
         // TODO: Возможность исопльзовать оттенки
         public static bool EqualTo(this Color color, Color other)
         {
-            return color.Red.EqualToWithPrecision(other.Red) 
-                && color.Green.EqualToWithPrecision(other.Green) 
+            return color.Red.EqualToWithPrecision(other.Red)
+                && color.Green.EqualToWithPrecision(other.Green)
                 && color.Blue.EqualToWithPrecision(other.Blue);
         }
     }

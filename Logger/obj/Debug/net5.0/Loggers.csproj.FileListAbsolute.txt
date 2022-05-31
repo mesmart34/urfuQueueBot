@@ -1,0 +1,12 @@
+W:\QueueBot\QueueBot-2-0\Logger\bin\Debug\net5.0\Loggers.deps.json
+W:\QueueBot\QueueBot-2-0\Logger\bin\Debug\net5.0\Loggers.dll
+W:\QueueBot\QueueBot-2-0\Logger\bin\Debug\net5.0\Loggers.pdb
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.csproj.AssemblyReference.cache
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.GeneratedMSBuildEditorConfig.editorconfig
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.AssemblyInfoInputs.cache
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.AssemblyInfo.cs
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.csproj.CoreCompileInputs.cache
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.dll
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\refint\Loggers.dll
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\Loggers.pdb
+W:\QueueBot\QueueBot-2-0\Logger\obj\Debug\net5.0\ref\Loggers.dll

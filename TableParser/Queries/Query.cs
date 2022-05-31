@@ -16,7 +16,7 @@ namespace TableParser
             var roomsTable = new TableIO(tableId);
             foreach (var sheet in roomsTable.GetAllSheets())
             {
-                var rooms = RoomParserExtensions.ParseRooms(roomsTable, sheet);
+                var rooms = roomsTable.ParseRooms(sheet);
                 foreach (var room in rooms)
                 {
                     db.ParseRoom(room);
@@ -41,7 +41,7 @@ namespace TableParser
             var data = table.Read(room.Name);
             for (int i = 0; i < data[0].Count; ++i)
             {
-                var startColumn = RoomParserExtensions.GetRoomCellIdByContent(data, room.Name, i) + 1;
+                var startColumn = TableIO.GetRoomCellIdByContent(data, room.Name, i) + 1;
                 for (int c = startColumn; c < data.Count; ++c)
                 {
                     if ((string)data[c][i] == teamName)

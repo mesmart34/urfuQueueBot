@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj": {}
+    "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+    "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
         "projectName": "TableParser",
-        "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\obj\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,17 +44,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Google.Apis": {
-              "target": "Package",
-              "version": "[1.55.0, )"
-            },
-            "Google.Apis.Auth": {
-              "target": "Package",
-              "version": "[1.55.0, )"
-            },
             "Google.Apis.Sheets.v4": {
               "target": "Package",
-              "version": "[1.55.0.2371, )"
+              "version": "[1.57.0.2657, )"
             }
           },
           "imports": [
@@ -72,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

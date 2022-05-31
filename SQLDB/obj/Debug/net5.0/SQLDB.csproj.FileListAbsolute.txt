@@ -1,0 +1,15 @@
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.csproj.AssemblyReference.cache
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.GeneratedMSBuildEditorConfig.editorconfig
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.AssemblyInfoInputs.cache
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.AssemblyInfo.cs
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.csproj.CoreCompileInputs.cache
+W:\QueueBot\QueueBot-2-0\SQLDB\bin\Debug\net5.0\SQLDB.deps.json
+W:\QueueBot\QueueBot-2-0\SQLDB\bin\Debug\net5.0\SQLDB.dll
+W:\QueueBot\QueueBot-2-0\SQLDB\bin\Debug\net5.0\SQLDB.pdb
+W:\QueueBot\QueueBot-2-0\SQLDB\bin\Debug\net5.0\TableParser.dll
+W:\QueueBot\QueueBot-2-0\SQLDB\bin\Debug\net5.0\TableParser.pdb
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.csproj.CopyComplete
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.dll
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\refint\SQLDB.dll
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\SQLDB.pdb
+W:\QueueBot\QueueBot-2-0\SQLDB\obj\Debug\net5.0\ref\SQLDB.dll

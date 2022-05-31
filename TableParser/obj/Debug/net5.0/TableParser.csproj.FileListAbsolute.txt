@@ -1,60 +1,12 @@
-W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
-W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
-W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\ref\TableParser.dll
-W:\tg_bot\c#\QueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
-W:\tg_bot\c#\QueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb
-C:\Users\artem\Documents\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
-C:\Users\artem\Documents\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot\TableParser\bin\Debug\net5.0\ref\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\TableParser.deps.json
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\ref\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\bin\Debug\net5.0\TableParser.pdb
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\ref\TableParser.dll
-C:\Users\artem\Documents\urfuQueueBot - Copy\TableParser\obj\Debug\net5.0\TableParser.pdb
-W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
-W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
-W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\ref\TableParser.dll
-W:\qwe\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
-W:\qwe\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\bin\Debug\net5.0\ref\TableParser.dll
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll
-C:\Users\PC-1\Desktop\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb
+W:\QueueBot\QueueBot-2-0\TableParser\bin\Debug\net5.0\TableParser.deps.json
+W:\QueueBot\QueueBot-2-0\TableParser\bin\Debug\net5.0\TableParser.dll
+W:\QueueBot\QueueBot-2-0\TableParser\bin\Debug\net5.0\TableParser.pdb
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.dll
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\refint\TableParser.dll
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.pdb
+W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\ref\TableParser.dll

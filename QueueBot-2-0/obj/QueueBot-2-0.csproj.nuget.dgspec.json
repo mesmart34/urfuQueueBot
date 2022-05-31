@@ -1,0 +1,554 @@
+{
+  "format": 1,
+  "restore": {
+    "W:\\QueueBot\\QueueBot-2-0\\QueueBot-2-0\\QueueBot-2-0.csproj": {}
+  },
+  "projects": {
+    "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj",
+        "projectName": "Bots",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj",
+        "projectName": "Builder",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\Builder\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj",
+        "projectName": "Loggers",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\QueueBot-2-0\\QueueBot-2-0.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\QueueBot-2-0\\QueueBot-2-0.csproj",
+        "projectName": "QueueBot-2-0",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\QueueBot-2-0\\QueueBot-2-0.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\QueueBot-2-0\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\TGBot\\TGBot.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TGBot\\TGBot.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj",
+        "projectName": "SQLDB",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
+        "projectName": "TableParser",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Google.Apis.Sheets.v4": {
+              "target": "Package",
+              "version": "[1.57.0.2657, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\TGBot\\TGBot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\TGBot\\TGBot.csproj",
+        "projectName": "TGBot",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TGBot\\TGBot.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\TGBot\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            },
+            "Telegram.Bot.Extensions.Polling": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj",
+        "projectName": "VKBot",
+        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj"
+              },
+              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "VkNet": {
+              "target": "Package",
+              "version": "[1.69.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

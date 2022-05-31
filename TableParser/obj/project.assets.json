@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Google.Apis/1.55.0": {
+      "Google.Apis/1.57.0": {
         "type": "package",
         "dependencies": {
-          "Google.Apis.Core": "1.55.0"
+          "Google.Apis.Core": "1.57.0"
         },
         "compile": {
           "lib/netstandard2.0/Google.Apis.dll": {}
@@ -14,11 +14,11 @@
           "lib/netstandard2.0/Google.Apis.dll": {}
         }
       },
-      "Google.Apis.Auth/1.55.0": {
+      "Google.Apis.Auth/1.57.0": {
         "type": "package",
         "dependencies": {
-          "Google.Apis": "1.55.0",
-          "Google.Apis.Core": "1.55.0"
+          "Google.Apis": "1.57.0",
+          "Google.Apis.Core": "1.57.0"
         },
         "compile": {
           "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
@@ -29,7 +29,7 @@
           "lib/netstandard2.0/Google.Apis.Auth.dll": {}
         }
       },
-      "Google.Apis.Core/1.55.0": {
+      "Google.Apis.Core/1.57.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
@@ -41,11 +41,11 @@
           "lib/netstandard2.0/Google.Apis.Core.dll": {}
         }
       },
-      "Google.Apis.Sheets.v4/1.55.0.2371": {
+      "Google.Apis.Sheets.v4/1.57.0.2657": {
         "type": "package",
         "dependencies": {
-          "Google.Apis": "1.55.0",
-          "Google.Apis.Auth": "1.55.0"
+          "Google.Apis": "1.57.0",
+          "Google.Apis.Auth": "1.57.0"
         },
         "compile": {
           "lib/netstandard2.0/Google.Apis.Sheets.v4.dll": {}
@@ -66,16 +66,16 @@
     }
   },
   "libraries": {
-    "Google.Apis/1.55.0": {
-      "sha512": "siw3M6VOFbkrTlOTo7F89BrdDFQw/XVks8qo4xDMXwGpwKpCt0KWENYs7N2RWFznJghlrmPuZ6Sx13vvYqrynA==",
+    "Google.Apis/1.57.0": {
+      "sha512": "30V7T2G98HQjfI6y0AzBOXJUu7j7Trl1ZzH0e6DKmUaXNCvdMPwxApjBKESeTOkWjMdFRmkpAGyDEoxim+Xq1A==",
       "type": "package",
-      "path": "google.apis/1.55.0",
+      "path": "google.apis/1.57.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.1.55.0.nupkg.sha512",
+        "google.apis.1.57.0.nupkg.sha512",
         "google.apis.nuspec",
         "lib/net45/Google.Apis.PlatformServices.dll",
         "lib/net45/Google.Apis.dll",
@@ -89,16 +89,16 @@
         "lib/netstandard2.0/Google.Apis.xml"
       ]
     },
-    "Google.Apis.Auth/1.55.0": {
-      "sha512": "YPHAgzqsU3j/CiPjb2GSvZo2kHhVkFsdfrqA8X5CUWxlwfivcvSn3N5Hi995r4vpGRNmyXNiWZOXbFKps03bmg==",
+    "Google.Apis.Auth/1.57.0": {
+      "sha512": "xNY9rprn3iih1H5dymbxxHeZggn4bMYKtYdwO3Yr+Cj06f6xrxnL0LqEi1bmG46LBY2FlVMy9NKIF99tZ6ZBZg==",
       "type": "package",
-      "path": "google.apis.auth/1.55.0",
+      "path": "google.apis.auth/1.57.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.auth.1.55.0.nupkg.sha512",
+        "google.apis.auth.1.57.0.nupkg.sha512",
         "google.apis.auth.nuspec",
         "lib/net45/Google.Apis.Auth.PlatformServices.dll",
         "lib/net45/Google.Apis.Auth.dll",
@@ -118,16 +118,16 @@
         "lib/netstandard2.0/Google.Apis.Auth.xml"
       ]
     },
-    "Google.Apis.Core/1.55.0": {
-      "sha512": "QX6pmjRxZYgyGFqsa7tyxdjoEb6ssJ9lv6ub8AxhPd/BCMEglmqzW4GpsuKQZaRg9Qq9gp9HRzjCiLZ3RgmNgw==",
+    "Google.Apis.Core/1.57.0": {
+      "sha512": "5wuY88PewhfaWsk37EEHcwU6CFqxpaWMm20ogWLXmaCw8NbTlV/Lna0gjtr2jpTLgb3mtVa7RC1AG/mgi530SQ==",
       "type": "package",
-      "path": "google.apis.core/1.55.0",
+      "path": "google.apis.core/1.57.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.core.1.55.0.nupkg.sha512",
+        "google.apis.core.1.57.0.nupkg.sha512",
         "google.apis.core.nuspec",
         "lib/net45/Google.Apis.Core.dll",
         "lib/net45/Google.Apis.Core.pdb",
@@ -140,16 +140,16 @@
         "lib/netstandard2.0/Google.Apis.Core.xml"
       ]
     },
-    "Google.Apis.Sheets.v4/1.55.0.2371": {
-      "sha512": "2CCsbvYYbww7WyN8Bmh51srGGQz4vEzQXHU3BxauvfpXdoHz5V1IqDQ9SqfsECG/bPicfSKVw+FYY5bEb+quYg==",
+    "Google.Apis.Sheets.v4/1.57.0.2657": {
+      "sha512": "RmpSEXNe8WgUtUiNnj7QLxfILvHOoReUIt86Agp7Za6JvY8c7fVzXSrqXhYmiJkg0FJiAOYosI7jsaNqzWLWsg==",
       "type": "package",
-      "path": "google.apis.sheets.v4/1.55.0.2371",
+      "path": "google.apis.sheets.v4/1.57.0.2657",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.sheets.v4.1.55.0.2371.nupkg.sha512",
+        "google.apis.sheets.v4.1.57.0.2657.nupkg.sha512",
         "google.apis.sheets.v4.nuspec",
         "lib/net40/Google.Apis.Sheets.v4.dll",
         "lib/net40/Google.Apis.Sheets.v4.pdb",
@@ -198,9 +198,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Google.Apis >= 1.55.0",
-      "Google.Apis.Auth >= 1.55.0",
-      "Google.Apis.Sheets.v4 >= 1.55.0.2371"
+      "Google.Apis.Sheets.v4 >= 1.57.0.2657"
     ]
   },
   "packageFolders": {
@@ -210,11 +208,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
+      "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
       "projectName": "TableParser",
-      "projectPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\TableParser.csproj",
+      "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
       "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\TableParser\\obj\\",
+      "outputPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -247,17 +245,9 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Google.Apis": {
-            "target": "Package",
-            "version": "[1.55.0, )"
-          },
-          "Google.Apis.Auth": {
-            "target": "Package",
-            "version": "[1.55.0, )"
-          },
           "Google.Apis.Sheets.v4": {
             "target": "Package",
-            "version": "[1.55.0.2371, )"
+            "version": "[1.57.0.2657, )"
           }
         },
         "imports": [
@@ -275,7 +265,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

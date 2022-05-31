@@ -86,14 +86,14 @@ namespace TableParser
                     var activeTeamIndex = 0;
 
                     var data = _table.Read(_room.Name);
-                    var firstRoomDef = RoomParserExtensions.GetRoomCellIdByContent(data, "Защита", 0);
-                    var secondRoomDef = RoomParserExtensions.GetRoomCellIdByContent(data, "Защита", 1);
+                    var firstRoomDef = TableIO.GetRoomCellIdByContent(data, "Защита", 0);
+                    var secondRoomDef = TableIO.GetRoomCellIdByContent(data, "Защита", 1);
 
                     int skipRows = 0;
                     int offset = 0;
                     for (; offset < data[0].Count; ++offset)
                     {
-                        var roomInfoRow = RoomParserExtensions.GetRoomCellIdByContent(data, "Защита", offset);
+                        var roomInfoRow = TableIO.GetRoomCellIdByContent(data, "Защита", offset);
                         var roomInfo = ((string)data[roomInfoRow][offset]).Split(' ');
                         var timeStr = roomInfo[1] + " " + roomInfo[3];
                         var time = DateTime.ParseExact(timeStr, "dd.MM.yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
@@ -124,7 +124,7 @@ namespace TableParser
                     foreach (var team in _room.Teams)
                     {
                         int currentTeamIndex = team.Id;
-                        
+
                         foreach (Member member in team.Members)
                         {
                             if (member.IsNotified)
@@ -140,7 +140,7 @@ namespace TableParser
                                         int notificationOffset = 20; //s
                                         // int notificationOffset = 10 * 60 //s == 10 min
                                         // TODO: Add timer-task
-                                        if (deltaTime >= -(60*1.5 + 1) && deltaTime <= notificationOffset)
+                                        if (deltaTime >= -(60 * 1.5 + 1) && deltaTime <= notificationOffset)
                                         {
                                             member.Notify();
                                         }

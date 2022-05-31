@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JfGFdd/N+LD3XoyagnWOYOXbFW5eMqG75E60f5Bs44u7VzFB+1YcjAViRg6fubkZ65QqqaXRUv5kkP0c0MWFLA==",
+  "dgSpecHash": "wGTMFdhSR6lq5qNz5HsyHVJ644BOyMkuDn2NNSPTXuWv0donP6TwtU6LzwaMGQSY24Php6fisF3L4LMy7Jg63g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC-1\\Desktop\\urfuQueueBot\\Logger\\Logger.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\PC-1\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

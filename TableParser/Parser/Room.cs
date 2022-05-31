@@ -52,7 +52,7 @@ namespace TableParser
             var seed = Number.GetHashCode() + TableID.GetHashCode() + StartTime.ToString("dd.MM HH:mm").GetHashCode();
 
             Random r = new Random(seed);
-            
+
             string res = "";
             for (int i = 0; i < 20; ++i)
             {
