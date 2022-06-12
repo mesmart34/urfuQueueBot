@@ -13,75 +13,66 @@ namespace SQLDB
 
         public DataBase() : base("SQLEXPRESS", "DB")
         {
-            if (!IsTableExists("Linker"))
-                _linker = CreateTable("Linker");
-            else
-                _linker = Tables.First(t => t.Name == "Linker");
-
+            _linker = IsTableExists("Linker") ? Tables.First(t => t.Name == "Linker") : CreateTable("Linker");
         }
 
-        //public IEnumerable<Room> GetRooms()
-        //{
-        //    List<Room> res = new List<Room>();
+        public IEnumerable<Room> GetRooms()
+        {
+            List<Room> res = new List<Room>();
 
-        //    List<string> roomCodes = new List<string>();
+            List<string> roomNames = new List<string>();
 
-        //    var tables = SendNativeQuery("SELECT TABLE_NAME AS [TABLE NAME] FROM INFORMATION_SCHEMA.TABLES").ExecuteReader();
+            var tables = SendNativeQuery("SELECT TABLE_NAME AS [TABLE NAME] FROM INFORMATION_SCHEMA.TABLES").ExecuteReader();
 
-        //    if (tables.HasRows)
-        //    {
-        //        while (tables.Read())
-        //        {
-        //            roomCodes.Add(tables.GetString(0));
-        //        }
-        //    }
+            if (tables.HasRows)
+            {
+                while (tables.Read())
+                {
+                    roomNames.Add(tables.GetString(0));
+                }
+            }
 
-        //    tables.Close();
+            tables.Close();
 
-        //    foreach (var roomCode in roomCodes.Skip(1))
-        //    {
-        //        // TODO: throw own exception
-        //        int roomNumber = int.Parse(new string(roomCode.ToCharArray().TakeWhile(c => char.IsDigit(c)).ToArray()));
+            foreach (var roomCode in roomNames.Skip(1))
+            {
+                // TODO: throw own exception
+                int roomNumber = int.Parse(roomCode.ToCharArray().TakeWhile(c => char.IsDigit(c)).ToArray());
 
-        //        var roomData = SendNativeQuery($"SELECT * FROM {roomCode}").ExecuteReader();
+                var roomData = SendNativeQuery($"SELECT * FROM {roomCode}").ExecuteReader();
 
-        //        DateTime roomTime = DateTime.MinValue;
-        //        List<Team> teams = new List<Team>();
+                DateTime roomTime = DateTime.MinValue;
+                List<Team> teams = new List<Team>();
 
-        //        if (roomData.HasRows)
-        //        {
-        //            while (roomData.Read())
-        //            {
-        //                if (roomTime == DateTime.MinValue)
-        //                    roomTime = roomData.GetDateTime(1);
+                if (roomData.HasRows)
+                {
+                    while (roomData.Read())
+                    {
+                        if (roomTime == DateTime.MinValue)
+                            roomTime = roomData.GetDateTime(1);
 
-        //            }
-        //        }
+                        string teamName = roomData.GetString(0);
+                        DateTime teamTime = roomData.GetDateTime(1);
 
+                        Team newTeam = new Team(teamName, teamTime, teams.Count);
 
-        //        foreach (var row in data)
-        //        {
-        //            string teamName = (string)row[0];
-        //            DateTime teamTime = DateTime.Parse((string)row[1]);
-        //            Team newTeam = new Team(teamName, teams.Count, teamTime);
+                        for (int i = 2; i < roomData.FieldCount; ++i)
+                        {
+                            string[] memberInfo = (roomData.GetString(i)).Split(':');
+                            newTeam.AddStudent(new Student(memberInfo[0], (NotificationType)int.Parse(memberInfo[1])));
+                        }
 
-        //            foreach (var member in row.Skip(2))
-        //            {
-        //                string[] memberInfo = ((string)member).Split(':');
-        //                newTeam.AddStudent(new Member(memberInfo[0], (NotificationType)int.Parse(memberInfo[1])));
-        //            }
+                        teams.Add(newTeam);
+                    }
+                }
 
-        //            teams.Add(newTeam);
-        //        }
+                string link = (string)_linker.Read($"Room = \"{roomCode}\"")[0][1];
 
-        //        var linksData = Table.Read("Linker").Skip(1);
-        //        string link = (string)linksData.Where(row => (string)row[0] == sheet.Name).First()[1];
+                res.Add(new Room(roomNumber, link, teams, roomTime));
+            }
 
-        //        res.Add(new Room(roomNumber, link, teams, roomTime));
-        //    }
-
-        //    return res;
-        //}
+            return res;
+        }
 
         public void WriteRoom(TableParser.Room room)
         {

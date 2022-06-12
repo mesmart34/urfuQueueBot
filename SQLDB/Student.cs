@@ -3,7 +3,7 @@ using TableParser;
 
 namespace SQLDB
 {
-    public class Member
+    public class Student
     {
         public string Name { get; }
         public bool IsNotified { get; private set; }
@@ -12,7 +12,7 @@ namespace SQLDB
 
         public event Action OnNotifyCalled;
 
-        public Member(string name, NotificationType notificationType = NotificationType.TEN_MINUTES)
+        public Student(string name, NotificationType notificationType = NotificationType.TEN_MINUTES)
         {
             Name = name;
             Notification = notificationType;

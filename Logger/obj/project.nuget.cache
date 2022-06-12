@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wGTMFdhSR6lq5qNz5HsyHVJ644BOyMkuDn2NNSPTXuWv0donP6TwtU6LzwaMGQSY24Php6fisF3L4LMy7Jg63g==",
+  "dgSpecHash": "DnQpuDCCE9QknAUQvr0YNpPvN+9bvAPjX0kQf/yZ0uST7It40w23yEauW5toMjBTY7m/7SuuVWQF+I8ZEaI1ow==",
   "success": true,
-  "projectFilePath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj",
+  "projectFilePath": "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\Loggers.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V5rRhlq1OmxBJlmSU5Ra35ATJHS3I+QLcPN7T+TP6QS49UDQLZx7+V/CvepO46j9xhw3bRydBCRb9iVTU33Q4w==",
+  "dgSpecHash": "9SVFwRZlXZmgIJP1r7fqI4SMuCcMlbkmDWHafYSG9Yx4eI5qeOZ6sduto2WLIcq8frhmW6561PG0Vp/NRo8zbg==",
   "success": true,
-  "projectFilePath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj",
+  "projectFilePath": "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-1\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",
     "C:\\Users\\PC-1\\.nuget\\packages\\google.apis.auth\\1.57.0\\google.apis.auth.1.57.0.nupkg.sha512",

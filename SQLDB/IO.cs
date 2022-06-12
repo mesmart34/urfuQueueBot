@@ -31,7 +31,7 @@ namespace SQLDB
 
         public Table CreateTable(string tableName, params string[] columns)
         {
-            var table = Table.CreateSQLTable(_connection, tableName, columns);
+            var table = Table.CreateTable(_connection, tableName, columns);
             Tables.Add(table);
             return table;
         }
@@ -40,7 +40,7 @@ namespace SQLDB
         {
             if (IsAlreadyLoaded(tableName, out Table table))
                 return table;
-            table = Table.LoadSQLTable(_connection, tableName);
+            table = Table.GetTable(_connection, tableName);
             Tables.Add(table);
             return table;
         }

@@ -30,9 +30,12 @@ namespace QueueBot_2_0
                     data
                 );
 
-            Builder builder = new Builder();
-            builder.Build(tgbot);
-            builder.Build(vkbot);
+            // TODO : Start in different threads
+
+            Builder tgBuilder = new Builder();
+            Builder vkBuilder = new Builder();
+            tgBuilder.Build(tgbot);
+            vkBuilder.Build(vkbot);
 
             tgbot.StartReceiving();
             vkbot.StartReceiving();

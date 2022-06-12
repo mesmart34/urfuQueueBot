@@ -5,23 +5,27 @@ using System.Linq;
 using Bots;
 using Bots.UpdateHandlers;
 using TableParser;
+using Requests;
 
 // TODO: Parse rooms from DB after starting
 // TODO: Refactoring
 // TODO: Протестировать перекрёстный огонь
-// TODO: Add resources in build
 
 namespace BotBuilder
 {
     enum SYSTEM_COMMANDS
     {
         PARSE_ROOMS_FROM_TABLE,
-        CONNECT_TO_ROOM,
+        PK_CONNECT,
+        PK_GET_LOGIN,
+        PK_GET_PASSWORD,
         NOTIFY_ALL
     }
 
     public class Builder
     {
+        // TODO : Create path to data-folder in BotData
+        // After : Get src and .private_cfg folders with Data.PathToData + "src/"...
         private const string src = "../../../../src/";
 
         private IBot _bot;
@@ -43,6 +47,8 @@ namespace BotBuilder
             return sr.ReadLine();
         }
 
+
+        // TODO : Parse sessions
         private Room GetRoomByChatId(long id)
         {
             return _bot.Data.Sessions
@@ -51,24 +57,21 @@ namespace BotBuilder
                 .Room;
         }
 
-        private void AddDefaultResponse(Response.FilterFunc filter, Response.ResponseFunc response)
+        private void AddResponse(Response.FilterFunc filter, Response.ResponseFunc response)
         {
-            //Response r = _bot.GetResponse(filter, response);
-            //_bot.UpdateHandler.AddResponse(r);
-
             _bot.AddResponse(filter, response);
         }
 
         private void AddStartResponse()
         {
-            AddDefaultResponse(
-                    (InputMessage im) => im.Text == "/start",
+            AddResponse(
+                    (InputMessage im) => im.Text == "/start" || im.Text == "Начать",
                     (InputMessage im) =>
                     {
                         _bot.SendMessageAsync(
                                 im.SenderId,
                                 ReadLineFromFile(src + "startWelcome.txt"),
-                                _bot.GetKeyboard("Студент", "Эксперт")
+                                _bot.GetKeyboard("Студент", "Организатор защит")
                             );
                     }
                 );
@@ -76,7 +79,7 @@ namespace BotBuilder
 
         private void ConfigureCommands()
         {
-            AddDefaultResponse(
+            AddResponse(
                     (InputMessage im) =>
                     {
                         return !int.TryParse(im.Text, out _) &&
@@ -89,20 +92,46 @@ namespace BotBuilder
                     }
                 );
 
-            AddDefaultResponse(
+            AddResponse(
                     (InputMessage im) =>
                     {
                         return !int.TryParse(im.Text, out _) &&
                             Enum.TryParse(typeof(SYSTEM_COMMANDS), im.Text, false, out var com) &&
-                            (SYSTEM_COMMANDS)com == SYSTEM_COMMANDS.CONNECT_TO_ROOM;
+                            (SYSTEM_COMMANDS)com == SYSTEM_COMMANDS.PK_CONNECT;
                     },
                     (InputMessage im) =>
                     {
-                        _bot.UpdateHandler.AddQuery(im.SenderId, ConnectToRoomResponseFunc);
+                        _bot.UpdateHandler.AddQuery(im.SenderId, ConnectToPKResponseFunc);
                     }
                 );
 
-            AddDefaultResponse(
+            AddResponse(
+                    (InputMessage im) =>
+                    {
+                        return !int.TryParse(im.Text, out _) &&
+                            Enum.TryParse(typeof(SYSTEM_COMMANDS), im.Text, false, out var com) &&
+                            (SYSTEM_COMMANDS)com == SYSTEM_COMMANDS.PK_GET_LOGIN;
+                    },
+                    (InputMessage im) =>
+                    {
+                        _bot.UpdateHandler.AddQuery(im.SenderId, GetLoginResponseFunc);
+                    }
+                );
+
+            AddResponse(
+                    (InputMessage im) =>
+                    {
+                        return !int.TryParse(im.Text, out _) &&
+                            Enum.TryParse(typeof(SYSTEM_COMMANDS), im.Text, false, out var com) &&
+                            (SYSTEM_COMMANDS)com == SYSTEM_COMMANDS.PK_GET_PASSWORD;
+                    },
+                    (InputMessage im) =>
+                    {
+                        _bot.UpdateHandler.AddQuery(im.SenderId, GetPassResponseFunc);
+                    }
+                );
+
+            AddResponse(
                     (InputMessage im) =>
                     {
                         return !int.TryParse(im.Text, out _) &&
@@ -132,14 +161,14 @@ namespace BotBuilder
         // COMPLETE
         private void AddExpertWelcomeResponse()
         {
-            AddDefaultResponse(
-                    (InputMessage im) => im.Text == "Эксперт",
+            AddResponse(
+                    (InputMessage im) => im.Text == "Организатор защит",
                     (InputMessage im) =>
                     {
                         _bot.SendMessageAsync(
                                 im.SenderId,
                                 ReadLineFromFile(src + "expertWelcome.txt"),
-                                _bot.GetKeyboard("Получить коды комнат", "Шаблон гугл таблицы")
+                                _bot.GetKeyboard("Отправить Google-Таблицу", "Шаблон гугл таблицы")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(1, 2));
@@ -151,14 +180,14 @@ namespace BotBuilder
         // TODO: Order files
         private void AddGoogleSheetPattern()
         {
-            AddDefaultResponse(
+            AddResponse(
                     (InputMessage im) => im.Text == "Шаблон гугл таблицы",
                     (InputMessage im) =>
                     {
                         _bot.SendMessageAsync(
                                 im.SenderId,
                                 ReadLineFromFile(src + "exampleAlert.txt"),
-                                _bot.GetKeyboard("Получить коды комнат", "Шаблон гугл таблицы")
+                                _bot.GetKeyboard("Отправить Google-Таблицу", "Шаблон гугл таблицы")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "expert", (uint)GetRandomIndex(5, 6));
@@ -173,8 +202,8 @@ namespace BotBuilder
         // COMPLETE
         private void AddGoogleSheetQuery()
         {
-            AddDefaultResponse(
-                    (InputMessage im) => im.Text == "Получить коды комнат",
+            AddResponse(
+                    (InputMessage im) => im.Text == "Отправить Google-Таблицу",
                     (InputMessage im) =>
                     {
                         // start new iteration
@@ -183,7 +212,7 @@ namespace BotBuilder
                         _bot.SendMessageAsync(
                                 im.SenderId,
                                 "Отправьте сюда ссылку на Google-таблицу.",
-                                keyboard: _bot.GetKeyboard("back")
+                                keyboard: _bot.GetKeyboard("Вернуться")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "expert", (uint)GetRandomIndex(2, 3));
@@ -236,35 +265,39 @@ namespace BotBuilder
         // COMPLETE
         void ParseTableResponseFunc(InputMessage im)
         {
-            if (im.Text == "back")
+            if (im.Text == "Вернуться")
             {
                 _bot.InvokeMessage(im.SenderId, "/start");
                 return;
             }
 
-            if (TryParseRooms(im.Text, out Room[] newRooms))
-            {
-                _bot.SendMessageAsync(
+            _bot.SendMessageAsync(
                         chatId: im.SenderId,
-                        text: "Коды комнат:\n" + string.Join("\n", newRooms.Select(room => $"\t[{room.StartTime:g}] {room.Name} - {room.Link}"))
+                        text: "Пробуем получить комнаты..."
                         );
 
+            if (TryParseRooms(im.Text, out Room[] newRooms))
+            {
+                // TODO : Запускать асинхронно блок из Send[STH](), чтобы сохранялся порядок
+                // TODO : Добавить боту метод SendSticker(..., StickerId, ...), где StickerId — не номер, а перечисление или название, чтобы
+                // стикер выбирася самим ботом
+
                 _bot.SendMessageAsync(
-                            chatId: im.SenderId,
-                            text: "Дальше я сам буду брать всю информацию с вашей таблицы. (Стикер)"
-                        );
+                        chatId: im.SenderId,
+                        text: "Дальше я сам буду брать всю информацию с вашей таблицы.",
+                        _bot.GetKeyboard("Студент", "Организатор защит")
+                    );
 
                 _bot.SendStickerAsync(im.SenderId, "expert", (uint)GetRandomIndex(4, 7));
             }
             else
             {
-                // start new iteration
                 _bot.InvokeMessage(im.SenderId, SYSTEM_COMMANDS.PARSE_ROOMS_FROM_TABLE.ToString());
 
                 _bot.SendMessageAsync(
                     chatId: im.SenderId,
                     text: "Вы отправили неправильную ссылку. Попробуйте снова.",
-                    keyboard: _bot.GetKeyboard("back")
+                    keyboard: _bot.GetKeyboard("Вернуться")
                 );
             }
         }
@@ -290,18 +323,12 @@ namespace BotBuilder
             ConnectToTeamResponse();
         }
 
-        // TODO: move "leave team" to next step
         private void AddStudentWelcomeResponse()
         {
-            AddDefaultResponse(
-                (InputMessage im) => im.Text == "Студент" || im.Text == "Покинуть команду",
+            AddResponse(
+                (InputMessage im) => im.Text == "Студент",
                 (InputMessage im) =>
                 {
-                    if (im.Text == "Покинуть команду")
-                    {
-                        _bot.InvokeMessage(im.SenderId, "Посмотреть команды");
-                    }
-
                     var currentSession = _bot.Data.Sessions
                         .Where(s => s.Member.Name == im.SenderId.ToString())
                         .FirstOrDefault();
@@ -311,7 +338,7 @@ namespace BotBuilder
                         _bot.SendMessageAsync(
                             chatId: im.SenderId,
                             text: ReadLineFromFile(src + "studentWelcome.txt"),
-                            keyboard: _bot.GetKeyboard("Подключиться к комнате")
+                            keyboard: _bot.GetKeyboard("Подключиться к ПроКомпетенции")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(1, 2));
@@ -324,19 +351,18 @@ namespace BotBuilder
             );
         }
 
-        // COMPLETE
         private void AddConnectQuery()
         {
-            AddDefaultResponse(
-                    (InputMessage im) => im.Text == "Подключиться к комнате",
+            AddResponse(
+                    (InputMessage im) => im.Text == "Подключиться к ПроКомпетенции",
                     (InputMessage im) =>
                     {
-                        _bot.InvokeMessage(im.SenderId, SYSTEM_COMMANDS.CONNECT_TO_ROOM.ToString());
+                        _bot.InvokeMessage(im.SenderId, SYSTEM_COMMANDS.PK_GET_LOGIN.ToString());
 
                         _bot.SendMessageAsync(
                             chatId: im.SenderId,
-                            text: "Введите, пожалуйста, код, который вам выдали ваши эксперты.",
-                            keyboard: _bot.GetKeyboard("back")
+                            text: "Введите, пожалуйста, логин от ПроКомпетенции",
+                            keyboard: _bot.GetKeyboard("Вернуться")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(3, 4));
@@ -344,59 +370,205 @@ namespace BotBuilder
                 );
         }
 
-        private void ConnectToRoomResponseFunc(InputMessage im)
+        public struct PK_INFO
         {
-            var commandsTable = _bot.Data.DataBase.Table;
-            var rooms = commandsTable.GetAllSheets();
-            var roomsLinks = rooms.Select(sheet => sheet.Name);
+            public long UserId;
+            public string Login;
+            public string Pass;
+        }
 
-            if (roomsLinks.Contains(im.Text))
+        private readonly HashSet<PK_INFO> _pkInfos = new HashSet<PK_INFO>();
+
+        private void GetLoginResponseFunc(InputMessage im)
+        {
+            if (im.Text == "Вернуться")
             {
-                string currentRoomLink = im.Text;
+                _bot.InvokeMessage(im.SenderId, "/start");
+                return;
+            }
 
-                // TODO: Parse rooms from Linker sheet
-                Room currentRoom = _bot.Data.DataBase.GetRooms()
-                    .Where(room => room.Link == currentRoomLink).FirstOrDefault();
+            _pkInfos.Add(new PK_INFO { 
+                UserId = im.SenderId,
+                Login = im.Text,
+                Pass = ""
+            });
 
-                var member = new Member(im.SenderId.ToString());
+            _bot.InvokeMessage(im.SenderId, SYSTEM_COMMANDS.PK_GET_PASSWORD.ToString());
 
-                member.OnNotifyCalled += () => _bot.SendMessageAsync(im.SenderId, "Подключайтесь!");
+            _bot.SendMessageAsync(
+                chatId: im.SenderId,
+                text: "Введите, пожалуйста, пароль от ПроКомпетенции",
+                keyboard: _bot.GetKeyboard("Вернуться")
+                );
+        }
 
-                _bot.Data.Sessions.Add(new Session { Member = member, Room = currentRoom, Team = null });
+        private void GetPassResponseFunc(InputMessage im)
+        {
+            if (im.Text == "Вернуться")
+            {
+                _bot.InvokeMessage(im.SenderId, "/start");
+                return;
+            }
+
+            var i = _pkInfos.First(i => i.UserId == im.SenderId);
+            i.Pass = im.Text;
+
+            _bot.SendMessageAsync(
+                chatId: im.SenderId,
+                text: "Пробуем подключиться к ПроКомпетенции...",
+                keyboard: _bot.GetKeyboard("Вернуться")
+                );
+
+            ConnectToPKResponseFunc(im);
+        }
+
+        private void ConnectToPKResponseFunc(InputMessage im)
+        {
+            var i = _pkInfos.First(i => i.UserId == im.SenderId);
+
+            string sid;
+            Requests.Team team = new Requests.Team
+            {
+                Name = "",
+                Students = null
+            };
+
+            try
+            {
+                sid = Authorize(i.Login, i.Pass);
+
+                Console.WriteLine($"SSID : {sid}");
+
+                RequestsManager rm = new RequestsManager(sid);
+                team = rm.GetEventData();
+            }
+            catch
+            {
+                _bot.SendMessageAsync(
+                        chatId: im.SenderId,
+                        text: "Неправильный логин и/или пароль"
+                    );
+
+                _bot.InvokeMessage(im.SenderId, "/start");
+
+                return;
+            }
+
+            var rooms = _bot.Data.DataBase.GetRooms();
+
+            Room room = null;
+
+            foreach (Room r in rooms)
+            {
+                var teams = r.Teams;
+                if (teams.Any(t => t.Name == team.Name))
+                {
+                    room = r;
+                    break;
+                }
+            }
+
+            if (room != null)
+            {
+                TableParser.Team tpTeam = room.Teams.Where(t => t.Name == team.Name).FirstOrDefault();
+                var test_member = new Member(im.SenderId.ToString());
+
+                test_member.OnNotifyCalled += () => _bot.SendMessageAsync(im.SenderId, "Подключайтесь!");
+
+
+                _bot.Data.Sessions.Add(new Session { Member = test_member, Room = room, Team = tpTeam });
+
+                _bot.Data.DataBase.AddMemberToTeam(
+                                room,
+                                tpTeam,
+                                test_member
+                            );
 
                 _bot.SendMessageAsync(
                         chatId: im.SenderId,
-                        text: "Тут вы можете посмотреть все существующие команды в данной комнате и выбрать нужную вам.",
-                        _bot.GetKeyboard("Посмотреть команды")
+                        text: $"Room: {room.Name} @ {room.StartTime.ToString("dd.MM.yyyy HH:mm")}\nTeam: {tpTeam.Name}",
+                        _bot.GetKeyboard("Настройка уведомлений")
                     );
 
-                _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(5, 6));
-            }
-            else if (im.Text == "back")
-            {
-                _bot.InvokeMessage(im.SenderId, "/start");
+                _bot.SendMessageAsync(
+                            chatId: im.SenderId,
+                            text: "Дальше вы можете настроить уведомления.",
+                            _bot.GetKeyboard("Настройка уведомлений")
+                        );
+
+                _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(7, 8));
             }
             else
             {
-                _bot.InvokeMessage(im.SenderId, SYSTEM_COMMANDS.CONNECT_TO_ROOM.ToString());
-
                 _bot.SendMessageAsync(
-                    chatId: im.SenderId,
-                    text: "Такой комнаты нет. Попробуйте ещё раз.",
-                    keyboard: _bot.GetKeyboard("back")
+                        chatId: im.SenderId,
+                        text: "Мы не смогли найти вашу команду в комнатах. Обратитесь к модератору."
                     );
+
+                _bot.InvokeMessage(im.SenderId, "/start");
+            }
+        }
+
+        private string Authorize(string login, string password)
+        {
+            string sid;
+            // line = login : sid : expired_date [dd/MM/yyyy hh:mm:ss]
+            foreach (string line in File.ReadAllLines("pk_sessions.txt"))
+            {
+                string[] info = line.Split(" : ");
+                if (info.Length > 1)
+                {
+                    if (info[0] == login)
+                    {
+                        if (DateTime.Parse(info[2]) > DateTime.UtcNow)
+                        {
+                            return info[1];
+                        }
+                        else
+                        {
+                            sid = RequestsManager.GetSID(login, password);
+                            DeletePKLine(login);
+                            AddPKLine($"{login} : {sid} : {DateTime.UtcNow.AddMonths(1):G}");
+                            return sid;
+                        }
+                    }
+                    else continue;
+                }
+            }
+
+            sid = RequestsManager.GetSID(login, password);
+            AddPKLine($"{login} : {sid} : {DateTime.UtcNow.AddMonths(1):G}");
+            return sid;
+        }
+
+        private void DeletePKLine(string login)
+        {
+            string path = "pk_sessions.txt";
+            var oldLines = File.ReadAllLines(path);
+            var newLines = oldLines.Where(line => !line.StartsWith(login));
+            File.WriteAllLines(path, newLines);
+            FileStream obj = new FileStream(path, FileMode.Append);
+            obj.Close();
+        }
+
+        private void AddPKLine(string line)
+        {
+            FileInfo file = new FileInfo("pk_sessions.txt");
+            using (StreamWriter sw = file.AppendText())
+            {
+                sw.WriteLine(line);
             }
         }
 
         // TODO: Check
         private void GetTeamsResponse()
         {
-            AddDefaultResponse(
+            AddResponse(
                 (InputMessage im) => im.Text == "Посмотреть команды",
                 (InputMessage im) =>
                 {
                     Room currentRoom = GetRoomByChatId(im.SenderId);
-                    List<Team> teams = currentRoom.Teams;
+                    List<TableParser.Team> teams = currentRoom.Teams;
 
                     string t = string.Join('\n', teams.Select(team => string.Format("{0} - {1}", teams.IndexOf(team) + 1, team.Name)));
 
@@ -411,7 +583,7 @@ namespace BotBuilder
         // TODO: Remake as query
         private void ConnectToTeamResponse()
         {
-            AddDefaultResponse(
+            AddResponse(
                 (InputMessage im) =>
                 {
                     Room currentRoom = GetRoomByChatId(im.SenderId);
@@ -434,9 +606,9 @@ namespace BotBuilder
 
                         int teamId = int.Parse(im.Text) - 1;
 
-                        List<Team> teams = currentRoom.Teams;
+                        List<TableParser.Team> teams = currentRoom.Teams;
 
-                        Team currentTeam = teams[teamId];
+                        TableParser.Team currentTeam = teams[teamId];
 
                         _bot.Data.Sessions[currentSessionIndex] = new Session
                         {
@@ -454,8 +626,8 @@ namespace BotBuilder
 
                     _bot.SendMessageAsync(
                         chatId: im.SenderId,
-                        text: "Дальше вы можете покинуть команду, если попали не туда, вернуться к просмотру всех команд или настроить уведомления.",
-                        _bot.GetKeyboard("Настройка уведомлений", "Покинуть команду")
+                        text: "Дальше вы можете настроить уведомления.",
+                        _bot.GetKeyboard("Настройка уведомлений")
                     );
 
                     _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(7, 8));
@@ -465,7 +637,7 @@ namespace BotBuilder
 
         private void SetNotTenMinutesResponse()
         {
-            AddDefaultResponse(
+            AddResponse(
                     (InputMessage im) => im.Text == "За 10 минут",
                     (InputMessage im) =>
                     {
@@ -479,7 +651,7 @@ namespace BotBuilder
                         _bot.SendMessageAsync(
                             chatId: im.SenderId,
                             text: "Настройки зафиксированы. Ожидайте оповещения.",
-                            keyboard: _bot.GetKeyboard("За 10 минут", "За две команды", "Автоматически", "Назад")
+                            keyboard: _bot.GetKeyboard("За 10 минут", "За две команды до начала", "Автоматически", "Назад")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(13, 14));
@@ -489,7 +661,7 @@ namespace BotBuilder
 
         private void SetNotAutoRepsonse()
         {
-            AddDefaultResponse(
+            AddResponse(
                 (InputMessage im) => im.Text == "Автоматически",
                 (InputMessage im) =>
                 {
@@ -502,7 +674,7 @@ namespace BotBuilder
                     _bot.SendMessageAsync(
                                 chatId: im.SenderId,
                                 text: "Высчитывается среднее арифметическое времени выступлений всех команд, которые уже выступили, и уведомление приходит за рассчитанное время до вашего выступления.",
-                                keyboard: _bot.GetKeyboard("За 10 минут", "За две команды", "Автоматически", "Назад")
+                                keyboard: _bot.GetKeyboard("За 10 минут", "За две команды до начала", "Автоматически", "Назад")
                             );
 
                     _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(11, 12));
@@ -510,7 +682,7 @@ namespace BotBuilder
                     _bot.SendMessageAsync(
                                 chatId: im.SenderId,
                                 text: "Настройки зафиксированы. Ожидайте оповещения.",
-                                keyboard: _bot.GetKeyboard("За 10 минут", "За две команды", "Автоматически", "Назад")
+                                keyboard: _bot.GetKeyboard("За 10 минут", "За две команды до начала", "Автоматически", "Назад")
                             );
 
                     _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(13, 14));
@@ -520,7 +692,7 @@ namespace BotBuilder
 
         private void SetNotTwoTeamsResponse()
         {
-            AddDefaultResponse(
+            AddResponse(
                 (InputMessage im) => im.Text == "За две команды",
                 (InputMessage im) =>
                 {
@@ -531,7 +703,7 @@ namespace BotBuilder
                     _bot.SendMessageAsync(
                         chatId: im.SenderId,
                         text: "Настройки зафиксированы. Ожидайте оповещения.",
-                        keyboard: _bot.GetKeyboard("За 10 минут", "За две команды", "Автоматически", "Назад")
+                        keyboard: _bot.GetKeyboard("За 10 минут", "За две команды до начала", "Автоматически", "Назад")
                     );
 
                     _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(13, 14));
@@ -541,14 +713,14 @@ namespace BotBuilder
 
         private void NotSettingsResponse()
         {
-            AddDefaultResponse(
+            AddResponse(
                     (InputMessage im) => im.Text == "Настройка уведомлений",
                     (InputMessage im) =>
                     {
                         _bot.SendMessageAsync(
                                 chatId: im.SenderId,
                                 text: "Укажите, когда мне уведомить о вашем выступлении.",
-                                keyboard: _bot.GetKeyboard("За 10 минут", "За две команды", "Автоматически", "Назад")
+                                keyboard: _bot.GetKeyboard("За 10 минут", "За две команды до начала", "Автоматически", "Назад")
                             );
 
                         _bot.SendStickerAsync(im.SenderId, "student", (uint)GetRandomIndex(9, 10));
@@ -556,9 +728,10 @@ namespace BotBuilder
                 );
         }
 
+        
         private void DisconnectFromTeamResponse()
         {
-            AddDefaultResponse(
+            AddResponse(
                 (InputMessage im) => im.Text == "Покинуть команду",
                 (InputMessage im) =>
                 {

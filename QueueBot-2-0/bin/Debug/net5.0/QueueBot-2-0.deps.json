@@ -250,6 +250,7 @@
       "Builder/1.0.0": {
         "dependencies": {
           "Bots": "1.0.0",
+          "Requests": "1.0.0",
           "TableParser": "1.0.0"
         },
         "runtime": {
@@ -259,6 +260,14 @@
       "Loggers/1.0.0": {
         "runtime": {
           "Loggers.dll": {}
+        }
+      },
+      "Requests/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "Requests.dll": {}
         }
       },
       "SQLDB/1.0.0": {
@@ -480,6 +489,11 @@
       "sha512": ""
     },
     "Loggers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Requests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

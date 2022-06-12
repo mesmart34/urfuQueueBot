@@ -10,3 +10,15 @@ W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.dll
 W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\refint\TableParser.dll
 W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\TableParser.pdb
 W:\QueueBot\QueueBot-2-0\TableParser\obj\Debug\net5.0\ref\TableParser.dll
+W:\QueueBot\git\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.deps.json
+W:\QueueBot\git\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.dll
+W:\QueueBot\git\urfuQueueBot\TableParser\bin\Debug\net5.0\TableParser.pdb
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.AssemblyReference.cache
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.GeneratedMSBuildEditorConfig.editorconfig
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfoInputs.cache
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.AssemblyInfo.cs
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.csproj.CoreCompileInputs.cache
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.dll
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\refint\TableParser.dll
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\TableParser.pdb
+W:\QueueBot\git\urfuQueueBot\TableParser\obj\Debug\net5.0\ref\TableParser.dll

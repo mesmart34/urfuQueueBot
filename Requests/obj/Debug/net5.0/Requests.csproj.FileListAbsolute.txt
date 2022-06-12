@@ -1,0 +1,12 @@
+W:\QueueBot\git\urfuQueueBot\Requests\bin\Debug\net5.0\Requests.deps.json
+W:\QueueBot\git\urfuQueueBot\Requests\bin\Debug\net5.0\Requests.dll
+W:\QueueBot\git\urfuQueueBot\Requests\bin\Debug\net5.0\Requests.pdb
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.csproj.AssemblyReference.cache
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.GeneratedMSBuildEditorConfig.editorconfig
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.AssemblyInfoInputs.cache
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.AssemblyInfo.cs
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.csproj.CoreCompileInputs.cache
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.dll
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\refint\Requests.dll
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\Requests.pdb
+W:\QueueBot\git\urfuQueueBot\Requests\obj\Debug\net5.0\ref\Requests.dll

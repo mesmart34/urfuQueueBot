@@ -50,19 +50,6 @@ namespace Bots.VK
                 return;
 
             await (UpdateHandler as Bots.UpdateHandlers.VK.VKUpdateHandler).HandleUpdateAsync(im);
-
-            //VkNet.Model.Keyboard.KeyboardBuilder kb = new VkNet.Model.Keyboard.KeyboardBuilder();
-
-            //switch(im.Text.ToLower())
-            //{
-            //    case "привет":
-            //        //kb.AddButton("Menu", "menu_btn", VkNet.Enums.SafetyEnums.KeyboardButtonColor.Positive);
-            //        //kb.AddLine();
-            //        //kb.AddButton("Back", "back_btn", VkNet.Enums.SafetyEnums.KeyboardButtonColor.Negative);
-            //        Keyboard k = new Keyboard("Menu", "Back");
-            //        SendMessageAsync(im.SenderId, "Choose required button", k);
-            //        break;
-            //}
         }
 
         private bool TryGetMessage(out InputMessage im)
@@ -85,6 +72,14 @@ namespace Bots.VK
             VkNet.Model.Message message = m.Items[0].LastMessage;
 
             im.Text = (message.Text != "" && message.Text != null) ? message.Text : "";
+            if (message.Text == "" && message.Attachments.Count == 1 && message.Attachments[0].Type == typeof(VkNet.Model.Attachments.Link))
+            {
+                VkNet.Model.Attachments.Link attachment = (VkNet.Model.Attachments.Link)message.Attachments[0].Instance;
+                if (attachment != null)
+                {
+                    im.Text = attachment.Uri.ToString();
+                }
+            }
             // TODO : Maybe add payload-field to IM
             //msg.keyname = (message.Payload != null && message.Payload != "") ? message.Payload : "";
             im.SenderId = message.FromId.Value;
@@ -170,12 +165,21 @@ namespace Bots.VK
 
         public async void SendDocumentAsync(long userId, string path, string caption, Bots.Keyboard keyboard = null)
         {
-            var uploadServer = _api.Photo.GetMessagesUploadServer(213475502);
+            return;
+
+            // TODO : Fix GetMessagesUploadServerAsync(group_id)
+
+            var uploadServer = await _api.Docs.GetMessagesUploadServerAsync(213475502);
+
             var response = await UploadFile(uploadServer.UploadUrl, path, path.Split('.').Last());
+
+            var t1 = _api.Docs.Save(file: response, title: caption ?? Guid.NewGuid().ToString(), null);
+            var t2 = t1[0];
+            var t3 = t2.Instance;
 
             var attachment = new List<VkNet.Model.Attachments.MediaAttachment>
             {
-                _api.Docs.Save(response, caption ?? Guid.NewGuid().ToString(), null)[0].Instance
+                t3
             };
 
             await _api.Messages.SendAsync(new MessagesSendParams
@@ -188,7 +192,8 @@ namespace Bots.VK
 
         public void SendStickerAsync(long userId, string set, uint index, Bots.Keyboard keyboard = null)
         {
-            SendPhotoAsync(userId, $"../../../../src/stickers/{set}/{index}.png", "", keyboard);
+            // TODO : Save from mistakes
+            SendPhotoAsync(userId, $"../../../../src/stickers/{set}/{(index % 8) + 1}.png", "", keyboard);
         }
 
         private async Task<string> UploadFile(string serverUrl, string file, string fileExtension)

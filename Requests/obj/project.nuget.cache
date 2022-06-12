@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZytpQXGdXxaVbpb5ltRHghnc97WCyBuoWznhP4Qg52eQ3rKzHIWSvwaK9kAMj1wlaxb+KJnwozF3+idgNvLH6g==",
+  "success": true,
+  "projectFilePath": "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\Requests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC-1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

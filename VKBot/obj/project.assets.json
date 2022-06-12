@@ -970,11 +970,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj",
+      "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\VKBot\\VKBot.csproj",
       "projectName": "VKBot",
-      "projectPath": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\VKBot.csproj",
+      "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\VKBot\\VKBot.csproj",
       "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-      "outputPath": "W:\\QueueBot\\QueueBot-2-0\\VKBot\\obj\\",
+      "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\VKBot\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -995,11 +995,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
-              "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj"
+            "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj": {
+              "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj"
             },
-            "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
-              "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+            "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+              "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj"
             }
           }
         }

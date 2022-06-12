@@ -12,23 +12,22 @@ namespace SQLDB
         public string Name { get; private set; }
         private SqlConnection _connection;
 
-        public static Table CreateSQLTable(SqlConnection connection, string name, params string[] columns)
+        public static Table CreateTable(SqlConnection connection, string name, params string[] columns)
         {
             var query = @"CREATE TABLE " + name + " (" + string.Join(", ", columns) + ");";
             var command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
-            var table = LoadSQLTable(connection, name);
-            return table;
+            return GetTable(connection, name);
         }
 
-        public static Table LoadSQLTable(SqlConnection connection, string name)
+        public static Table GetTable(SqlConnection connection, string name)
         {
             var restrictions = new string[4] { null, null, name, null };
-            var columnList = connection.GetSchema("Columns", restrictions).AsEnumerable().Select(s => s.Field<String>("Column_Name")).ToList();
+            var columnList = connection.GetSchema("Columns", restrictions).AsEnumerable().Select(s => s.Field<string>("Column_Name")).ToList();
             var table = new Table();
             var colList = new List<string>();
             var dataTable = new DataTable();
-            var cmdString = string.Format("SELECT TOP 0 * FROM {0}", name);
+            var cmdString = $"SELECT TOP 0 * FROM {name}";
             using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, connection))
             {
                 dataContent.Fill(dataTable);
@@ -105,7 +104,6 @@ namespace SQLDB
             }
             command.ExecuteNonQuery();
         }
-
 
         public void Clear()
         {

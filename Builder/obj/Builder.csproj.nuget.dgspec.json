@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj": {}
+    "W:\\QueueBot\\git\\urfuQueueBot\\Builder\\Builder.csproj": {}
   },
   "projects": {
-    "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
+    "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj",
+        "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj",
         "projectName": "Bots",
-        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj",
+        "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\obj\\",
+        "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,14 +32,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj": {
-                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj"
+              "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\Loggers.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\Loggers.csproj"
               },
-              "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj": {
-                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj"
+              "W:\\QueueBot\\git\\urfuQueueBot\\SQLDB\\SQLDB.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\SQLDB\\SQLDB.csproj"
               },
-              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj": {
+    "W:\\QueueBot\\git\\urfuQueueBot\\Builder\\Builder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj",
+        "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\Builder\\Builder.csproj",
         "projectName": "Builder",
-        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Builder\\Builder.csproj",
+        "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Builder\\Builder.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\Builder\\obj\\",
+        "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\Builder\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -100,11 +100,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj": {
-                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Bots\\Bots.csproj"
+              "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Bots\\Bots.csproj"
               },
-              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\Requests.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\Requests.csproj"
+              },
+              "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj"
               }
             }
           }
@@ -137,14 +140,14 @@
         }
       }
     },
-    "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj": {
+    "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\Loggers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj",
+        "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\Loggers.csproj",
         "projectName": "Loggers",
-        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\Loggers.csproj",
+        "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\Loggers.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\Logger\\obj\\",
+        "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\Logger\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -195,14 +198,78 @@
         }
       }
     },
-    "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj": {
+    "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\Requests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj",
-        "projectName": "SQLDB",
-        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\SQLDB.csproj",
+        "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\Requests.csproj",
+        "projectName": "Requests",
+        "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\Requests.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\SQLDB\\obj\\",
+        "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\Requests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\QueueBot\\git\\urfuQueueBot\\SQLDB\\SQLDB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\SQLDB\\SQLDB.csproj",
+        "projectName": "SQLDB",
+        "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\SQLDB\\SQLDB.csproj",
+        "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
+        "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\SQLDB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -223,8 +290,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
-                "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj"
+              "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj": {
+                "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj"
               }
             }
           }
@@ -263,14 +330,14 @@
         }
       }
     },
-    "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj": {
+    "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
+        "projectUniqueName": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj",
         "projectName": "TableParser",
-        "projectPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\TableParser.csproj",
+        "projectPath": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\TableParser.csproj",
         "packagesPath": "C:\\Users\\PC-1\\.nuget\\packages\\",
-        "outputPath": "W:\\QueueBot\\QueueBot-2-0\\TableParser\\obj\\",
+        "outputPath": "W:\\QueueBot\\git\\urfuQueueBot\\TableParser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

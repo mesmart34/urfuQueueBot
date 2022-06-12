@@ -7,15 +7,18 @@ namespace SQLDB
     {
         public string Name { get; private set; }
         public DateTime Time { get; private set; }
-        public List<Member> Members { get; private set; }
+
+        // TODO : Why Id
         public int Id { get; private set; }
 
-        public Team(string name, int id, DateTime time)
+        public HashSet<Student> Students { get; private set; }
+
+        public Team(string name, DateTime time, int id)
         {
             Name = name;
             Time = time;
-            Members = new List<Member>();
             Id = id;
+            Students = new HashSet<Student>();
         }
 
         public void ChangeTime(DateTime time)
@@ -23,14 +26,8 @@ namespace SQLDB
             Time = time;
         }
 
-        public void AddStudent(Member student)
-        {
-            Members.Add(student);
-        }
+        public void AddStudent(Student student) => Students.Add(student);
 
-        public void RemoveStudent(Member student)
-        {
-            Members.Remove(student);
-        }
+        public void RemoveStudent(Student student) => Students.Remove(student);
     }
 }
